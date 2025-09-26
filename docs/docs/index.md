@@ -20,7 +20,7 @@ Welcome to the cpp-linter organization documentation hub. Choose a product below
 
     Pre-commit hooks for automated C/C++ linting in your local development
 
-    [Learn More](https://cpp-linter.github.io/cpp-linter-hooks/){ .md-button .md-button--primary }
+    [Learn More](https://github.com/cpp-linter/cpp-linter-hooks){ .md-button .md-button--primary }
 
 
 -   :fontawesome-brands-python: **cpp-linter**
@@ -70,7 +70,7 @@ Welcome to the cpp-linter organization documentation hub. Choose a product below
 
     Easy installation of clang tools Python wheels via pip
 
-    [Learn More](https://github.com/cpp-linter/clang-tools-wheels){ .md-button .md-button--primary }
+    [Learn More](https://github.com/cpp-linter/clang-tools-wheel){ .md-button .md-button--primary }
 
 </div>
 
