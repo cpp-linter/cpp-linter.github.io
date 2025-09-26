@@ -1,0 +1,68 @@
+site_name: "cpp-linter organization"
+site_description: "Documentation for the cpp-linter organization."
+site_url: "https://cpp-linter.github.io/"
+
+nav:
+  - index.md
+  - DOCS:
+      - docs/index.md
+  - BLOG:
+      - blog/index.md
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - toc.integrate
+    - navigation.top
+    - navigation.sections
+  logo: static/logo.png
+  favicon: static/favicon.ico
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/lightbulb
+        name: Switch to system preference
+
+
+markdown_extensions:
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+  - blog
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cpp-linter

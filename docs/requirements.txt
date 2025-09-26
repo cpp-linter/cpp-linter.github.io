@@ -1,0 +1,4 @@
+markdown-gfm-admonition
+mkdocs
+mkdocs-include-markdown-plugin
+mkdocs-material
