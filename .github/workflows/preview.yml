@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6
         with:
           python-version: '3.x'
 
@@ -33,7 +33,7 @@ jobs:
           commit_message: "Deploy docs preview for PR #${{ github.event.number }} (sha: ${{ github.sha }})"
 
       - name: Create or update PR comment with preview URL
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
