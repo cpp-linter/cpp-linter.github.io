@@ -1,13 +1,13 @@
-site_name: "cpp-linter organization"
+site_name: "cpp-linter"
 site_description: "Documentation for the cpp-linter organization."
 site_url: "https://cpp-linter.github.io/"
 
 nav:
-  - index.md
-  - DOCS:
-      - docs/index.md
-  - BLOG:
-      - blog/index.md
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Discussion: discussion.md
+  # - Blog:
+  #     - blog/index.md
 
 theme:
   name: material
@@ -52,9 +52,11 @@ markdown_extensions:
   - pymdownx.superfences
   - attr_list
   - md_in_html
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
   - blog
