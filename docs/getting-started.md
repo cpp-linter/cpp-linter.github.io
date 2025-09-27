@@ -1,6 +1,6 @@
-# Documentation Hub
+# Getting Started
 
-Welcome to the cpp-linter organization documentation hub. Choose a product below to access its complete documentation.
+cpp-linter is an open-source organization dedicated to providing high-quality tools and solutions for C/C++ code analysis and linting. Our mission is to help developers write cleaner, more maintainable code by offering easy-to-use tools that integrate seamlessly into their development workflows.
 
 ## Our Solutions
 
