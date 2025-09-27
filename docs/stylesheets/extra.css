@@ -2,6 +2,87 @@ th {
     background-color: var(--md-default-fg-color--lightest);
 }
 
+/* Hero section styling */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-accent-fg-color) 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+    color: white;
+    margin: -1.5rem -1.5rem 3rem -1.5rem;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Card enhancements */
+.md-typeset .grid.cards > .card-content {
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.md-typeset .grid.cards > .card-content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-color: var(--md-primary-fg-color);
+}
+
+/* Community section styling */
+.community-section {
+    background: var(--md-default-fg-color--lightest);
+    padding: 3rem 2rem;
+    margin: 3rem -1.5rem 0 -1.5rem;
+    text-align: center;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.community-section h2 {
+    color: var(--md-primary-fg-color);
+    margin-bottom: 1rem;
+}
+
+/* Code block enhancements */
+.md-typeset pre > code {
+    border-radius: 0.5rem;
+}
+
+/* Button styling improvements */
+.md-button {
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.md-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
 .md-header {
     background-color: #4051b5;
 }
