@@ -26,7 +26,7 @@ hide:
 
     ---
 
-    Open-source and permissively licensed. Bringing contributors together to empower impactful C/C++ lint projects in open source and beyond.
+    Open-source and MIT-licensed. Bringing contributors together to empower impactful C/C++ lint projects in open source and beyond.
 
 -   :material-cog: **Zero Configuration**
 
@@ -38,11 +38,69 @@ hide:
 
     ---
 
-    GitHub Actions, Pre-commit, Command Line, Docker containers – integrate anywhere your code lives.
+    GitHub Actions, Pre-commit, Command Line, Docker containers and more – integrate anywhere your code lives.
 
 </div>
 
 <div class="grid" markdown>
+
+</div>
+
+## Trusted by developers worldwide
+
+<div class="trusted-by" markdown>
+
+**Join thousands of developers and organizations using cpp-linter in production**
+
+<div class="logo-grid">
+  <div class="logo-item">
+    <img src="https://github.com/microsoft.png" alt="Microsoft" title="Microsoft">
+    <span>Microsoft</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/apache.png" alt="Apache" title="Apache">
+    <span>Apache</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/nasa.png" alt="NASA" title="NASA">
+    <span>NASA</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/samsung.png" alt="Samsung" title="Samsung">
+    <span>Samsung</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/TheAlgorithms.png" alt="TheAlgorithms" title="TheAlgorithms">
+    <span>TheAlgorithms</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/Nextcloud.png" alt="Nextcloud" title="Nextcloud">
+    <span>Nextcloud</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/Jupyter.png" alt="Jupyter" title="Jupyter">
+    <span>Jupyter</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/CachyOS.png" alt="CachyOS" title="CachyOS">
+    <span>CachyOS</span>
+  </div>
+</div>
+
+<!-- <div class="stats-grid">
+  <div class="stat">
+    <strong>1,000+</strong>
+    <span>GitHub Users</span>
+  </div>
+  <div class="stat">
+    <strong>20K+</strong>
+    <span>Downloads/Month</span>
+  </div>
+  <div class="stat">
+    <strong>50+</strong>
+    <span>Contributors</span>
+  </div>
+</div> -->
 
 </div>
 
