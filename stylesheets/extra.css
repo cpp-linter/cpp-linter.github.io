@@ -83,6 +83,107 @@ th {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* Trusted by section styling */
+.trusted-by {
+    text-align: center;
+    padding: 3rem 0;
+    background: var(--md-default-fg-color--lightest);
+    margin: 3rem -1.5rem;
+    border-radius: 1rem;
+}
+
+.trusted-by p {
+    font-size: 1.1rem;
+    color: var(--md-default-fg-color--light);
+    margin-bottom: 2rem;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+}
+
+.logo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.logo-item:hover {
+    transform: translateY(-4px);
+    background: var(--md-default-bg-color);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.logo-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.logo-item:hover img {
+    filter: grayscale(0%);
+}
+
+.logo-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--md-default-fg-color--light);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--md-primary-fg-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat span {
+    font-size: 0.9rem;
+    color: var(--md-default-fg-color--light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile responsiveness for trusted by section */
+@media screen and (max-width: 768px) {
+    .logo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 1rem;
+    }
+    
+    .stat strong {
+        font-size: 1.5rem;
+    }
+}
+
 .md-header {
     background-color: #4051b5;
 }
