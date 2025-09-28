@@ -8,7 +8,7 @@ hide:
 
 # C/C++ linting that simply works
 
-**Professional static analysis for C/C++ code – automated, configurable, and fast. Integrate seamlessly into any workflow in minutes.**
+**Lint your C/C++ code in workflow – automated, configurable, and fast. Integrate seamlessly into any workflow in minutes.**
 
 [Get started :material-rocket-launch:](getting-started.md){ .md-button .md-button--primary }
 
@@ -16,34 +16,9 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :material-github: **GitHub Action**
-
-    ---
-
-    Automated C++ linting in your CI/CD pipelines with zero configuration
-
-    [:octicons-arrow-right-24: cpp-linter-action](https://cpp-linter.github.io/cpp-linter-action/)
-
--   :material-git: **Pre-commit Hooks**
-
-    ---
-
-    Catch issues before they reach your repository with Git hooks
-
-    [:octicons-arrow-right-24: cpp-linter-hooks](https://github.com/cpp-linter/cpp-linter-hooks)
-
--   :fontawesome-brands-python: **Python Package**
-
-    ---
-
-    Powerful command-line tool and Python API for local development
-
-    [:octicons-arrow-right-24: cpp-linter](https://cpp-linter.github.io/cpp-linter/)
-
-
 </div>
 
-## Everything you need for C/C++ code quality
+## Everything you need for linting C/C++ code
 
 <div class="grid cards" markdown>
 
@@ -67,36 +42,7 @@ hide:
 
 </div>
 
-## Clang Tools Made Simple
-
-**No more complex installations or version conflicts.** Get `clang-format`, `clang-tidy`, `clang-query`, and more through your favorite package manager:
-
 <div class="grid" markdown>
-
-<div class="card-content" markdown>
-### :fontawesome-brands-python: **pip**
-```bash
-pip install clang-tools
-clang-tools --install 20
-```
-[:octicons-arrow-right-24: clang-tools-pip](https://github.com/cpp-linter/clang-tools-pip)
-</div>
-
-<div class="card-content" markdown>
-### :material-docker: **Docker**  
-```bash
-docker pull xianpengshen/clang-tools
-```
-[:octicons-arrow-right-24: clang-tools-docker](https://github.com/cpp-linter/clang-tools-docker)
-</div>
-
-<div class="card-content" markdown>
-### :material-download: **Python Wheels**
-```bash
-pip install clang-<name>-<version>.whl
-```
-[:octicons-arrow-right-24: clang-tools-wheel](https://github.com/cpp-linter/clang-tools-wheel)
-</div>
 
 </div>
 

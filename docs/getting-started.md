@@ -56,7 +56,7 @@ Select the method that best fits your development workflow:
 
 <div class="grid cards" markdown>
 
--   :fontawesome-brands-binary: **clang-tools-static-binaries**
+-   :fontawesome-brands-github: **clang-tools-static-binaries**
 
     ---
 
