@@ -26,7 +26,7 @@ hide:
 
     ---
 
-    Open-source and permissively licensed. Bringing contributors together to empower impactful C/C++ lint projects in open source and beyond.
+    Open-source and MIT-licensed. Bringing contributors together to empower impactful C/C++ lint projects in open source and beyond.
 
 -   :material-cog: **Zero Configuration**
 
@@ -38,7 +38,7 @@ hide:
 
     ---
 
-    GitHub Actions, Pre-commit, Command Line, Docker containers – integrate anywhere your code lives.
+    GitHub Actions, Pre-commit, Command Line, Docker containers and more – integrate anywhere your code lives.
 
 </div>
 
