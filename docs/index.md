@@ -8,7 +8,7 @@ hide:
 
 # C/C++ linting that simply works
 
-**Lint your C/C++ code in workflow – automated, configurable, and fast. Integrate seamlessly into any workflow in minutes.**
+**Lint your C/C++ code in workflow** - automated, configurable, and reliable. Integrate seamlessly into any workflow in minutes.
 
 [Get started :material-rocket-launch:](getting-started.md){ .md-button .md-button--primary }
 

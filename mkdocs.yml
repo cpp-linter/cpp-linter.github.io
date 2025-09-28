@@ -1,6 +1,7 @@
 site_name: "cpp-linter"
 site_description: "Documentation for the cpp-linter organization."
 site_url: "https://cpp-linter.github.io/"
+repo_url: https://github.com/cpp-linter
 
 nav:
   - Home: index.md
