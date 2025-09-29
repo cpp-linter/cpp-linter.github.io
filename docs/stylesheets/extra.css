@@ -2,15 +2,21 @@ th {
     background-color: var(--md-default-fg-color--lightest);
 }
 
+:root > * {
+    --cpp-linter-logo-color-green: #40b385;
+    --cpp-linter-logo-color-yellow: #ffc20a;
+}
+
 /* Hero section styling */
 .hero {
     text-align: center;
     padding: 4rem 0;
-    background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--md-accent-fg-color) 100%);
-    background-size: 200% 200%;
-    animation: gradientShift 8s ease infinite;
-    color: white;
-    margin: -1.5rem -1.5rem 3rem -1.5rem;
+    /* background: linear-gradient(135deg, var(--md-primary-fg-color) 0%, var(--cpp-linter-logo-color-green) 100%); */
+    /* background-size: 200% 200%; */
+    /* animation: gradientShift 8s ease infinite; */
+    background: var(--md-primary-fg-color);
+    color: var(--md-primary-bg-color);
+    margin: 0 -1em 3rem -1em;
     border-radius: 0 0 1rem 1rem;
 }
 
@@ -19,15 +25,37 @@ th {
     font-weight: 700;
     margin-bottom: 1rem;
     text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+    color: unset;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
-    max-width: 600px;
+    width: 65%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.hero .md-button:hover {
+    border: 2px solid black;
+}
+
+.hero .md-button {
+    background: var(--cpp-linter-logo-color-green);
+    color: black;
+    border: none;
+}
+
+.hero .md-button:hover {
+    background: var(--cpp-linter-logo-color-yellow);
+    color: black;
+    border: none;
+}
+
+.md-typeset .md-button:hover {
+    color: black;
 }
 
 @keyframes gradientShift {
@@ -182,19 +210,6 @@ th {
     .stat strong {
         font-size: 1.5rem;
     }
-}
-
-.md-header {
-    background-color: #4051b5;
-}
-
-/* Make navigation tabs match header color */
-.md-tabs {
-    background-color: #4051b5;
-}
-
-.md-tabs__list {
-    background-color: #4051b5;
 }
 
 /* Ensure tab items have proper contrast */

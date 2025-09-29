@@ -4,11 +4,13 @@ Welcome to cpp-linter! This guide will help you integrate C/C++ linting into you
 
 ## Choose Your Integration
 
+<!-- markdownlint-disable MD033 -->
+
 Select the method that best fits your development workflow:
 
 <div class="grid cards" markdown>
 
--   :material-github: **GitHub Actions**
+- :material-github: **GitHub Actions**
 
     ---
 
@@ -18,8 +20,7 @@ Select the method that best fits your development workflow:
 
     [Get started with GitHub Actions →](https://cpp-linter.github.io/cpp-linter-action/){ .md-button .md-button--primary }
 
-
--   :material-git: **Pre-commit Hooks**
+- :material-git: **Pre-commit Hooks**
 
     ---
 
@@ -28,9 +29,8 @@ Select the method that best fits your development workflow:
     **Perfect for:** Catching issues before commits, local enforcement
 
     [Get started with pre-commit →](https://github.com/cpp-linter/cpp-linter-hooks){ .md-button .md-button--primary }
-    
 
--   :fontawesome-brands-python: **Command Line**
+- :fontawesome-brands-python: **Command Line**
 
     ---
 
@@ -40,7 +40,7 @@ Select the method that best fits your development workflow:
 
     [Get started with cpp-linter package →](https://cpp-linter.github.io/cpp-linter/){ .md-button .md-button--primary }
 
--   :simple-rust: **Command Line (Rust)**
+- :simple-rust: **Command Line (Rust)**
 
     ---
 
@@ -56,7 +56,7 @@ Select the method that best fits your development workflow:
 
 <div class="grid cards" markdown>
 
--   :fontawesome-brands-github: **clang-tools-static-binaries**
+- :fontawesome-brands-github: **clang-tools-static-binaries**
 
     ---
 
@@ -64,8 +64,7 @@ Select the method that best fits your development workflow:
 
     [Download from →](https://github.com/cpp-linter/clang-tools-static-binaries){ .md-button .md-button--primary }
 
-
--   :fontawesome-brands-docker: **clang-tools-docker**
+- :fontawesome-brands-docker: **clang-tools-docker**
 
     ---
 
@@ -73,8 +72,7 @@ Select the method that best fits your development workflow:
 
     [Download from →](https://github.com/cpp-linter/clang-tools-docker){ .md-button .md-button--primary }
 
-
--   :fontawesome-brands-python: **clang-tools-wheels**
+- :fontawesome-brands-python: **clang-tools-wheels**
 
     ---
 
@@ -84,13 +82,11 @@ Select the method that best fits your development workflow:
 
 </div>
 
-
-
 ## Easy Installation
 
 <div class="grid cards" markdown>
 
--   :fontawesome-brands-python: **clang-tools-pip**
+- :fontawesome-brands-python: **clang-tools-pip**
 
     ---
 
@@ -98,7 +94,7 @@ Select the method that best fits your development workflow:
 
     [Get started with clang-tools CLI →](https://cpp-linter.github.io/clang-tools-pip/){ .md-button .md-button--primary }
 
--   :fontawesome-brands-python: **clang-tools-asdf**
+- :fontawesome-brands-python: **clang-tools-asdf**
 
     ---
 

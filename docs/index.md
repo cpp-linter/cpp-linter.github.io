@@ -4,6 +4,21 @@ hide:
   - toc
 ---
 
+<!-- markdownlint-disable MD041 MD033 MD036 -->
+
+<style>
+  /* this must be embedded in the page because
+     it removes the gap between header and hero */
+  .md-main__inner {
+    margin-top: 0;
+  }
+  .md-content__inner {
+    padding-top: 0;
+  }
+  .md-content__inner::before {
+    height: 0;
+  }
+</style>
 <div class="hero" markdown>
 
 # C/C++ linting that simply works
@@ -22,19 +37,19 @@ hide:
 
 <div class="grid cards" markdown>
 
--   :material-chart-line: **Built in Open Source**
+- :material-chart-line: **Built in Open Source**
 
     ---
 
     Open-source and MIT-licensed. Bringing contributors together to empower impactful C/C++ lint projects in open source and beyond.
 
--   :material-cog: **Zero Configuration**
+- :material-cog: **Zero Configuration**
 
     ---
 
     Works out of the box with sensible defaults. Advanced users can customize every aspect to match their coding standards.
 
--   :material-devices: **Works Everywhere**
+- :material-devices: **Works Everywhere**
 
     ---
 
@@ -138,7 +153,15 @@ hide:
         - id: clang-format
             args: [--style=Google] # Other coding style: LLVM, GNU, Chromium, Microsoft, Mozilla, WebKit.
         - id: clang-tidy
-            args: [--checks='boost-*,bugprone-*,performance-*,readability-*,portability-*,modernize-*,clang-analyzer-*,cppcoreguidelines-*']
+            args:
+              - --checks='boost-*
+              - bugprone-*
+              - performance-*
+              - readability-*
+              - portability-*
+              - modernize-*
+              - clang-analyzer-*
+              - cppcoreguidelines-*'
     ```
 
 === "Command Line"
