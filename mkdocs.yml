@@ -2,7 +2,7 @@ site_name: "cpp-linter"
 site_description: "Documentation for the cpp-linter organization."
 site_url: "https://cpp-linter.github.io/"
 repo_url: https://github.com/cpp-linter
-
+repo_name: "cpp-linter"
 copyright: "© 2021-2025, cpp-linter"
 
 nav:
@@ -11,11 +11,15 @@ nav:
   - Discussion: discussion.md
   # - Blog:
   #     - blog/index.md
+exclude_docs: |
+  blog/**
 
 theme:
   name: material
+  custom_dir: docs/overrides
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - toc.integrate
     - navigation.top
     - navigation.sections
@@ -35,7 +39,7 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: blue
+      primary: indigo
       accent: cyan
       toggle:
         icon: material/lightbulb-outline
@@ -44,7 +48,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue
+      primary: indigo
       accent: cyan
       toggle:
         icon: material/lightbulb
