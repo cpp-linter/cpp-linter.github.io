@@ -51,6 +51,7 @@ th {
     color: black;
     border: none;
     border-radius: unset;
+    display: block;
 }
 
 .hero .md-button:hover {
