@@ -2,36 +2,10 @@
 hide:
   - navigation
   - toc
+template: home.html
 ---
 
 <!-- markdownlint-disable MD041 MD033 MD036 -->
-
-<style>
-  /* this must be embedded in the page because
-     it removes the gap between header and hero */
-  .md-main__inner {
-    margin-top: 0;
-  }
-  .md-content__inner {
-    padding-top: 0;
-  }
-  .md-content__inner::before {
-    height: 0;
-  }
-</style>
-<div class="hero" markdown>
-
-# C/C++ linting that simply works
-
-**Lint your C/C++ code in workflow** - automated, configurable, and reliable. Integrate seamlessly into any workflow in minutes.
-
-[Get started :material-rocket-launch:](getting-started.md){ .md-button .md-button--primary }
-
-</div>
-
-<div class="grid cards" markdown>
-
-</div>
 
 ## Everything you need for linting C/C++ code
 
