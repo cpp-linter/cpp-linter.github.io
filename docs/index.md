@@ -3,9 +3,12 @@ hide:
   - navigation
   - toc
 template: home.html
+title: C/C++ Linting
 ---
 
-<!-- markdownlint-disable MD041 MD033 MD036 -->
+<!-- markdownlint-disable MD041 MD033 MD036 MD025 -->
+
+# C/C++ Linting
 
 ## Everything you need for linting C/C++ code
 
