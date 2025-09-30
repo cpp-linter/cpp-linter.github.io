@@ -5,7 +5,6 @@ th {
 :root > * {
     --cpp-linter-logo-color-green: #40b385;
     --cpp-linter-logo-color-yellow: #ffc20a;
-    --cpp-linter-logo-color-blue: #4051b5;
 }
 
 /* Hero section styling */
