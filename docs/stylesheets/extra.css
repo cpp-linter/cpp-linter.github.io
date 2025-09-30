@@ -5,6 +5,7 @@ th {
 :root > * {
     --cpp-linter-logo-color-green: #40b385;
     --cpp-linter-logo-color-yellow: #ffc20a;
+    --cpp-linter-logo-color-blue: #4051b5;
 }
 
 /* Hero section styling */
@@ -41,7 +42,7 @@ th {
 }
 
 .hero .md-button {
-    background: var(--cpp-linter-logo-color-green);
+    background: var(--cpp-linter-logo-color-yellow);
     color: black;
     border: none;
     border-radius: unset;
@@ -49,7 +50,7 @@ th {
 }
 
 .hero .md-button:hover {
-    background: var(--cpp-linter-logo-color-yellow);
+    background: var(--cpp-linter-logo-color-green);
     color: black;
     border: none;
 }
