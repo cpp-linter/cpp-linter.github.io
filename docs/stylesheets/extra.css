@@ -41,7 +41,7 @@ th {
 }
 
 .hero .md-button {
-    background: var(--cpp-linter-logo-color-green);
+    background: var(--cpp-linter-logo-color-yellow);
     color: black;
     border: none;
     border-radius: unset;
@@ -49,7 +49,7 @@ th {
 }
 
 .hero .md-button:hover {
-    background: var(--cpp-linter-logo-color-yellow);
+    background: var(--cpp-linter-logo-color-green);
     color: black;
     border: none;
 }
