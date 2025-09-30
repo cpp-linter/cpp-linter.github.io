@@ -70,10 +70,6 @@ title: C/C++ Linting
     <span>Nextcloud</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/Jupyter.png" alt="Jupyter" title="Jupyter">
-    <span>Jupyter</span>
-  </div>
-  <div class="logo-item">
     <img src="https://github.com/CachyOS.png" alt="CachyOS" title="CachyOS">
     <span>CachyOS</span>
   </div>
@@ -94,10 +90,6 @@ title: C/C++ Linting
     <span>Chocolate Doom</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/AppNeta.png" alt="AppNeta" title="AppNeta">
-    <span>AppNeta</span>
-  </div>
-  <div class="logo-item">
     <img src="https://github.com/LedgerHQ.png" alt="LedgerHQ" title="LedgerHQ">
     <span>LedgerHQ</span>
   </div>
@@ -114,12 +106,8 @@ title: C/C++ Linting
     <span>Diasurgical</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/xemu-project.png" alt="Xemu Project" title="Xemu Project">
-    <span>Xemu Project</span>
-  </div>
-  <div class="logo-item">
-    <img src="https://github.com/Cambridge-ICCS.png" alt="Cambridge ICCS" title="Cambridge ICCS">
-    <span>Cambridge ICCS</span>
+    <img src="https://github.com/KhronosGroup.png" alt="Khronos Group" title="Khronos Group">
+    <span>Khronos Group</span>
   </div>
   <div class="logo-item">
     <img src="https://github.com/man-group.png" alt="man-group" title="Man Group">
@@ -130,12 +118,16 @@ title: C/C++ Linting
     <span>Stanford SSI</span>
   </div>
   <div class="logo-item">
+    <img src="https://github.com/Cambridge-ICCS.png" alt="Cambridge ICCS" title="Cambridge ICCS">
+    <span>Cambridge ICCS</span>
+  </div>
+  <div class="logo-item">
     <img src="https://github.com/openMSL.png" alt="OpenMSL" title="OpenMSL">
     <span>OpenMSL</span>
   </div>
-  <div class="logo-item">
-    <img src="https://github.com/KhronosGroup.png" alt="Khronos Group" title="Khronos Group">
-    <span>The Khronos Group</span>
+   <div class="logo-item">
+    <img src="https://github.com/xemu-project.png" alt="Xemu Project" title="Xemu Project">
+    <span>Xemu Project</span>
   </div>
 </div>
 
