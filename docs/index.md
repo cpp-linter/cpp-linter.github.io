@@ -77,6 +77,66 @@ title: C/C++ Linting
     <img src="https://github.com/CachyOS.png" alt="CachyOS" title="CachyOS">
     <span>CachyOS</span>
   </div>
+  <div class="logo-item">
+    <img src="https://github.com/imgproxy.png" alt="Imgproxy" title="Imgproxy">
+    <span>Imgproxy</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/zondax.png" alt="Zondax" title="Zondax">
+    <span>Zondax</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/nnstreamer.png" alt="NNStreamer" title="NNStreamer">
+    <span>NNStreamer</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/chocolate-doom.png" alt="Chocolate Doom" title="Chocolate Doom">
+    <span>Chocolate Doom</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/AppNeta.png" alt="AppNeta" title="AppNeta">
+    <span>AppNeta</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/LedgerHQ.png" alt="LedgerHQ" title="LedgerHQ">
+    <span>LedgerHQ</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/LLNL.png" alt="LLNL" title="LLNL">
+    <span>LLNL</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/cohere-ai.png" alt="cohere" title="cohere">
+    <span>cohere</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/diasurgical.png" alt="Diasurgical" title="Diasurgical">
+    <span>Diasurgical</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/xemu-project.png" alt="Xemu Project" title="Xemu Project">
+    <span>Xemu Project</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/Cambridge-ICCS.png" alt="Cambridge ICCS" title="Cambridge ICCS">
+    <span>Cambridge ICCS</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/man-group.png" alt="man-group" title="Man Group">
+    <span>Man Group</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/stanford-ssi.png" alt="Stanford SSI" title="Stanford SSI">
+    <span>Stanford SSI</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/openMSL.png" alt="OpenMSL" title="OpenMSL">
+    <span>OpenMSL</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/KhronosGroup.png" alt="Khronos Group" title="Khronos Group">
+    <span>The Khronos Group</span>
+  </div>
 </div>
 
 <!-- <div class="stats-grid">
