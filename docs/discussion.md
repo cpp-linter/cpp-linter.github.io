@@ -9,7 +9,7 @@ Join our community discussions to ask questions, share ideas, and connect with o
 Visit our GitHub Discussions to:
 
 - **Ask Questions** - Get help from the community and maintainers
-- **Share Ideas** - Propose new features or improvements  
+- **Share Ideas** - Propose new features or improvements
 - **Show and Tell** - Share your projects using cpp-linter tools
 - **General Discussion** - Chat about C/C++ linting and best practices
 

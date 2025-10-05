@@ -16,4 +16,3 @@ authors:
 ---
 
 # cpp-linter-action supports xxx features
-

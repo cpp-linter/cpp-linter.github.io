@@ -201,12 +201,12 @@ th {
         gap: 1rem;
         padding: 0 1rem;
     }
-    
+
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 1rem;
     }
-    
+
     .stat strong {
         font-size: 1.5rem;
     }
