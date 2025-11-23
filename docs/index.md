@@ -177,7 +177,7 @@ title: C/C++ Linting
     ```yaml
     repos:
       - repo: https://github.com/cpp-linter/cpp-linter-hooks
-        rev: v1.1.5  # Use the tag or commit you want
+        rev: v1.1.8  # Use the tag or commit you want
         hooks:
         - id: clang-format
             args: [--style=Google] # Other coding style: LLVM, GNU, Chromium, Microsoft, Mozilla, WebKit.
