@@ -3,7 +3,7 @@ site_description: "Documentation for the cpp-linter organization."
 site_url: "https://cpp-linter.github.io/"
 repo_url: https://github.com/cpp-linter
 repo_name: "cpp-linter"
-copyright: "© 2021-2025, cpp-linter"
+copyright: "© 2021-2026, cpp-linter"
 
 nav:
   - Home: index.md
