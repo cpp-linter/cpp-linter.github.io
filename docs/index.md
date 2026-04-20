@@ -74,8 +74,8 @@ title: C/C++ Linting
     <span>CachyOS</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/imgproxy.png" alt="Imgproxy" title="Imgproxy">
-    <span>Imgproxy</span>
+    <img src="https://github.com/qualcomm.png" alt="Qualcomm" title="Qualcomm">
+    <span>Qualcomm</span>
   </div>
   <div class="logo-item">
     <img src="https://github.com/zondax.png" alt="Zondax" title="Zondax">
