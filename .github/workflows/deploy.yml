@@ -23,7 +23,7 @@ jobs:
         run: pipx run nox -s docs
 
       - name: Upload docs build as artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           name: ${{ github.event.repository.name }}_docs
           path: ${{ github.workspace }}/site
