@@ -9,6 +9,7 @@ nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Discussion: discussion.md
+  - Merchandise: merch.md
   # - Blog:
   #     - blog/index.md
 exclude_docs: |
@@ -56,6 +57,8 @@ theme:
 
 
 markdown_extensions:
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
   - attr_list
   - md_in_html
