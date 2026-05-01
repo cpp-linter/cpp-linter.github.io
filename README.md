@@ -1,9 +1,9 @@
 # cpp-linter.github.io
 
-[![Website](https://img.shields.io/static/v1?logo=googlechrome&logoColor=white&label=Website&message=cpp-linter.github.io&color=yellow)](https://cpp-linter.github.io/)
+kdoc[![Website](https://img.shields.io/static/v1?logo=googlechrome&logoColor=white&label=Website&message=cpp-linter.github.io&color=yellow)](https://cpp-linter.github.io/)
 [![GitHub Org](https://img.shields.io/badge/github-cpp--linter-181717?logo=github)](https://github.com/cpp-linter)
 [![License](https://img.shields.io/github/license/cpp-linter/cpp-linter.github.io)](LICENSE)
-[![MkDocs](https://img.shields.io/badge/docs-MkDocs%20Material-526CFE?logo=materialformkdocs&logoColor=white)](https://cpp-linter.github.io/)
+[![MkDocs](https://img.shields.io/badge/docs-MkDocs%20NG%20Material-526CFE?logo=materialformkdocs&logoColor=white)](https://cpp-linter.github.io/)
 
 Documentation website for the `cpp-linter` project and organization.
 
