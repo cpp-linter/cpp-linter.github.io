@@ -6,11 +6,7 @@ template: home.html
 title: C/C++ Linting
 ---
 
-<!-- markdownlint-disable MD041 MD033 MD036 MD025 -->
-
-# C/C++ Linting
-
-## Everything you need for linting C/C++ code
+<!-- markdownlint-disable MD041 MD033 MD036 -->
 
 <div class="grid cards" markdown>
 
@@ -34,21 +30,13 @@ title: C/C++ Linting
 
 </div>
 
-<div class="grid" markdown>
-
-</div>
-
-## Trusted by developers worldwide
+## Used across open-source projects
 
 <div class="trusted-by" markdown>
 
-**Join thousands of developers and organizations using cpp-linter in production**
+Examples of public GitHub organizations and projects where cpp-linter usage has been seen. This list is a discovery aid, not an endorsement.
 
 <div class="logo-grid">
-  <div class="logo-item">
-    <img src="https://github.com/microsoft.png" alt="Microsoft" title="Microsoft">
-    <span>Microsoft</span>
-  </div>
   <div class="logo-item">
     <img src="https://github.com/apache.png" alt="Apache" title="Apache">
     <span>Apache</span>
@@ -94,18 +82,6 @@ title: C/C++ Linting
     <span>LedgerHQ</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/LLNL.png" alt="LLNL" title="LLNL">
-    <span>LLNL</span>
-  </div>
-  <div class="logo-item">
-    <img src="https://github.com/cohere-ai.png" alt="cohere" title="cohere">
-    <span>cohere</span>
-  </div>
-  <div class="logo-item">
-    <img src="https://github.com/diasurgical.png" alt="Diasurgical" title="Diasurgical">
-    <span>Diasurgical</span>
-  </div>
-  <div class="logo-item">
     <img src="https://github.com/KhronosGroup.png" alt="Khronos Group" title="Khronos Group">
     <span>Khronos Group</span>
   </div>
@@ -121,30 +97,7 @@ title: C/C++ Linting
     <img src="https://github.com/Cambridge-ICCS.png" alt="Cambridge ICCS" title="Cambridge ICCS">
     <span>Cambridge ICCS</span>
   </div>
-  <div class="logo-item">
-    <img src="https://github.com/openMSL.png" alt="OpenMSL" title="OpenMSL">
-    <span>OpenMSL</span>
-  </div>
-   <div class="logo-item">
-    <img src="https://github.com/xemu-project.png" alt="Xemu Project" title="Xemu Project">
-    <span>Xemu Project</span>
-  </div>
 </div>
-
-<!-- <div class="stats-grid">
-  <div class="stat">
-    <strong>1,000+</strong>
-    <span>GitHub Users</span>
-  </div>
-  <div class="stat">
-    <strong>20K+</strong>
-    <span>Downloads/Month</span>
-  </div>
-  <div class="stat">
-    <strong>50+</strong>
-    <span>Contributors</span>
-  </div>
-</div> -->
 
 </div>
 
@@ -179,18 +132,10 @@ title: C/C++ Linting
       - repo: https://github.com/cpp-linter/cpp-linter-hooks
         rev: v1.2.0  # Use the tag or commit you want
         hooks:
-        - id: clang-format
+          - id: clang-format
             args: [--style=Google] # Other coding style: LLVM, GNU, Chromium, Microsoft, Mozilla, WebKit.
-        - id: clang-tidy
-            args:
-              - --checks='boost-*
-              - bugprone-*
-              - performance-*
-              - readability-*
-              - portability-*
-              - modernize-*
-              - clang-analyzer-*
-              - cppcoreguidelines-*'
+          - id: clang-tidy
+            args: [--checks=-*,bugprone-*,performance-*,readability-*]
     ```
 
 === "Command Line"
