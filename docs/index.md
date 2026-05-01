@@ -177,20 +177,12 @@ title: C/C++ Linting
     ```yaml
     repos:
       - repo: https://github.com/cpp-linter/cpp-linter-hooks
-        rev: v1.2.0  # Use the tag or commit you want
+        rev: v1.4.0  # Use the tag or commit you want
         hooks:
-        - id: clang-format
+          - id: clang-format
             args: [--style=Google] # Other coding style: LLVM, GNU, Chromium, Microsoft, Mozilla, WebKit.
-        - id: clang-tidy
-            args:
-              - --checks='boost-*
-              - bugprone-*
-              - performance-*
-              - readability-*
-              - portability-*
-              - modernize-*
-              - clang-analyzer-*
-              - cppcoreguidelines-*'
+          - id: clang-tidy
+            args: [--checks=-*,bugprone-*,performance-*,readability-*]
     ```
 
 === "Command Line"

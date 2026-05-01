@@ -2,11 +2,26 @@
 
 Welcome to cpp-linter! This guide will help you integrate C/C++ linting into your workflow quickly and efficiently.
 
+## What is cpp-linter?
+
+cpp-linter connects the standard LLVM linting tools, `clang-format` and `clang-tidy`, to the places where C/C++ projects need checks: pull requests, pre-commit hooks, local scripts, and CI jobs.
+
+- `clang-format` checks formatting against a named style or your `.clang-format` file.
+- `clang-tidy` runs static-analysis and modernization checks, usually configured by `.clang-tidy`.
+- cpp-linter wraps those tools into integrations with consistent defaults, reporting, and failure controls.
+
 ## Choose Your Integration
 
 <!-- markdownlint-disable MD033 -->
 
 Select the method that best fits your development workflow:
+
+| Use case | Recommended entry point |
+| --- | --- |
+| GitHub pull request checks | [cpp-linter-action](https://cpp-linter.github.io/cpp-linter-action/) |
+| Local checks before commits | [cpp-linter-hooks](https://github.com/cpp-linter/cpp-linter-hooks) |
+| Custom scripts or CI jobs | [cpp-linter CLI](https://cpp-linter.github.io/cpp-linter/) |
+
 
 <div class="grid cards" markdown>
 
