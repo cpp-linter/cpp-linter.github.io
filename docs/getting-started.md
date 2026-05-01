@@ -21,7 +21,6 @@ Select the method that best fits your development workflow:
 | GitHub pull request checks | [cpp-linter-action](https://cpp-linter.github.io/cpp-linter-action/) |
 | Local checks before commits | [cpp-linter-hooks](https://github.com/cpp-linter/cpp-linter-hooks) |
 | Custom scripts or CI jobs | [cpp-linter CLI](https://cpp-linter.github.io/cpp-linter/) |
-| High-performance local runs | [cpp-linter-rs](https://cpp-linter.github.io/cpp-linter-rs/) |
 
 
 <div class="grid cards" markdown>
