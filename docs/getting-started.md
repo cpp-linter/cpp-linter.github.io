@@ -8,7 +8,7 @@ cpp-linter connects the standard LLVM linting tools, `clang-format` and `clang-t
 
 - `clang-format` checks formatting against a named style or your `.clang-format` file.
 - `clang-tidy` runs static-analysis and modernization checks, usually configured by `.clang-tidy`.
-- cpp-linter packages those tools into integrations with consistent defaults, reporting, and failure controls.
+- cpp-linter wraps those tools into integrations with consistent defaults, reporting, and failure controls.
 
 ## Choose Your Integration
 
