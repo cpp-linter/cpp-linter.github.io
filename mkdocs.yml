@@ -20,9 +20,15 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - toc.integrate
     - navigation.top
     - navigation.sections
+    - navigation.footer
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - search.suggest
+    - search.share
+    - toc.follow
   logo: static/logo.png
   favicon: static/favicon.ico
   icon:
@@ -39,7 +45,7 @@ theme:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
+      primary: blue
       accent: cyan
       toggle:
         icon: material/lightbulb-outline
@@ -48,7 +54,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: blue
       accent: cyan
       toggle:
         icon: material/lightbulb
@@ -56,14 +62,22 @@ theme:
 
 
 markdown_extensions:
-  - pymdownx.superfences
+  - admonition
   - attr_list
   - md_in_html
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+  - toc:
+      permalink: true
 
 plugins:
   - search
