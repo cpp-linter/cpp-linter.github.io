@@ -20,7 +20,8 @@ Select the method that best fits your development workflow:
 | --- | --- |
 | GitHub pull request checks | [cpp-linter-action](https://cpp-linter.github.io/cpp-linter-action/) |
 | Local checks before commits | [cpp-linter-hooks](https://github.com/cpp-linter/cpp-linter-hooks) |
-| Custom scripts or CI jobs | [cpp-linter CLI](https://cpp-linter.github.io/cpp-linter/) |
+| Custom scripts or CI jobs | [cpp-linter CLI (Python)](https://pypi.org/project/cpp-linter/) |
+| High-performance local runs | [cpp-linter-rs (Rust)](https://github.com/cpp-linter/cpp-linter-rs) |
 
 
 <div class="grid cards" markdown>
@@ -45,7 +46,7 @@ Select the method that best fits your development workflow:
 
     [Get started with pre-commit →](https://github.com/cpp-linter/cpp-linter-hooks){ .md-button .md-button--primary }
 
-- :fontawesome-brands-python: **Command Line**
+- :fontawesome-brands-python: **Command Line (Python)**
 
     ---
 
@@ -53,7 +54,7 @@ Select the method that best fits your development workflow:
 
     **Perfect for:** Local development, custom scripts, one-off analysis
 
-    [Get started with cpp-linter package →](https://cpp-linter.github.io/cpp-linter/){ .md-button .md-button--primary }
+    [Get started with cpp-linter package →](https://pypi.org/project/cpp-linter/){ .md-button .md-button--primary }
 
 - :simple-rust: **Command Line (Rust)**
 
@@ -63,7 +64,7 @@ Select the method that best fits your development workflow:
 
     **Perfect for:** Local development, custom scripts, one-off analysis
 
-    [Get started with cpp-linter-rs →](https://cpp-linter.github.io/cpp-linter-rs/){ .md-button .md-button--primary }
+    [Get started with cpp-linter-rs →](https://github.com/cpp-linter/cpp-linter-rs){ .md-button .md-button--primary }
 
 </div>
 
