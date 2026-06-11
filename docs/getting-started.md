@@ -94,7 +94,7 @@ Select the method that best fits your development workflow:
 
     Distribution clang tools Python wheels for various platforms
 
-    [Download from →](https://cpp-linter.github.io/clang-tools-wheel/){ .md-button .md-button--primary }
+    [Download from →](https://github.com/cpp-linter/clang-tools-wheel){ .md-button .md-button--primary }
 
 </div>
 
