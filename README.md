@@ -18,4 +18,5 @@ This repository hosts the public site at <https://cpp-linter.github.io/>, includ
 
 - Project overview and landing page content
 - Getting started documentation
+- Clang tools distribution guides (static binaries, Docker images, Python wheels)
 - Discussion and community entry points
