@@ -68,7 +68,9 @@ Select the method that best fits your development workflow:
 
 </div>
 
-## Clang Tools Distribution
+## Clang Tools — Simplified
+
+We provide ready-to-use **binaries**, **Docker images**, and **Python wheels** of key clang tools:
 
 <div class="grid cards" markdown>
 
@@ -76,7 +78,7 @@ Select the method that best fits your development workflow:
 
     ---
 
-    Distribution clang tools static binaries for various platforms
+    Statically-linked `clang-format`, `clang-tidy`, `clang-query`, `clang-apply-replacements`, and `clang-include-cleaner` binaries for Linux, macOS, and Windows
 
     [Download from →](https://github.com/cpp-linter/clang-tools-static-binaries){ .md-button .md-button--primary }
 
@@ -84,7 +86,7 @@ Select the method that best fits your development workflow:
 
     ---
 
-    Distribution clang tools Docker images for various platforms
+    Docker images with pre-installed `clang-format` and `clang-tidy`
 
     [Download from →](https://github.com/cpp-linter/clang-tools-docker){ .md-button .md-button--primary }
 
@@ -92,9 +94,25 @@ Select the method that best fits your development workflow:
 
     ---
 
-    Distribution clang tools Python wheels for various platforms
+    Redistribute `clang-format` and `clang-tidy` Python wheels
 
     [Download from →](https://github.com/cpp-linter/clang-tools-wheel){ .md-button .md-button--primary }
+
+- :fontawesome-brands-python: **clang-apply-replacements**
+
+    ---
+
+    Standalone Python wheel for `clang-apply-replacements`
+
+    [Download from →](https://github.com/cpp-linter/clang-apply-replacements){ .md-button .md-button--primary }
+
+- :fontawesome-brands-python: **clang-include-cleaner**
+
+    ---
+
+    Standalone Python wheel for `clang-include-cleaner` — detects unused `#include` directives
+
+    [Download from →](https://github.com/cpp-linter/clang-include-cleaner){ .md-button .md-button--primary }
 
 </div>
 
@@ -106,7 +124,7 @@ Select the method that best fits your development workflow:
 
     ---
 
-    Easy installation of clang tools static binaries via pip
+    Install `clang-format`, `clang-tidy`, `clang-query`, `clang-apply-replacements`, and `clang-include-cleaner` via static binaries or Python wheels using a single CLI
 
     [Get started with clang-tools CLI →](https://cpp-linter.github.io/clang-tools-pip/){ .md-button .md-button--primary }
 
