@@ -136,4 +136,12 @@ We provide ready-to-use **binaries**, **Docker images**, and **Python wheels** o
 
     [Get started with asdf →](https://github.com/cpp-linter/asdf-clang-tools){ .md-button .md-button--primary }
 
+- :fontawesome-brands-apple: **Homebrew Tap**
+
+    ---
+
+    Install `clang-format`, `clang-tidy`, `clang-query`, `clang-apply-replacements`, and `clang-include-cleaner` via Homebrew — no compilation required
+
+    [Get started with Homebrew →](https://github.com/cpp-linter/homebrew-tap){ .md-button .md-button--primary }
+
 </div>
