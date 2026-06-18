@@ -102,17 +102,17 @@ We provide ready-to-use **binaries**, **Docker images**, and **Python wheels** o
 
     ---
 
-    Standalone Python wheel for `clang-apply-replacements`
+    Install `clang-apply-replacements` via pip — standalone Python wheel
 
-    [Download from →](https://github.com/cpp-linter/clang-apply-replacements){ .md-button .md-button--primary }
+    [Install from PyPI →](https://pypi.org/project/clang-apply-replacements/){ .md-button .md-button--primary }
 
 - :fontawesome-brands-python: **clang-include-cleaner**
 
     ---
 
-    Standalone Python wheel for `clang-include-cleaner` — detects unused `#include` directives
+    Install `clang-include-cleaner` via pip — detects unused `#include` directives
 
-    [Download from →](https://github.com/cpp-linter/clang-include-cleaner){ .md-button .md-button--primary }
+    [Install from PyPI →](https://pypi.org/project/clang-include-cleaner/){ .md-button .md-button--primary }
 
 </div>
 
@@ -135,5 +135,13 @@ We provide ready-to-use **binaries**, **Docker images**, and **Python wheels** o
     Easy installation of clang tools static binaries via asdf
 
     [Get started with asdf →](https://github.com/cpp-linter/asdf-clang-tools){ .md-button .md-button--primary }
+
+- :fontawesome-brands-apple: **Homebrew Tap**
+
+    ---
+
+    Install `clang-format`, `clang-tidy`, `clang-query`, `clang-apply-replacements`, and `clang-include-cleaner` via Homebrew — no compilation required
+
+    [Get started with Homebrew →](https://github.com/cpp-linter/homebrew-tap){ .md-button .md-button--primary }
 
 </div>
