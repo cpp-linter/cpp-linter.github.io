@@ -125,9 +125,13 @@ title: C/C++ Linting
     <img src="https://github.com/openMSL.png" alt="OpenMSL" title="OpenMSL">
     <span>OpenMSL</span>
   </div>
-   <div class="logo-item">
+  <div class="logo-item">
     <img src="https://github.com/xemu-project.png" alt="Xemu Project" title="Xemu Project">
     <span>Xemu Project</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/bloomberg.png" alt="Bloomberg" title="Bloomberg">
+    <span>Bloomberg</span>
   </div>
 </div>
 
