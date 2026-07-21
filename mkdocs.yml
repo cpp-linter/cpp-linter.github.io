@@ -9,6 +9,7 @@ nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Discussion: discussion.md
+  - Merchandise: merch.md
   # - Blog:
   #     - blog/index.md
 exclude_docs: |
