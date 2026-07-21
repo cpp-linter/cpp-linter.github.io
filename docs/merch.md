@@ -39,6 +39,7 @@ We may still add GitHub Sponsors later, but this Open Collective page is now the
 If you want to support cpp-linter, the intended model is:
 
 - Donate through [Open Collective](https://opencollective.com/cpp-linter).
+- Supporters who contribute **USD 100 or more** may be eligible for one T-shirt.
 - If we are offering shirts at that time, we will confirm availability manually.
 - A shirt is a **thank-you perk**, not an automatic purchase entitlement.
 
@@ -56,9 +57,10 @@ We still like the idea of project shirts, but only in a lightweight and sustaina
 Our working policy is:
 
 1. The shirt is meant to thank notable supporters of the project.
-2. We will confirm each shipment manually before collecting size and address details.
-3. We will avoid promising fulfillment unless the shared fund can cover it.
-4. Limited quantity, international shipping, and cost changes may affect availability.
+2. Supporters contributing **USD 100 or more** may be considered for one shirt.
+3. We will confirm each shipment manually before collecting size and address details.
+4. We will avoid promising fulfillment unless the shared fund can cover it.
+5. Limited quantity, international shipping, and cost changes may affect availability.
 
 ## If you want one
 
@@ -71,7 +73,7 @@ If you specifically want to express interest in a shirt, the best follow-up chan
 - [GitHub Discussions](https://github.com/cpp-linter/cpp-linter/discussions)
 - [Issues in this site repository](https://github.com/cpp-linter/cpp-linter.github.io/issues)
 
-If enough people are interested, we can publish a clearer supporter policy around shirt availability and supporter tiers.
+This threshold is meant to cover the shirt as a thank-you gesture, along with packaging, international shipping, and platform fees.
 
 ## Next steps
 
