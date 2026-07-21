@@ -1,0 +1,19 @@
+docs/merch.md
+  s_46da5047c5ed8c::t_8c4b15ed8b5273 42,60-63,76
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "d82917048cc7bf770d8964a406dbc98424b1a564",
+  "prompts": {},
+  "sessions": {
+    "s_46da5047c5ed8c": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "34df69c7-e031-4ab0-ba43-02569fbb45ac",
+        "model": "unknown"
+      },
+      "human_author": "shenxianpeng <xianpeng.shen@gmail.com>"
+    }
+  }
+}
