@@ -1,75 +1,23 @@
-# Support cpp-linter with a T-shirt
+# T-shirt Thank-You
 
-cpp-linter is **not** opening a general T-shirt store right now.
+We are not selling T-shirts.
 
-Instead, we want one shared project fund so support goes to the project as a whole, not to only one maintainer. That makes it much easier to cover printing, shipping, and the occasional T-shirt thank-you gift fairly.
+The T-shirt is our way of saying thank you to people who support the project. If your cumulative donations on [Open Collective](https://opencollective.com/cpp-linter) reach **USD 100**, we will reach out personally and send you one.
 
-## Shared funding path
-
-!!! tip "Preferred setup"
-    Support cpp-linter through our shared Open Collective account: [opencollective.com/cpp-linter](https://opencollective.com/cpp-linter)
+## How to support
 
 [Support cpp-linter on Open Collective](https://opencollective.com/cpp-linter){ .md-button .md-button--primary }
 
-Why Open Collective:
+All contributions go to the project as a whole — not to any single maintainer — and all income and expenses are publicly visible.
 
-- It gives the project a shared public account instead of sending funds to only one person.
-- It makes incoming funds and project expenses easier to track transparently.
-- It gives the maintainers a cleaner way to share responsibility for project spending.
+## How the T-shirt works
 
-We may still add GitHub Sponsors later, but this Open Collective page is now the **canonical shared destination** for project support.
+1. Donate through [Open Collective](https://opencollective.com/cpp-linter).
+2. When your cumulative donations reach **USD 100**, we will contact you to arrange shipping.
+3. We confirm each shipment manually and collect your size and address at that point.
 
-## What supporters should expect
+Availability depends on stock, sizing, and shipping at the time — but we will always let you know before anything is sent.
 
-!!! important "No active checkout yet"
-    There is no public order form or direct purchase flow at the moment.
+Have questions? Start a [GitHub Discussion](https://github.com/cpp-linter/cpp-linter/discussions) or open an [issue](https://github.com/cpp-linter/cpp-linter.github.io/issues).
 
-If you want to support cpp-linter, the intended model is:
-
-- Donate through [Open Collective](https://opencollective.com/cpp-linter).
-- Supporters who contribute **USD 100 or more** may be eligible for one T-shirt.
-- If we are offering shirts at that time, we will confirm availability manually.
-- A shirt is a **thank-you perk**, not an automatic purchase entitlement.
-
-That means fulfillment may depend on:
-
-- available stock
-- shipping destination
-- sizing availability
-- current project budget
-
-## T-shirt policy
-
-We still like the idea of project shirts, but only in a lightweight and sustainable way.
-
-Our working policy is:
-
-1. The shirt is meant to thank notable supporters of the project.
-2. Supporters contributing **USD 100 or more** may be considered for one shirt.
-3. We will confirm each shipment manually before collecting size and address details.
-4. We will avoid promising fulfillment unless the shared fund can cover it.
-5. Limited quantity, international shipping, and cost changes may affect availability.
-
-## If you want one
-
-The shared fund is live, and the best starting point is:
-
-- [Open Collective for cpp-linter](https://opencollective.com/cpp-linter)
-
-If you specifically want to express interest in a shirt, the best follow-up channels are:
-
-- [GitHub Discussions](https://github.com/cpp-linter/cpp-linter/discussions)
-- [Issues in this site repository](https://github.com/cpp-linter/cpp-linter.github.io/issues)
-
-This threshold is meant to cover the shirt as a thank-you gesture, along with packaging, international shipping, and platform fees.
-
-## Next steps
-
-The remaining rollout is:
-
-1. Add this same support link to the main repository.
-2. Publish the maintainer policy for how project funds are used.
-3. Define when a supporter may be offered a shirt.
-4. Add GitHub Sponsors later only if it still points people back to the shared funding model.
-
-Thanks for supporting cpp-linter and helping us keep the project fair for everyone involved.
+Thanks for supporting cpp-linter!
