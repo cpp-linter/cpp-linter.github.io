@@ -3,7 +3,7 @@ site_description: "Documentation for the cpp-linter organization."
 site_url: "https://cpp-linter.github.io/"
 repo_url: https://github.com/cpp-linter
 repo_name: "cpp-linter"
-copyright: "© 2021-2025, cpp-linter"
+copyright: "© 2021-2026, cpp-linter"
 
 nav:
   - Home: index.md
@@ -21,9 +21,15 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - toc.integrate
     - navigation.top
     - navigation.sections
+    - navigation.footer
+    - content.code.annotate
+    - content.code.copy
+    - content.tabs.link
+    - search.suggest
+    - search.share
+    - toc.follow
   logo: static/logo.png
   favicon: static/favicon.ico
   icon:
@@ -31,7 +37,7 @@ theme:
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
-      primary: blue
+      primary: indigo
       accent: cyan
       toggle:
         icon: material/brightness-auto
@@ -59,16 +65,24 @@ theme:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
   - attr_list
   - md_in_html
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      linenums_style: pymdownx-inline
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+  - toc:
+      permalink: true
 
 plugins:
+  - search
   - blog
 
 extra_css:

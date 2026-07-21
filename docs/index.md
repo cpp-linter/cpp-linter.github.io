@@ -74,8 +74,8 @@ title: C/C++ Linting
     <span>CachyOS</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/imgproxy.png" alt="Imgproxy" title="Imgproxy">
-    <span>Imgproxy</span>
+    <img src="https://github.com/qualcomm.png" alt="Qualcomm" title="Qualcomm">
+    <span>Qualcomm</span>
   </div>
   <div class="logo-item">
     <img src="https://github.com/zondax.png" alt="Zondax" title="Zondax">
@@ -125,9 +125,13 @@ title: C/C++ Linting
     <img src="https://github.com/openMSL.png" alt="OpenMSL" title="OpenMSL">
     <span>OpenMSL</span>
   </div>
-   <div class="logo-item">
+  <div class="logo-item">
     <img src="https://github.com/xemu-project.png" alt="Xemu Project" title="Xemu Project">
     <span>Xemu Project</span>
+  </div>
+  <div class="logo-item">
+    <img src="https://github.com/bloomberg.png" alt="Bloomberg" title="Bloomberg">
+    <span>Bloomberg</span>
   </div>
 </div>
 
@@ -177,20 +181,12 @@ title: C/C++ Linting
     ```yaml
     repos:
       - repo: https://github.com/cpp-linter/cpp-linter-hooks
-        rev: v1.1.8  # Use the tag or commit you want
+        rev: v1.5.0  # Use the tag or commit you want
         hooks:
-        - id: clang-format
+          - id: clang-format
             args: [--style=Google] # Other coding style: LLVM, GNU, Chromium, Microsoft, Mozilla, WebKit.
-        - id: clang-tidy
-            args:
-              - --checks='boost-*
-              - bugprone-*
-              - performance-*
-              - readability-*
-              - portability-*
-              - modernize-*
-              - clang-analyzer-*
-              - cppcoreguidelines-*'
+          - id: clang-tidy
+            args: [--checks=-*,bugprone-*,performance-*,readability-*]
     ```
 
 === "Command Line"
