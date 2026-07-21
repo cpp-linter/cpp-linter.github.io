@@ -1,0 +1,29 @@
+mkdocs.yml
+  s_46da5047c5ed8c::t_0c37ba4e1c6119 12
+docs/merch.md
+  s_46da5047c5ed8c::t_0c37ba4e1c6119 1-18,20-21,23-31,33-68,70-73,75,77,79,84-85
+  s_46da5047c5ed8c::t_7b39a092011f95 19
+  s_46da5047c5ed8c::t_a5520c0377617f 22
+  s_46da5047c5ed8c::t_501265f388ae48 32
+  s_46da5047c5ed8c::t_472f599a571e0f 69
+  s_46da5047c5ed8c::t_dd9509bc9eac96 74
+  s_46da5047c5ed8c::t_1ea611cd004d0b 76
+  s_46da5047c5ed8c::t_bec253ad0deeab 78
+  s_46da5047c5ed8c::t_34efb203b076ee 80-83
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "8c81fa69c7fd3507af8664f4b16f93ef01905b08",
+  "prompts": {},
+  "sessions": {
+    "s_46da5047c5ed8c": {
+      "agent_id": {
+        "tool": "github-copilot-cli",
+        "id": "34df69c7-e031-4ab0-ba43-02569fbb45ac",
+        "model": "unknown"
+      },
+      "human_author": "shenxianpeng <xianpeng.shen@gmail.com>"
+    }
+  }
+}
