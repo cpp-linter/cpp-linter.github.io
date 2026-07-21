@@ -4,18 +4,6 @@ cpp-linter is **not** opening a general T-shirt store right now.
 
 Instead, we want one shared project fund so support goes to the project as a whole, not to only one maintainer. That makes it much easier to cover printing, shipping, and the occasional T-shirt thank-you gift fairly.
 
-## Why a shared fund comes first
-
-If supporters donate to individual maintainers separately, it creates an awkward problem: one person may receive the money while someone else is expected to handle the shirt, inventory, or shipping.
-
-Our preferred model is:
-
-1. Support goes into one public project account.
-2. The core maintainers manage it together.
-3. Shirt fulfillment is offered manually when budget, stock, and shipping make sense.
-
-This keeps expectations clear and avoids turning project support into private side payments.
-
 ## Shared funding path
 
 !!! tip "Preferred setup"
