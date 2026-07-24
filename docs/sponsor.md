@@ -1,16 +1,18 @@
-# T-shirt Thank-You
+# Sponsor cpp-linter
 
-We are not selling T-shirts.
+cpp-linter is an open-source project maintained by volunteers. If you find it valuable, consider supporting the project.
 
-The T-shirt is our way of saying thank you to people who support the project. If your cumulative donations on [Open Collective](https://opencollective.com/cpp-linter) reach **USD 100**, we will reach out personally and send you one.
+## How to sponsor
 
-## How to support
-
-[Support cpp-linter on Open Collective](https://opencollective.com/cpp-linter){ .md-button .md-button--primary }
+[Sponsor cpp-linter on Open Collective](https://opencollective.com/cpp-linter){ .md-button .md-button--primary }
 
 All contributions go to the project as a whole — not to any single maintainer — and all income and expenses are publicly visible.
 
-## How the T-shirt works
+## Sponsor perks
+
+As a thank-you to our sponsors, we offer exclusive cpp-linter merchandise for supporters who cumulatively donate **USD 100 or more**.
+
+### How the T-shirt perk works
 
 1. Donate through [Open Collective](https://opencollective.com/cpp-linter).
 2. When your cumulative donations reach **USD 100**, we will contact you to arrange shipping.
@@ -22,9 +24,9 @@ Have questions? Start a [GitHub Discussion](https://github.com/cpp-linter/cpp-li
 
 Thanks for supporting cpp-linter!
 
-## About These T-Shirts
+## About the T-shirts
 
-These aren't for sale — just something we made for ourselves to wear and promote this open source project. If you've used cpp-linter, appreciate the open source approach, or want to support the project, consider getting one.
+These aren't for sale — just something we made for ourselves to wear and promote this open source project.
 
 <div class="grid cards" markdown>
 
