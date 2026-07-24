@@ -9,7 +9,7 @@ nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Discussion: discussion.md
-  - Merchandise: merch.md
+  - Sponsor: sponsor.md
   # - Blog:
   #     - blog/index.md
 exclude_docs: |
