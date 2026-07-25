@@ -197,6 +197,26 @@ th {
     color: var(--md-default-fg-color--light);
 }
 
+/* Live project stats (real shields.io badges, not hard-coded numbers) */
+.project-stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-stats a {
+    display: inline-flex;
+    line-height: 0;
+}
+
+.project-stats img {
+    height: 38px;
+    width: auto;
+}
+
 /* Mobile responsiveness for trusted by section */
 @media screen and (max-width: 768px) {
     .logo-grid {

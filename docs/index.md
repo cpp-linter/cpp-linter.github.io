@@ -133,20 +133,17 @@ title: C/C++ Linting
   </div>
 </div>
 
-<!-- <div class="stats-grid">
-  <div class="stat">
-    <strong>1,000+</strong>
-    <span>GitHub Users</span>
-  </div>
-  <div class="stat">
-    <strong>20K+</strong>
-    <span>Downloads/Month</span>
-  </div>
-  <div class="stat">
-    <strong>50+</strong>
-    <span>Contributors</span>
-  </div>
-</div> -->
+<div class="project-stats">
+  <a href="https://pypi.org/project/cpp-linter/" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/pypi/dm/cpp-linter?style=for-the-badge&logo=pypi&logoColor=white&label=PyPI%20downloads&color=3f51b5" alt="cpp-linter downloads per month on PyPI" loading="lazy" decoding="async">
+  </a>
+  <a href="https://github.com/cpp-linter/cpp-linter-action" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/github/stars/cpp-linter/cpp-linter-action?style=for-the-badge&logo=github&logoColor=white&label=Action%20stars&color=3f51b5" alt="GitHub stars for cpp-linter-action" loading="lazy" decoding="async">
+  </a>
+  <a href="https://github.com/cpp-linter/cpp-linter/graphs/contributors" target="_blank" rel="noopener">
+    <img src="https://img.shields.io/github/contributors/cpp-linter/cpp-linter?style=for-the-badge&logo=github&logoColor=white&label=Contributors&color=3f51b5" alt="Contributors to cpp-linter" loading="lazy" decoding="async">
+  </a>
+</div>
 
 </div>
 
