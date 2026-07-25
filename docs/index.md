@@ -8,8 +8,6 @@ title: C/C++ Linting
 
 <!-- markdownlint-disable MD041 MD033 MD036 MD025 -->
 
-# C/C++ Linting
-
 ## Everything you need for linting C/C++ code
 
 <div class="grid cards" markdown>
@@ -46,91 +44,91 @@ title: C/C++ Linting
 
 <div class="logo-grid">
   <div class="logo-item">
-    <img src="https://github.com/microsoft.png" alt="Microsoft" title="Microsoft">
+    <img src="https://github.com/microsoft.png" alt="Microsoft" title="Microsoft" loading="lazy" decoding="async">
     <span>Microsoft</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/apache.png" alt="Apache" title="Apache">
+    <img src="https://github.com/apache.png" alt="Apache" title="Apache" loading="lazy" decoding="async">
     <span>Apache</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/nasa.png" alt="NASA" title="NASA">
+    <img src="https://github.com/nasa.png" alt="NASA" title="NASA" loading="lazy" decoding="async">
     <span>NASA</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/samsung.png" alt="Samsung" title="Samsung">
+    <img src="https://github.com/samsung.png" alt="Samsung" title="Samsung" loading="lazy" decoding="async">
     <span>Samsung</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/TheAlgorithms.png" alt="TheAlgorithms" title="TheAlgorithms">
+    <img src="https://github.com/TheAlgorithms.png" alt="TheAlgorithms" title="TheAlgorithms" loading="lazy" decoding="async">
     <span>TheAlgorithms</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/Nextcloud.png" alt="Nextcloud" title="Nextcloud">
+    <img src="https://github.com/Nextcloud.png" alt="Nextcloud" title="Nextcloud" loading="lazy" decoding="async">
     <span>Nextcloud</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/CachyOS.png" alt="CachyOS" title="CachyOS">
+    <img src="https://github.com/CachyOS.png" alt="CachyOS" title="CachyOS" loading="lazy" decoding="async">
     <span>CachyOS</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/qualcomm.png" alt="Qualcomm" title="Qualcomm">
+    <img src="https://github.com/qualcomm.png" alt="Qualcomm" title="Qualcomm" loading="lazy" decoding="async">
     <span>Qualcomm</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/zondax.png" alt="Zondax" title="Zondax">
+    <img src="https://github.com/zondax.png" alt="Zondax" title="Zondax" loading="lazy" decoding="async">
     <span>Zondax</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/nnstreamer.png" alt="NNStreamer" title="NNStreamer">
+    <img src="https://github.com/nnstreamer.png" alt="NNStreamer" title="NNStreamer" loading="lazy" decoding="async">
     <span>NNStreamer</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/chocolate-doom.png" alt="Chocolate Doom" title="Chocolate Doom">
+    <img src="https://github.com/chocolate-doom.png" alt="Chocolate Doom" title="Chocolate Doom" loading="lazy" decoding="async">
     <span>Chocolate Doom</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/LedgerHQ.png" alt="LedgerHQ" title="LedgerHQ">
+    <img src="https://github.com/LedgerHQ.png" alt="LedgerHQ" title="LedgerHQ" loading="lazy" decoding="async">
     <span>LedgerHQ</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/LLNL.png" alt="LLNL" title="LLNL">
+    <img src="https://github.com/LLNL.png" alt="LLNL" title="LLNL" loading="lazy" decoding="async">
     <span>LLNL</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/cohere-ai.png" alt="cohere" title="cohere">
+    <img src="https://github.com/cohere-ai.png" alt="cohere" title="cohere" loading="lazy" decoding="async">
     <span>cohere</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/diasurgical.png" alt="Diasurgical" title="Diasurgical">
+    <img src="https://github.com/diasurgical.png" alt="Diasurgical" title="Diasurgical" loading="lazy" decoding="async">
     <span>Diasurgical</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/KhronosGroup.png" alt="Khronos Group" title="Khronos Group">
+    <img src="https://github.com/KhronosGroup.png" alt="Khronos Group" title="Khronos Group" loading="lazy" decoding="async">
     <span>Khronos Group</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/man-group.png" alt="man-group" title="Man Group">
+    <img src="https://github.com/man-group.png" alt="man-group" title="Man Group" loading="lazy" decoding="async">
     <span>Man Group</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/stanford-ssi.png" alt="Stanford SSI" title="Stanford SSI">
+    <img src="https://github.com/stanford-ssi.png" alt="Stanford SSI" title="Stanford SSI" loading="lazy" decoding="async">
     <span>Stanford SSI</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/Cambridge-ICCS.png" alt="Cambridge ICCS" title="Cambridge ICCS">
+    <img src="https://github.com/Cambridge-ICCS.png" alt="Cambridge ICCS" title="Cambridge ICCS" loading="lazy" decoding="async">
     <span>Cambridge ICCS</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/openMSL.png" alt="OpenMSL" title="OpenMSL">
+    <img src="https://github.com/openMSL.png" alt="OpenMSL" title="OpenMSL" loading="lazy" decoding="async">
     <span>OpenMSL</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/xemu-project.png" alt="Xemu Project" title="Xemu Project">
+    <img src="https://github.com/xemu-project.png" alt="Xemu Project" title="Xemu Project" loading="lazy" decoding="async">
     <span>Xemu Project</span>
   </div>
   <div class="logo-item">
-    <img src="https://github.com/bloomberg.png" alt="Bloomberg" title="Bloomberg">
+    <img src="https://github.com/bloomberg.png" alt="Bloomberg" title="Bloomberg" loading="lazy" decoding="async">
     <span>Bloomberg</span>
   </div>
 </div>
@@ -181,7 +179,7 @@ title: C/C++ Linting
     ```yaml
     repos:
       - repo: https://github.com/cpp-linter/cpp-linter-hooks
-        rev: v1.5.0  # Use the tag or commit you want
+        rev: v1.6.0  # Use the tag or commit you want
         hooks:
           - id: clang-format
             args: [--style=Google] # Other coding style: LLVM, GNU, Chromium, Microsoft, Mozilla, WebKit.
