@@ -141,7 +141,7 @@ title: C/C++ Linting
     <img src="https://img.shields.io/github/stars/cpp-linter/cpp-linter-action?style=for-the-badge&logo=github&logoColor=white&label=Action%20stars&color=3f51b5" alt="GitHub stars for cpp-linter-action" loading="lazy" decoding="async">
   </a>
   <a href="https://github.com/cpp-linter/cpp-linter-action/graphs/contributors" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/github/contributors/cpp-linter/cpp-linter?style=for-the-badge&logo=github&logoColor=white&label=Contributors&color=3f51b5" alt="Contributors to cpp-linter" loading="lazy" decoding="async">
+    <img src="https://img.shields.io/github/contributors/cpp-linter/cpp-linter-action?style=for-the-badge&logo=github&logoColor=white&label=Contributors&color=3f51b5" alt="Contributors to cpp-linter" loading="lazy" decoding="async">
   </a>
 </div>
 
