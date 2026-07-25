@@ -68,9 +68,42 @@ Select the method that best fits your development workflow:
 
 </div>
 
-## Clang Tools — Simplified
+## Install the clang tools
 
-We provide ready-to-use **binaries**, **Docker images**, and **Python wheels** of key clang tools:
+Need `clang-format`, `clang-tidy`, and friends without building LLVM from source?
+Choose whichever fits your setup.
+
+### Package managers (recommended)
+
+<div class="grid cards" markdown>
+
+- :fontawesome-brands-python: **clang-tools-pip**
+
+    ---
+
+    Install `clang-format`, `clang-tidy`, `clang-query`, `clang-apply-replacements`, and `clang-include-cleaner` via static binaries or Python wheels using a single CLI
+
+    [Get started with clang-tools CLI →](https://cpp-linter.github.io/clang-tools-pip/){ .md-button .md-button--primary }
+
+- :fontawesome-brands-apple: **Homebrew Tap**
+
+    ---
+
+    Install `clang-format`, `clang-tidy`, `clang-query`, `clang-apply-replacements`, and `clang-include-cleaner` via Homebrew — no compilation required
+
+    [Get started with Homebrew →](https://github.com/cpp-linter/homebrew-tap){ .md-button .md-button--primary }
+
+- :fontawesome-brands-python: **clang-tools-asdf**
+
+    ---
+
+    Easy installation of clang tools static binaries via asdf
+
+    [Get started with asdf →](https://github.com/cpp-linter/asdf-clang-tools){ .md-button .md-button--primary }
+
+</div>
+
+### Prebuilt binaries, Docker & wheels
 
 <div class="grid cards" markdown>
 
@@ -98,6 +131,12 @@ We provide ready-to-use **binaries**, **Docker images**, and **Python wheels** o
 
     [Download from →](https://github.com/cpp-linter/clang-tools-wheel){ .md-button .md-button--primary }
 
+</div>
+
+### Standalone tools
+
+<div class="grid cards" markdown>
+
 - :fontawesome-brands-python: **clang-apply-replacements**
 
     ---
@@ -113,35 +152,5 @@ We provide ready-to-use **binaries**, **Docker images**, and **Python wheels** o
     Install `clang-include-cleaner` via pip — detects unused `#include` directives
 
     [Install from PyPI →](https://pypi.org/project/clang-include-cleaner/){ .md-button .md-button--primary }
-
-</div>
-
-## Easy Installation
-
-<div class="grid cards" markdown>
-
-- :fontawesome-brands-python: **clang-tools-pip**
-
-    ---
-
-    Install `clang-format`, `clang-tidy`, `clang-query`, `clang-apply-replacements`, and `clang-include-cleaner` via static binaries or Python wheels using a single CLI
-
-    [Get started with clang-tools CLI →](https://cpp-linter.github.io/clang-tools-pip/){ .md-button .md-button--primary }
-
-- :fontawesome-brands-python: **clang-tools-asdf**
-
-    ---
-
-    Easy installation of clang tools static binaries via asdf
-
-    [Get started with asdf →](https://github.com/cpp-linter/asdf-clang-tools){ .md-button .md-button--primary }
-
-- :fontawesome-brands-apple: **Homebrew Tap**
-
-    ---
-
-    Install `clang-format`, `clang-tidy`, `clang-query`, `clang-apply-replacements`, and `clang-include-cleaner` via Homebrew — no compilation required
-
-    [Get started with Homebrew →](https://github.com/cpp-linter/homebrew-tap){ .md-button .md-button--primary }
 
 </div>
