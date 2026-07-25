@@ -44,7 +44,7 @@ Select the method that best fits your development workflow:
 
     **Perfect for:** Catching issues before commits, local enforcement
 
-    [Get started with pre-commit →](https://github.com/cpp-linter/cpp-linter-hooks){ .md-button .md-button--primary }
+    [Get started with pre-commit :octicons-link-external-16:](https://github.com/cpp-linter/cpp-linter-hooks){ .md-button }
 
 - :fontawesome-brands-python: **Command Line (Python)**
 
@@ -54,7 +54,7 @@ Select the method that best fits your development workflow:
 
     **Perfect for:** Local development, custom scripts, one-off analysis
 
-    [Get started with cpp-linter package →](https://pypi.org/project/cpp-linter/){ .md-button .md-button--primary }
+    [Get started with cpp-linter package :octicons-link-external-16:](https://pypi.org/project/cpp-linter/){ .md-button }
 
 - :simple-rust: **Command Line (Rust)**
 
@@ -64,7 +64,7 @@ Select the method that best fits your development workflow:
 
     **Perfect for:** Local development, custom scripts, one-off analysis
 
-    [Get started with cpp-linter-rs →](https://github.com/cpp-linter/cpp-linter-rs){ .md-button .md-button--primary }
+    [Get started with cpp-linter-rs :octicons-link-external-16:](https://github.com/cpp-linter/cpp-linter-rs){ .md-button }
 
 </div>
 
@@ -91,7 +91,7 @@ Choose whichever fits your setup.
 
     Install `clang-format`, `clang-tidy`, `clang-query`, `clang-apply-replacements`, and `clang-include-cleaner` via Homebrew — no compilation required
 
-    [Get started with Homebrew →](https://github.com/cpp-linter/homebrew-tap){ .md-button .md-button--primary }
+    [Get started with Homebrew :octicons-link-external-16:](https://github.com/cpp-linter/homebrew-tap){ .md-button }
 
 - :fontawesome-brands-python: **clang-tools-asdf**
 
@@ -99,7 +99,7 @@ Choose whichever fits your setup.
 
     Easy installation of clang tools static binaries via asdf
 
-    [Get started with asdf →](https://github.com/cpp-linter/asdf-clang-tools){ .md-button .md-button--primary }
+    [Get started with asdf :octicons-link-external-16:](https://github.com/cpp-linter/asdf-clang-tools){ .md-button }
 
 </div>
 
@@ -113,7 +113,7 @@ Choose whichever fits your setup.
 
     Statically-linked `clang-format`, `clang-tidy`, `clang-query`, `clang-apply-replacements`, and `clang-include-cleaner` binaries for Linux, macOS, and Windows
 
-    [Download from →](https://github.com/cpp-linter/clang-tools-static-binaries){ .md-button .md-button--primary }
+    [Download from :octicons-link-external-16:](https://github.com/cpp-linter/clang-tools-static-binaries){ .md-button }
 
 - :fontawesome-brands-docker: **clang-tools-docker**
 
@@ -121,7 +121,7 @@ Choose whichever fits your setup.
 
     Docker images with pre-installed `clang-format` and `clang-tidy`
 
-    [Download from →](https://github.com/cpp-linter/clang-tools-docker){ .md-button .md-button--primary }
+    [Download from :octicons-link-external-16:](https://github.com/cpp-linter/clang-tools-docker){ .md-button }
 
 - :fontawesome-brands-python: **clang-tools-wheels**
 
@@ -129,7 +129,7 @@ Choose whichever fits your setup.
 
     Redistribute `clang-format` and `clang-tidy` Python wheels
 
-    [Download from →](https://github.com/cpp-linter/clang-tools-wheel){ .md-button .md-button--primary }
+    [Download from :octicons-link-external-16:](https://github.com/cpp-linter/clang-tools-wheel){ .md-button }
 
 </div>
 
@@ -143,7 +143,7 @@ Choose whichever fits your setup.
 
     Install `clang-apply-replacements` via pip — standalone Python wheel
 
-    [Install from PyPI →](https://pypi.org/project/clang-apply-replacements/){ .md-button .md-button--primary }
+    [Install from PyPI :octicons-link-external-16:](https://pypi.org/project/clang-apply-replacements/){ .md-button }
 
 - :fontawesome-brands-python: **clang-include-cleaner**
 
@@ -151,6 +151,6 @@ Choose whichever fits your setup.
 
     Install `clang-include-cleaner` via pip — detects unused `#include` directives
 
-    [Install from PyPI →](https://pypi.org/project/clang-include-cleaner/){ .md-button .md-button--primary }
+    [Install from PyPI :octicons-link-external-16:](https://pypi.org/project/clang-include-cleaner/){ .md-button }
 
 </div>
