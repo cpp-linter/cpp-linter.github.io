@@ -24,6 +24,7 @@ theme:
     - navigation.top
     - navigation.sections
     - navigation.footer
+    - content.action.edit
     - content.code.annotate
     - content.code.copy
     - content.tabs.link
@@ -87,6 +88,8 @@ plugins:
 
 extra_css:
   - stylesheets/extra.css
+
+edit_uri_template: https://github.com/cpp-linter/cpp-linter.github.io/edit/main/docs/{path}
 
 extra:
   social:
