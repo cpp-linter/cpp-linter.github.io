@@ -84,6 +84,8 @@ markdown_extensions:
 
 plugins:
   - search
+  - social:
+      cards: !ENV [CARDS, false]
   - blog
 
 extra_css:
