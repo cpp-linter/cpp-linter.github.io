@@ -133,7 +133,7 @@ title: C/C++ Linting
   </div>
 </div>
 
-<!-- <div class="stats-grid">
+<div class="stats-grid">
   <div class="stat">
     <strong>1,000+</strong>
     <span>GitHub Users</span>
@@ -146,7 +146,7 @@ title: C/C++ Linting
     <strong>50+</strong>
     <span>Contributors</span>
   </div>
-</div> -->
+</div>
 
 </div>
 
