@@ -12,7 +12,7 @@ authors:
   - shenxianpeng
 ---
 
-# Moving from clang-format-action and clang-tidy-review to cpp-linter
+# Moving to cpp-linter from other clang-format and clang-tidy actions
 
 A common C++ workflow on GitHub has two lint jobs that grew up separately: a format check that
 fails the build, and a clang-tidy job that posts review comments. They pin different clang

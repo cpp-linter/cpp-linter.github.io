@@ -49,9 +49,13 @@ links to verify a cell. ✓ yes · ✗ no · — not applicable.
 | Runners | ubuntu, macOS, Windows | ubuntu only | Linux (Docker) | Linux (Docker) | unclear | Linux (Docker) | — |
 | Compilation database input | ✓ `database` | — | — | ✓ `build_dir` | — | ✓ | — |
 | pre-commit hook from the same project | ✓ cpp-linter-hooks | ✗ | ✗ | ✗ | ✗ | ✗ | is one |
-| Last release | v2.21.0, 2026-08 | v4.18.0, 2026-03 | v0.20, 2025-04 | v0.23.1, 2026-02 | v1.8.0, 2025-06 | v0.0.8, 2025-02 | v23.1.1, 2026-09 |
 
 <!-- markdownlint-enable MD013 MD033 -->
+
+If you maintain one of these projects and a cell is out of date, please
+[open an issue](https://github.com/cpp-linter/cpp-linter.github.io/issues/new) or edit this page;
+we will correct it. The point of the table is to help people pick the right tool, not to rank
+projects.
 
 [reviewdog](https://github.com/reviewdog/reviewdog) is not in the table because it is a reporting
 framework rather than a linter: it has no built-in clang-format or clang-tidy support and needs a
