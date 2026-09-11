@@ -1,0 +1,16 @@
+docs/blog/posts/2026-09-12-moving-to-cpp-linter.md
+  h_95e33fbd4ab2d9 15
+docs/why-cpp-linter.md
+  h_95e33fbd4ab2d9 55-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "38fc818f261ff8bdb13c0ad5b65f2c95b8d32a09",
+  "prompts": {},
+  "humans": {
+    "h_95e33fbd4ab2d9": {
+      "author": "shenxianpeng <xianpeng.shen@gmail.com>"
+    }
+  }
+}
