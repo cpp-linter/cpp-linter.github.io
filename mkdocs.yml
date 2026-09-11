@@ -8,12 +8,12 @@ copyright: "© 2021-2026, cpp-linter"
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
+  - Why cpp-linter?: why-cpp-linter.md
+  - Showcase: showcase.md
+  - Blog:
+      - blog/index.md
   - Discussion: discussion.md
   - Sponsor: sponsor.md
-  # - Blog:
-  #     - blog/index.md
-exclude_docs: |
-  blog/**
 
 theme:
   name: material
@@ -84,7 +84,14 @@ markdown_extensions:
 
 plugins:
   - search
-  - blog
+  - blog:
+      blog_dir: blog
+      post_excerpt: required
+      post_readtime: true
+      categories_allowed:
+        - Guides
+        - Releases
+        - Announcements
 
 extra_css:
   - stylesheets/extra.css
