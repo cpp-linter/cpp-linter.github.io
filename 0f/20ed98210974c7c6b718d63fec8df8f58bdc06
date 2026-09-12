@@ -1,0 +1,25 @@
+docs/blog/posts/2026-09-12-one-clang-version-everywhere.md
+  s_0da9b18608c2a0::t_d1fddc8b20fa15 68-71,122-125
+docs/index.md
+  s_0da9b18608c2a0::t_58c1c0b80ee1a6 5
+docs/why-cpp-linter.md
+  s_0da9b18608c2a0::t_d4a6f57e86ad99 13-34,52,71-83
+mkdocs.yml
+  s_0da9b18608c2a0::t_eac5099646080d 108-121
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0f20ed98210974c7c6b718d63fec8df8f58bdc06",
+  "prompts": {},
+  "sessions": {
+    "s_0da9b18608c2a0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c1ae0c79-9ddb-4e6b-a8e1-2213cfd3c2b6",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "shenxianpeng <xianpeng.shen@gmail.com>"
+    }
+  }
+}
