@@ -26,8 +26,8 @@ whatever clang happens to be around.
 
 <!-- more -->
 
-This is the problem the cpp-linter tools are built around: **pick one LLVM major version and use it
-in every place code gets checked**.
+The cpp-linter tools are built to pick one LLVM major version and use it in every place code gets
+checked.
 
 ## Pick the version once
 
@@ -59,7 +59,7 @@ repos:
 ```
 
 `--style=file` and `--checks=.clang-tidy` read the same `.clang-format` and `.clang-tidy` files
-that CI will use, so there is one source of truth for the rules as well as for the version.
+that CI will use, so the rules, like the version, are defined in one place.
 
 ## CI: cpp-linter-action
 
@@ -149,10 +149,10 @@ When LLVM 22 is the version you want:
 If the action reports differences at this point, the two tools are not on the same version, and
 the numbers above are the first thing to check.
 
-## Why this matters more for clang-tidy
+## clang-tidy drifts more than clang-format
 
-`clang-format` version drift produces noisy diffs. `clang-tidy` version drift produces *different
-findings*: checks that were added, renamed or made stricter. A pull request that passes locally and
-fails in CI with a check nobody has heard of is usually a version mismatch, not a code problem.
-Pinning the same major version in the hook and in the action turns "why does CI complain" into a
-deterministic question.
+`clang-format` version drift produces noisy diffs. `clang-tidy` version drift produces different
+findings: checks that were added, renamed or made stricter. A pull request that passes locally and
+fails in CI with a check nobody has heard of is usually a version mismatch. With the hook and the
+action pinned to the same major version, the two numbers to compare are `--version` in
+`.pre-commit-config.yaml` and `version` in the workflow.

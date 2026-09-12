@@ -7,8 +7,8 @@ description: Open-source projects that run cpp-linter-action and cpp-linter-hook
 
 <!-- markdownlint-disable MD033 -->
 
-More than **550 public repositories** run [cpp-linter-action](https://github.com/cpp-linter/cpp-linter-action)
-from a workflow on their default branch, with **over 87,000 GitHub stars** between them.
+More than 550 public repositories run [cpp-linter-action](https://github.com/cpp-linter/cpp-linter-action)
+from a workflow on their default branch, with over 87,000 GitHub stars between them.
 The list below is the top of that set, ranked by stars.
 
 !!! info "How this list is built"
@@ -65,7 +65,7 @@ shows the live list.
 
 ## Add your project
 
-Using cpp-linter in a public project? Open a pull request against
+To add a public project, open a pull request against
 [cpp-linter.github.io](https://github.com/cpp-linter/cpp-linter.github.io/edit/main/docs/showcase.md)
 and add a row, or mention it in
-[GitHub Discussions](https://github.com/cpp-linter/cpp-linter/discussions) and we will add it for you.
+[GitHub Discussions](https://github.com/cpp-linter/cpp-linter/discussions) and we will add it.

@@ -6,11 +6,11 @@ description: How cpp-linter compares with other clang-format and clang-tidy GitH
 # Why cpp-linter?
 
 There are several ways to run `clang-format` and `clang-tidy` on a pull request. Most of them do
-one tool, in one place, with whatever clang version the runner happens to have. cpp-linter is built
-around a different idea: **one pinned LLVM version, both tools, every place code gets checked**,
-from a contributor's pre-commit hook to the review comments on the pull request.
+one tool, in one place, with whatever clang version the runner happens to have. cpp-linter pins one
+LLVM version and runs both tools in every place code gets checked, from a contributor's pre-commit
+hook to the review comments on the pull request.
 
-## The short version
+## What you get
 
 - **Both tools in one step.** `clang-format` and `clang-tidy` run from a single
   `cpp-linter/cpp-linter-action@v2` step. The other actions in the table below do one or the other.
@@ -52,10 +52,9 @@ links to verify a cell. ✓ yes · ✗ no · — not applicable.
 
 <!-- markdownlint-enable MD013 MD033 -->
 
-If you maintain one of these projects and a cell is out of date, please
-[open an issue](https://github.com/cpp-linter/cpp-linter.github.io/issues/new) or edit this page;
-we will correct it. The point of the table is to help people pick the right tool, not to rank
-projects.
+The table is there to help people pick a tool. If you maintain one of these projects and a cell is
+out of date, [open an issue](https://github.com/cpp-linter/cpp-linter.github.io/issues/new) or
+edit this page and we will correct it.
 
 [reviewdog](https://github.com/reviewdog/reviewdog) is not in the table because it is a reporting
 framework rather than a linter: it has no built-in clang-format or clang-tidy support and needs a

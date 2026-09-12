@@ -17,8 +17,7 @@ authors:
 A common C++ workflow on GitHub has two lint jobs that grew up separately: a format check that
 fails the build, and a clang-tidy job that posts review comments. They pin different clang
 versions, they run on different triggers, and when one of them starts flaking nobody remembers why
-it was configured that way. This post walks through replacing both with one cpp-linter-action step,
-and what changes for contributors.
+it was configured that way. Both jobs can be one cpp-linter-action step.
 
 <!-- more -->
 
@@ -52,7 +51,7 @@ jobs:
 
 The format job fails with a diff in the log; the tidy job builds a Docker image, runs, uploads an
 artifact, and a second workflow posts the review. Contributors see a red check for formatting and a
-review for clang-tidy, and format fixes still have to be made by hand.
+review for clang-tidy, and still fix the formatting by hand.
 
 ## The replacement
 
@@ -108,14 +107,14 @@ every push instead of adding a new one.
 
 ## Adopting a strict `.clang-tidy` on an old code base
 
-The usual reason teams keep clang-tidy out of pull requests is the first run: thousands of
-findings in files nobody is touching. Two inputs handle that:
+Teams usually keep clang-tidy out of pull requests because of the first run, which reports
+thousands of findings in files nobody is touching. Two inputs handle that:
 
 - `files-changed-only: true` (the default) limits analysis to files in the pull request.
 - `lines-changed-only: true` limits reported clang-tidy findings to lines the pull request changed.
 
-With both set, a pull request only hears about the code it wrote. The rest of the tree gets cleaned
-up gradually, or in a dedicated pass with the `cpp-linter` CLI.
+With both set, contributors only see findings on the lines they changed. You clean up the rest of
+the tree gradually, or in one pass with the `cpp-linter` CLI.
 
 ## What contributors see
 
