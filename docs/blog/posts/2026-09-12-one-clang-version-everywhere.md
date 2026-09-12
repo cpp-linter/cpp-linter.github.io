@@ -65,7 +65,10 @@ that CI will use, so the rules, like the version, are defined in one place.
 
 [cpp-linter-action](https://github.com/cpp-linter/cpp-linter-action) installs the requested
 version itself; the workflow does not need `apt-get install clang-format-21` or a matching LLVM
-apt repository. The `version` input takes the LLVM major version:
+apt repository. The `version` input takes the LLVM major version. It also accepts a path to tools
+you installed yourself, or an empty string for whatever the runner has; the
+[input reference](https://cpp-linter.github.io/cpp-linter-action/inputs-outputs/#version) has the
+details.
 
 ```yaml title=".github/workflows/lint.yml"
 name: cpp-linter
@@ -116,8 +119,10 @@ clang-format-21 --version
 ```
 
 The binaries come from [clang-tools-static-binaries](https://github.com/cpp-linter/clang-tools-static-binaries),
-which publishes LLVM 12 through 23 for Linux, macOS and Windows, on x86-64 and ARM64. The same
-release is what cpp-linter-action downloads in CI, so the bytes match.
+which publishes a rolling window of recent LLVM majors for Linux, macOS and Windows, on x86-64 and
+ARM64; each release lists its exact versions in
+[`versions.json`](https://github.com/cpp-linter/clang-tools-static-binaries/releases/latest/download/versions.json).
+The same release is what cpp-linter-action downloads in CI, so the bytes match.
 
 ## Containers and other package managers
 

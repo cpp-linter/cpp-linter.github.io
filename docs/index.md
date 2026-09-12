@@ -2,6 +2,7 @@
 hide:
   - navigation
   - toc
+  - feedback
 template: home.html
 title: C/C++ Linting
 ---
