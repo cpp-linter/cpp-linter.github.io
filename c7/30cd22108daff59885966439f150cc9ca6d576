@@ -1,0 +1,25 @@
+docs/blog/posts/2026-09-12-moving-to-cpp-linter.md
+  s_0da9b18608c2a0::t_8b6309a341f9f0 20,54,110-111,116-117
+docs/blog/posts/2026-09-12-one-clang-version-everywhere.md
+  s_0da9b18608c2a0::t_46fc97e7f7691e 29-30,62,152,154-158
+docs/showcase.md
+  s_0da9b18608c2a0::t_7c55b278a0de13 10-11,68,71
+docs/why-cpp-linter.md
+  s_0da9b18608c2a0::t_dce64b12e9b5d1 9-11,13,55-57
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "c730cd22108daff59885966439f150cc9ca6d576",
+  "prompts": {},
+  "sessions": {
+    "s_0da9b18608c2a0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c1ae0c79-9ddb-4e6b-a8e1-2213cfd3c2b6",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "shenxianpeng <xianpeng.shen@gmail.com>"
+    }
+  }
+}
