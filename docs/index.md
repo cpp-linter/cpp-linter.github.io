@@ -2,6 +2,7 @@
 hide:
   - navigation
   - toc
+  - feedback
 template: home.html
 title: C/C++ Linting
 ---
@@ -139,7 +140,7 @@ title: C/C++ Linting
     <span>GitHub Users</span>
   </div>
   <div class="stat">
-    <strong>20K+</strong>
+    <strong>30K+</strong>
     <span>Downloads/Month</span>
   </div>
   <div class="stat">
@@ -147,6 +148,8 @@ title: C/C++ Linting
     <span>Contributors</span>
   </div>
 </div>
+
+[See who uses cpp-linter →](showcase.md){ .md-button }
 
 </div>
 
