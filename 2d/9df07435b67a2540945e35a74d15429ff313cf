@@ -1,0 +1,22 @@
+docs/blog/posts/2026-09-20-clang-tidy-pull-requests-github-actions.md
+  s_e064bc09b2d49f::t_1653fa464b6601 237
+  s_e064bc09b2d49f::t_bba3549e5a7dcf 25-26
+  s_e064bc09b2d49f::t_814c042f73f436 157
+  s_e064bc09b2d49f::t_b537742706a17c 30,65,115,163,182,207
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "2d9df07435b67a2540945e35a74d15429ff313cf",
+  "prompts": {},
+  "sessions": {
+    "s_e064bc09b2d49f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "58065765-ffca-4a5c-9a85-234199eda825",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Xianpeng Shen <xianpeng.shen@gmail.com>"
+    }
+  }
+}
