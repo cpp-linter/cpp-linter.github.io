@@ -1,0 +1,27 @@
+docs/blog/posts/2026-09-20-clang-format-pre-commit-hook.md
+  s_e064bc09b2d49f::t_43a3da778401c8 29,44,78,110,141,176
+  s_e064bc09b2d49f::t_c03db4f1efd93b 178-179
+  s_e064bc09b2d49f::t_5de841d84dc9ef 104-105
+  s_e064bc09b2d49f::t_78792a24ea05e8 24-25
+  s_e064bc09b2d49f::t_bb8b77607952bb 89-90
+  s_e064bc09b2d49f::t_2c2086ca0f11fd 242-245
+  s_e064bc09b2d49f::t_b4cb7cd2e646c2 225
+  s_e064bc09b2d49f::t_9a155a1a834235 173-174
+  s_e064bc09b2d49f::t_e13def23949299 226
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "a87af6ee999049df3c66eb0295847c48d6ae25a5",
+  "prompts": {},
+  "sessions": {
+    "s_e064bc09b2d49f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "58065765-ffca-4a5c-9a85-234199eda825",
+        "model": "claude-fable-5-1"
+      },
+      "human_author": "Xianpeng Shen <xianpeng.shen@gmail.com>"
+    }
+  }
+}
