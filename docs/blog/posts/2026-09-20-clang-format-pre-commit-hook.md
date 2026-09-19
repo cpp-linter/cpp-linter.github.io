@@ -21,12 +21,12 @@ Formatting comments are the cheapest part of a code review to get rid of. A pre-
 clang-format on the files in each commit, so badly formatted code never reaches a pull request,
 and CI stops failing for a missing space.
 
-This guide sets that up with the [pre-commit](https://pre-commit.com/) framework. Nobody on the
-team has to install LLVM, and everyone gets the same clang-format version.
+With the [pre-commit](https://pre-commit.com/) framework, nobody on the team has to install LLVM,
+and everyone gets the same clang-format version.
 
 <!-- more -->
 
-## Step 1: have a `.clang-format` in the repository
+## Step 1: Have a `.clang-format` in the repository
 
 If the project already has one, keep it. If not, start from a built-in style and change as little
 as possible:
@@ -41,7 +41,7 @@ The built-in styles are `LLVM`, `Google`, `Chromium`, `Mozilla`, `WebKit`, `Micr
 [clang-format configurator](https://clang-format-configurator.site/) shows the effect of each
 option on sample code.
 
-## Step 2: install pre-commit and add the hook
+## Step 2: Install pre-commit and add the hook
 
 pre-commit is a Python tool. Install it once per machine:
 
@@ -75,7 +75,7 @@ pre-commit install
 Every contributor runs `pre-commit install` once after cloning. Put that line in
 `CONTRIBUTING.md`.
 
-## Step 3: commit something
+## Step 3: Commit something
 
 Stage a badly formatted file and commit:
 
@@ -86,8 +86,8 @@ clang-format.............................................................Failed
 - files were modified by this hook
 ```
 
-"Failed" here means the hook did its job. It reformatted the file in your working tree and
-stopped the commit, so you can look at what changed:
+"Failed" here means the hook reformatted the file in your working tree and stopped the commit, so
+you can look at what changed:
 
 ```console
 $ git status --short
@@ -101,13 +101,13 @@ clang-format.............................................................Passed
 Two things to know about the scope:
 
 - Only the files staged for the commit are checked, which keeps the hook fast.
-- Those files are formatted completely, not just the lines you changed. That matters for old code;
-  see step 5.
+- Those files are formatted completely, not just the lines you changed. Step 5 covers what that
+  does to old code.
 
 The first run takes a little longer, because pre-commit builds an environment for the hook and
 downloads clang-format. Both are cached afterwards.
 
-## Step 4: format only your own code
+## Step 4: Format only your own code
 
 By default the hook runs on C and C++ sources and headers. Vendored code should be left alone,
 because reformatting it makes every later update a merge conflict. There are two ways to exclude
@@ -138,7 +138,7 @@ widen its file types:
         types_or: [c++, c, cuda, proto]
 ```
 
-## Step 5: decide what to do with existing code
+## Step 5: Decide what to do with existing code
 
 Because the hook formats whole files, the first person to touch an old file gets a diff where
 three lines of logic are buried in three hundred lines of whitespace changes. Pick one of these
@@ -170,13 +170,13 @@ and announce it. After resolving the conflicts, a branch author runs
 Ask contributors to put the formatting change in a separate commit from the logic change, so
 reviewers can skip it. The code base converges more slowly and the noisy diffs last longer.
 
-If you need to format only the changed lines, that is a different tool: `git clang-format`, which
-ships with LLVM. It does not run through the pre-commit framework.
+To format only the changed lines, use `git clang-format`, which ships with LLVM. It does not run
+through the pre-commit framework.
 
-## Step 6: enforce it in CI
+## Step 6: Enforce it in CI
 
-A local hook is a convenience, not a guarantee. It can be skipped with `git commit --no-verify`,
-and new contributors may not have run `pre-commit install`. Run the same configuration in CI:
+A local hook can be skipped with `git commit --no-verify`, and new contributors may not have run
+`pre-commit install`. Run the same configuration in CI:
 
 ```yaml title=".github/workflows/pre-commit.yml"
 name: pre-commit
@@ -222,8 +222,8 @@ committed from the browser.
 
 | Symptom | Cause and fix |
 | --- | --- |
-| The hook "fails" on every commit that needs formatting | That is how it works: it fixed the files and stopped the commit. `git add` them and commit again. |
-| Formatting differs between two machines | Someone formats with another clang-format version, usually from an editor plugin or a system package. Point the editor at the same version, for example `pip install clang-format==21.1.8`. See [One clang-format version everywhere](2026-09-12-one-clang-version-everywhere.md). |
+| The hook "fails" on every commit that needs formatting | It fixed the files and stopped the commit. `git add` them and commit again. |
+| Formatting differs between two machines | Someone formats with another clang-format version, for example from an editor plugin or a system package. Point the editor at the same version, for example `pip install clang-format==21.1.8`. See [One clang-format version everywhere](2026-09-12-one-clang-version-everywhere.md). |
 | `Could not find any stable versions of clang-format on PyPI` | The hook looks the version up on pypi.org each time it runs, so it needs network access. |
 | `Unsupported clang-format version '...'` | There is no wheel for that version. The message lists the available ones. |
 | Vendored or generated code gets reformatted | Exclude it; see step 4. |
@@ -239,10 +239,10 @@ The same repository provides a `clang-tidy` hook:
         args: [--checks=.clang-tidy, --version=21]
 ```
 
-It is a bigger step than formatting. clang-tidy needs a `compile_commands.json` to find your
-headers, which the hook picks up from `build/` and a few other common directories, and it takes
-seconds per file instead of milliseconds. Many projects keep clang-format in the hook and run
-clang-tidy in CI only.
+clang-tidy needs a `compile_commands.json` to find your headers, which the hook picks up from
+`build/` and a few other common directories. It is also much slower than clang-format, because it
+parses every header a file includes. We suggest keeping clang-format in the hook and running
+clang-tidy in CI.
 
 ## Where to go next
 
