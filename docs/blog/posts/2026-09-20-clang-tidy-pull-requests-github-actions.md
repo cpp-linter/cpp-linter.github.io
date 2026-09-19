@@ -22,13 +22,12 @@ get stuck: clang-tidy needs the real compile flags or it reports missing headers
 an existing code base produces thousands of findings nobody asked for, and the output ends up in a
 CI log that contributors do not open.
 
-This guide sets up one GitHub Actions job that solves those three problems. When it is done,
-clang-tidy findings appear as review comments on the lines a pull request changed, and the check
-turns red when something is left unfixed.
+With the GitHub Actions job below, clang-tidy findings appear as review comments on the lines a
+pull request changed, and the check turns red when something is left unfixed.
 
 <!-- more -->
 
-## Step 1: start with a small `.clang-tidy`
+## Step 1: Start with a small `.clang-tidy`
 
 Put the configuration in the repository, not in the workflow. The same file is then used by CI,
 by editors (clangd, CLion, Qt Creator, Visual Studio) and by anyone running clang-tidy by hand.
@@ -63,7 +62,7 @@ $ clang-tidy --verify-config
 No config errors detected.
 ```
 
-## Step 2: generate `compile_commands.json`
+## Step 2: Generate `compile_commands.json`
 
 clang-tidy parses each file the way the compiler does, so it needs the include paths, defines and
 language standard of the real build. It reads them from a compilation database,
@@ -113,7 +112,7 @@ Two things commonly go wrong here:
 - **Generated headers.** Protobuf output, `config.h` and similar files only exist after the build
   step that produces them. Build those targets before running clang-tidy.
 
-## Step 3: add the workflow
+## Step 3: Add the workflow
 
 ```yaml title=".github/workflows/clang-tidy.yml"
 name: clang-tidy
@@ -155,15 +154,13 @@ jobs:
 | --- | --- |
 | `version: '21'` | Installs clang-tidy 21 on the runner. Pin it, and use the same major version locally; new LLVM releases add and move checks. |
 | `style: ''` | Turns clang-format off, so this job is clang-tidy only. Set it to `file` to check formatting against your `.clang-format` in the same step. |
-| `tidy-checks: ''` | Uses your `.clang-tidy` and nothing else. The default value is a broad list of check groups that is **appended** to the `Checks` in your file, which is the usual reason CI reports more than a local run. |
+| `tidy-checks: ''` | Uses your `.clang-tidy` and nothing else. The default value is a broad list of check groups that is appended to the `Checks` in your file, so CI reports more than a local run with the same `.clang-tidy`. |
 | `database: build` | The directory that contains `compile_commands.json`. |
 | `lines-changed-only: true` | Reports findings only on lines the pull request added or modified. |
 | `tidy-review: true` | Posts the findings as a pull request review. |
 | `step-summary: true` | Writes the same report to the workflow run's summary page. |
 
-## Step 4: report only what the pull request changed
-
-This is the setting that makes clang-tidy acceptable on a code base that has never used it.
+## Step 4: Report only what the pull request changed
 
 - `files-changed-only` defaults to `true`: only files touched by the pull request are analyzed.
 - `lines-changed-only` filters what is reported inside those files:
@@ -182,7 +179,7 @@ base gets cleaner in the places that are actively worked on, and nobody has to l
 clang-tidy still parses the whole translation unit, so the run time depends on how many files
 changed, not on how many lines.
 
-## Step 5: choose where the feedback appears
+## Step 5: Choose where the feedback appears
 
 | Feedback | Input | Default | Token permission |
 | --- | --- | --- | --- |
@@ -207,7 +204,7 @@ Things to know about reviews:
   Approving requires the repository setting "Allow GitHub Actions to create and approve pull
   requests". Set `passive-reviews: true` if the bot should only comment.
 
-## Step 6: decide when the check fails
+## Step 6: Decide when the check fails
 
 The action reports; it does not fail the job by itself. The last step in the workflow does that,
 using the `clang-tidy-checks-failed` output (there is also `clang-format-checks-failed`, and
@@ -237,7 +234,7 @@ arbitrary code execution for anyone who opens a pull request.
 | Nothing is reported for headers | `HeaderFilterRegex` does not match your header paths. |
 | Findings from vendored code | Narrow `HeaderFilterRegex`, and exclude the sources with `ignore: 'third_party|build'`. |
 | No review shows up | The pull request is a draft, comes from a fork, or the job lacks `pull-requests: write`. |
-| The job is slow | Keep `files-changed-only` on. The analysis already uses every core (`jobs: 0`); the time usually goes into installing dependencies and configuring, so cache those. |
+| The job is slow | Keep `files-changed-only` on. The analysis already uses every core (`jobs: 0`). Check the step timings in the run; if installing dependencies or configuring takes longer than the analysis, cache those. |
 
 ## Run the same checks before the commit
 
