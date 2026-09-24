@@ -21,5 +21,22 @@ This repository hosts the public site at <https://cpp-linter.github.io/>, includ
 - "Why cpp-linter?": how the toolchain compares with other clang-format / clang-tidy actions and hooks
 - Showcase of open-source projects that use cpp-linter
 - Blog posts and guides
-- Clang tools distribution guides (static binaries, Docker images, Python wheels)
-- Discussion and community entry points
+- Links to the clang tools packages (pip, Homebrew, asdf, static binaries, Docker images, wheels)
+- Community entry points and the sponsor page
+
+## Build
+
+```bash
+pipx run nox -s docs       # build into site/
+pipx run nox -s docs-live  # preview with live reload
+```
+
+## Files other projects use
+
+Other repositories load these files from the published site, so do not rename or remove them
+without updating those repositories:
+
+- `docs/stylesheets/shared.css`, served at <https://cpp-linter.github.io/stylesheets/shared.css>,
+  is loaded by the docs sites of cpp-linter-action, cpp-linter, clang-tools-pip and cpp-linter-rs.
+- `docs/install-wheel.sh`, served at <https://cpp-linter.github.io/install-wheel.sh>, is used by
+  the clang-tools-wheel README and its release workflow.
