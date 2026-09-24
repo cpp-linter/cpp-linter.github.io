@@ -8,20 +8,22 @@ description: Open-source projects that run cpp-linter-action and cpp-linter-hook
 <!-- markdownlint-disable MD033 -->
 
 More than 550 public repositories run [cpp-linter-action](https://github.com/cpp-linter/cpp-linter-action)
-from a workflow on their default branch, with over 87,000 GitHub stars between them.
-The list below is the top of that set, ranked by stars.
+from a workflow on their default branch, with over 75,000 GitHub stars between them.
+The list below is a selection from that set, ranked by stars.
 
 !!! info "How this list is built"
     Numbers come from a GitHub code search for `cpp-linter/cpp-linter-action@` inside
     `.github/workflows`, restricted to non-fork, non-archived repositories, on 2026-09-12.
     Forks and mirrors are excluded, so the real number is higher. Star counts are from the same day.
+    On 2026-09-24 the totals were recounted with only `.yml` and `.yaml` workflow files, so a
+    disabled file such as `.yml.bak` does not count, and every project below was rechecked the
+    same way.
 
 ## Projects
 
 | Project | Stars | What it is |
 | --- | ---: | --- |
 | <img src="https://github.com/zealdocs.png?size=40" width="20" alt=""> [zealdocs/zeal](https://github.com/zealdocs/zeal) | 12,789 | Offline documentation browser |
-| <img src="https://github.com/Alexays.png?size=40" width="20" alt=""> [Alexays/Waybar](https://github.com/Alexays/Waybar) | 11,944 | Highly customizable Wayland bar for Sway and wlroots compositors |
 | <img src="https://github.com/libvips.png?size=40" width="20" alt=""> [libvips/libvips](https://github.com/libvips/libvips) | 11,633 | Fast image processing library with low memory needs |
 | <img src="https://github.com/diasurgical.png?size=40" width="20" alt=""> [diasurgical/DevilutionX](https://github.com/diasurgical/DevilutionX) | 9,736 | Diablo build for modern operating systems |
 | <img src="https://github.com/iree-org.png?size=40" width="20" alt=""> [iree-org/iree](https://github.com/iree-org/iree) | 3,925 | Retargetable MLIR-based machine learning compiler and runtime |

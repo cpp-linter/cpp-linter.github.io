@@ -31,6 +31,8 @@ theme:
     - search.suggest
     - search.share
     - toc.follow
+  # Fonts load in docs/overrides/main.html.
+  font: false
   logo: static/logo.png
   favicon: static/favicon.ico
   icon:
