@@ -11,6 +11,9 @@ tags:
   - clang-tools
 authors:
   - shenxianpeng
+description: >-
+  Use the same LLVM major version for clang-format and clang-tidy in pre-commit, in
+  cpp-linter-action and on your laptop, and upgrade it in one commit.
 ---
 
 # One clang-format version everywhere: pre-commit, CI and your laptop
@@ -37,13 +40,13 @@ Write it down somewhere visible, for example in `CONTRIBUTING.md`:
 Formatting and static analysis use LLVM 21 (clang-format 21, clang-tidy 21).
 ```
 
-Everything below pins `21`. When you move to 22, change it in all places in one commit, reformat
-the tree in the same commit, and the history stays clean.
+Everything below pins `21`. Pick a major every tool has: the clang-tidy hook covers LLVM 13 to 22,
+the action and clang-tools 12 to 23.
 
 ## Pre-commit: cpp-linter-hooks
 
 [cpp-linter-hooks](https://github.com/cpp-linter/cpp-linter-hooks) installs `clang-format` and
-`clang-tidy` as Python wheels, so every contributor gets the same binary regardless of what their
+`clang-tidy` as Python wheels, so every contributor gets the same release regardless of what their
 distribution ships. The `rev` is the hooks release; the tool version is a separate `--version`
 argument:
 
@@ -55,18 +58,21 @@ repos:
       - id: clang-format
         args: [--style=file, --version=21]
       - id: clang-tidy
-        args: [--checks=.clang-tidy, --version=21]
+        args: [--version=21]
 ```
 
-`--style=file` and `--checks=.clang-tidy` read the same `.clang-format` and `.clang-tidy` files
-that CI will use, so the rules, like the version, are defined in one place.
+`21` means the newest 21.x wheel on PyPI, looked up on each run, so the two hooks can land on
+different patch releases of 21. `--style=file` reads `.clang-format`, and clang-tidy finds
+`.clang-tidy` by itself: the hooks read the same files CI will use, so the rules, like the version,
+are defined in one place. The clang-tidy hook needs a `compile_commands.json`; if your build does
+not produce one before commit time, run clang-tidy only in CI.
 
 ## CI: cpp-linter-action
 
 [cpp-linter-action](https://github.com/cpp-linter/cpp-linter-action) installs the requested
 version itself; the workflow does not need `apt-get install clang-format-21` or a matching LLVM
-apt repository. The `version` input takes the LLVM major version. It also accepts a path to tools
-you installed yourself, or an empty string for whatever the runner has; the
+apt repository. The `version` input takes only the LLVM major version. It also accepts a path to
+tools you installed yourself, or an empty string for whatever the runner has; the
 [input reference](https://cpp-linter.github.io/cpp-linter-action/inputs-outputs/#version) has the
 details.
 
@@ -85,7 +91,7 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - uses: cpp-linter/cpp-linter-action@v2
         id: linter
         env:
@@ -94,7 +100,7 @@ jobs:
           version: '21'
           style: file
           tidy-checks: ''
-          thread-comments: ${{ github.event_name == 'pull_request' && 'update' }}
+          thread-comments: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && 'update' }}
       - name: Fail on lint errors
         if: steps.linter.outputs.checks-failed > 0
         run: exit 1
@@ -102,15 +108,17 @@ jobs:
 
 `style: file` and an empty `tidy-checks` tell the action to use `.clang-format` and
 `.clang-tidy` from the repository, the same files pre-commit used a minute earlier on the
-developer's machine. The result is a thread comment on the pull request that is updated on every
-push instead of a new comment each time, plus file annotations in the diff view.
+developer's machine. The result is file annotations in the diff view, plus a thread comment on the
+pull request that is edited on each push while there are findings and removed once they are fixed.
+Pull requests from forks get a read-only token, and posting the comment would fail the step, so
+the condition leaves the comment off for them.
 
 ## Local one-off runs: clang-tools
 
-Sometimes you want the binary itself: a quick `clang-format --dry-run` over a directory, or a
+Sometimes you want the binary itself: a quick `clang-format --dry-run` over a few files, or a
 `clang-tidy` run with a hand-written compile database. [clang-tools](https://github.com/cpp-linter/clang-tools-pip)
-downloads a statically linked binary for the exact major version and falls back to the Python
-wheel when there is no binary for your platform:
+downloads the static binary for that LLVM major (21.1.0 for 21) unless a `clang-format-21` is
+already on your PATH, and falls back to the PyPI wheel if the download fails. In a virtualenv:
 
 ```bash
 pip install clang-tools
@@ -122,20 +130,22 @@ The binaries come from [clang-tools-static-binaries](https://github.com/cpp-lint
 which publishes a rolling window of recent LLVM majors for Linux, macOS and Windows, on x86-64 and
 ARM64; each release lists its exact versions in
 [`versions.json`](https://github.com/cpp-linter/clang-tools-static-binaries/releases/latest/download/versions.json).
-The same release is what cpp-linter-action downloads in CI, so the bytes match.
+cpp-linter-action uses the runner's package manager where it can: apt on Linux, Homebrew's
+`llvm@21` on macOS, these binaries on Windows. Every place runs clang-format 21, but not always the
+same patch release.
 
 ## Containers and other package managers
 
-The same versions are available as
-[Docker images](https://github.com/cpp-linter/clang-tools-docker) tagged by major version:
+[Docker images](https://github.com/cpp-linter/clang-tools-docker) carry Ubuntu's clang-format and
+clang-tidy packages, tagged by major version up to 22:
 
 ```bash
-docker run -v "$PWD":/src xianpengshen/clang-tools:21 clang-format --dry-run --Werror /src/main.cpp
+docker run --rm -v "$PWD":/src xianpengshen/clang-tools:21 clang-format --dry-run --Werror /src/main.cpp
 ```
 
-The [Homebrew tap](https://github.com/cpp-linter/homebrew-tap) and the
-[asdf plugin](https://github.com/cpp-linter/asdf-clang-tools) are built from the same static
-binaries, for teams that already manage tool versions that way:
+On macOS, the [Homebrew tap](https://github.com/cpp-linter/homebrew-tap) (LLVM 19 to 23) installs
+the same static binaries; the [asdf plugin](https://github.com/cpp-linter/asdf-clang-tools) does so
+on every platform, for teams that already manage tool versions that way:
 
 ```bash
 brew install cpp-linter/tap/clang-format@21 cpp-linter/tap/clang-tidy@21
@@ -143,21 +153,16 @@ brew install cpp-linter/tap/clang-format@21 cpp-linter/tap/clang-tidy@21
 
 ## Upgrading
 
-When LLVM 22 is the version you want:
+When LLVM 22 is the version you want, change it everywhere in one commit:
 
 1. Change `21` to `22` in `.pre-commit-config.yaml`, the workflow and `CONTRIBUTING.md`.
 2. Run `pre-commit run clang-format --all-files` and commit the reformatted tree together with the
    version change.
 3. Open the pull request. cpp-linter-action runs with 22 and should report nothing, because the
-   tree was formatted with the same version a moment ago.
+   tree was formatted with the same major version a moment ago.
 
-If the action reports differences at this point, the two tools are not on the same version, and
-the numbers above are the first thing to check.
-
-## clang-tidy drifts more than clang-format
-
-`clang-format` version drift produces noisy diffs. `clang-tidy` version drift produces different
-findings: checks that were added, renamed or made stricter. A pull request that passes locally and
-fails in CI with a check nobody has heard of is usually a version mismatch. With the hook and the
-action pinned to the same major version, the two numbers to compare are `--version` in
-`.pre-commit-config.yaml` and `version` in the workflow.
+If the action does report differences, compare the exact releases: the action's log prints the one
+it ran (`clang-format-22 --version`), and the hook uses the newest 22.x wheel. `clang-tidy` drifts
+more than `clang-format`: a new major adds, renames and tightens checks, so a pull request that
+passes locally and fails in CI with a check nobody has heard of usually means the two version
+numbers above differ.

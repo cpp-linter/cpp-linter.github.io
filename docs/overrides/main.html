@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{#-
+  The site's fonts, loaded on every page: Instrument Sans for text,
+  JetBrains Mono for code and Bricolage Grotesque for headings. theme.font is
+  false in mkdocs.yml, so Material loads nothing itself; extra.css points
+  Material's font variables at these.
+-#}
+
+{% block extrahead %}
+  {{ super() }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap">
+{% endblock %}

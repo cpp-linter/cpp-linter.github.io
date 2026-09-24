@@ -1,18 +1,22 @@
 site_name: "cpp-linter"
-site_description: "Documentation for the cpp-linter organization."
+site_description: "clang-format and clang-tidy for C and C++, in pull requests, pre-commit hooks and CI."
 site_url: "https://cpp-linter.github.io/"
 repo_url: https://github.com/cpp-linter
 repo_name: "cpp-linter"
 copyright: "© 2021-2026, cpp-linter"
+# Theme overrides and build requirements live in docs/ but are not pages.
+exclude_docs: |
+  overrides/
+  requirements.txt
 
 nav:
   - Home: index.md
-  - Getting Started: getting-started.md
-  - Why cpp-linter?: why-cpp-linter.md
+  - Get started: getting-started.md
+  - Why cpp-linter: why-cpp-linter.md
   - Showcase: showcase.md
   - Blog:
       - blog/index.md
-  - Discussion: discussion.md
+  - Community: discussion.md
   - Sponsor: sponsor.md
 
 theme:
@@ -23,7 +27,7 @@ theme:
     - navigation.tabs.sticky
     - navigation.top
     - navigation.sections
-    - navigation.footer
+    - navigation.indexes
     - content.action.edit
     - content.code.annotate
     - content.code.copy
@@ -31,6 +35,8 @@ theme:
     - search.suggest
     - search.share
     - toc.follow
+  # Fonts load in docs/overrides/main.html.
+  font: false
   logo: static/logo.png
   favicon: static/favicon.ico
   icon:
@@ -84,6 +90,7 @@ markdown_extensions:
 
 plugins:
   - search
+  - tags
   - blog:
       blog_dir: blog
       post_excerpt: required
@@ -103,6 +110,13 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/cpp-linter
+      name: cpp-linter on GitHub
+    - icon: material/forum
+      link: https://github.com/cpp-linter/cpp-linter/discussions
+      name: GitHub Discussions
+    - icon: simple/opencollective
+      link: https://opencollective.com/cpp-linter
+      name: Sponsor on Open Collective
   analytics:
     provider: google
     property: G-JKH4SXC7HC
@@ -119,4 +133,4 @@ extra:
           data: 0
           note: >-
             Thanks for your feedback! Help us improve this page by
-            <a href="https://github.com/cpp-linter/cpp-linter.github.io/issues/new" target="_blank" rel="noopener">opening an issue</a>.
+            <a href="https://github.com/cpp-linter/cpp-linter.github.io/issues/new?title=Feedback:+{title}&body=Page:+{url}" target="_blank" rel="noopener">opening an issue</a>.

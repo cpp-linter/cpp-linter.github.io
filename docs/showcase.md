@@ -1,6 +1,8 @@
 ---
 title: Who uses cpp-linter
-description: Open-source projects that run cpp-linter-action and cpp-linter-hooks, ranked by GitHub stars.
+description: Open-source projects that run cpp-linter-action, ranked by GitHub stars, and some that use cpp-linter-hooks.
+hide:
+  - navigation
 ---
 
 # Who uses cpp-linter
@@ -8,20 +10,20 @@ description: Open-source projects that run cpp-linter-action and cpp-linter-hook
 <!-- markdownlint-disable MD033 -->
 
 More than 550 public repositories run [cpp-linter-action](https://github.com/cpp-linter/cpp-linter-action)
-from a workflow on their default branch, with over 87,000 GitHub stars between them.
-The list below is the top of that set, ranked by stars.
+from a workflow on their default branch, with over 75,000 GitHub stars between them.
+The list below is a selection from that set, ranked by stars.
 
 !!! info "How this list is built"
-    Numbers come from a GitHub code search for `cpp-linter/cpp-linter-action@` inside
-    `.github/workflows`, restricted to non-fork, non-archived repositories, on 2026-09-12.
-    Forks and mirrors are excluded, so the real number is higher. Star counts are from the same day.
+    Counted on 2026-09-24 with a GitHub code search for `cpp-linter/cpp-linter-action@` in `.yml`
+    and `.yaml` files under `.github/workflows`, in repositories that are not forks and not
+    archived. Star counts in the table are from 2026-09-12. GitHub's dependents count, which
+    includes forks, is over 1,000.
 
 ## Projects
 
 | Project | Stars | What it is |
 | --- | ---: | --- |
 | <img src="https://github.com/zealdocs.png?size=40" width="20" alt=""> [zealdocs/zeal](https://github.com/zealdocs/zeal) | 12,789 | Offline documentation browser |
-| <img src="https://github.com/Alexays.png?size=40" width="20" alt=""> [Alexays/Waybar](https://github.com/Alexays/Waybar) | 11,944 | Highly customizable Wayland bar for Sway and wlroots compositors |
 | <img src="https://github.com/libvips.png?size=40" width="20" alt=""> [libvips/libvips](https://github.com/libvips/libvips) | 11,633 | Fast image processing library with low memory needs |
 | <img src="https://github.com/diasurgical.png?size=40" width="20" alt=""> [diasurgical/DevilutionX](https://github.com/diasurgical/DevilutionX) | 9,736 | Diablo build for modern operating systems |
 | <img src="https://github.com/iree-org.png?size=40" width="20" alt=""> [iree-org/iree](https://github.com/iree-org/iree) | 3,925 | Retargetable MLIR-based machine learning compiler and runtime |
@@ -59,13 +61,15 @@ The list below is the top of that set, ranked by stars.
 ## Pre-commit users
 
 [cpp-linter-hooks](https://github.com/cpp-linter/cpp-linter-hooks) is used by projects from
-Bosch Research, MIT ACL, bazel-contrib, CodSpeed, Jupyter Xeus, Rancher Sandbox and others.
-GitHub's own [code search](https://github.com/search?q=%22cpp-linter%2Fcpp-linter-hooks%22+path%3A.pre-commit-config.yaml&type=code)
-shows the live list.
+bazel-contrib, CodSpeed, doldecomp (the Super Smash Bros. Melee decompilation), HKUST Aerial
+Robotics, Kubewarden, MIT ACL and others. GitHub
+[code search](https://github.com/search?q=%22cpp-linter%2Fcpp-linter-hooks%22+path%3A.pre-commit-config.yaml&type=code)
+(sign-in required) lists more; some results are forks or commented-out entries.
 
 ## Add your project
 
-To add a public project, open a pull request against
+To add a public project that runs cpp-linter-action or cpp-linter-hooks on its default branch,
+open a pull request against
 [cpp-linter.github.io](https://github.com/cpp-linter/cpp-linter.github.io/edit/main/docs/showcase.md)
 and add a row, or mention it in
 [GitHub Discussions](https://github.com/cpp-linter/cpp-linter/discussions) and we will add it.

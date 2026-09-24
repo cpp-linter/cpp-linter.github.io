@@ -1,18 +1,438 @@
 {% extends "main.html" %}
 
+{#-
+  The home page has its own header, sections and footer; every other page
+  keeps the standard Material layout. home.css is only loaded on this page.
+-#}
+
+{% block extrahead %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ 'stylesheets/home.css' | url }}">
+{% endblock %}
+
+{% block header %}
+  {% set links = [
+    ("Get started", "getting-started/" | url),
+    ("Tools", "#tools"),
+    ("Why cpp-linter", "why-cpp-linter/" | url),
+    ("Showcase", "showcase/" | url),
+    ("Blog", "blog/" | url),
+    ("Community", "discussion/" | url),
+  ] %}
+  <header class="md-header cl-header" data-md-component="header">
+    <nav class="md-header__inner cl-header__inner" aria-label="{{ lang.t('header') }}">
+      <a class="cl-brand" href="{{ nav.homepage.url | url }}">
+        <img src="{{ config.theme.logo | url }}" alt="" width="38" height="38">
+        <span>{{ config.site_name }}</span>
+      </a>
+      <div class="cl-nav">
+        {% for label, href in links %}
+          <a href="{{ href }}">{{ label }}</a>
+        {% endfor %}
+      </div>
+      <div class="cl-header__actions">
+        {% if "material/search" in config.plugins %}
+          {% set search = config.plugins["material/search"] | attr("config") %}
+          {% if search.enabled %}
+            <label class="md-header__button md-icon" for="__search" aria-label="{{ lang.t('search.placeholder') }}">
+              {% include ".icons/material/magnify.svg" %}
+            </label>
+            {% include "partials/search.html" %}
+          {% endif %}
+        {% endif %}
+        <a class="cl-btn cl-btn--line cl-header__wide" href="{{ config.repo_url }}">
+          GitHub <span class="cl-ico">{% include ".icons/octicons/link-external-16.svg" %}</span>
+        </a>
+        <a class="cl-btn cl-btn--ink cl-header__wide" href="{{ 'sponsor/' | url }}">
+          <span class="cl-ico">{% include ".icons/octicons/heart-16.svg" %}</span> Sponsor
+        </a>
+        <details class="cl-menu">
+          <summary aria-label="Menu">{% include ".icons/material/menu.svg" %}</summary>
+          <div class="cl-menu__panel">
+            {% for label, href in links %}
+              <a href="{{ href }}">{{ label }}</a>
+            {% endfor %}
+            <a href="{{ config.repo_url }}">GitHub</a>
+            <a href="{{ 'sponsor/' | url }}">Sponsor</a>
+          </div>
+        </details>
+      </div>
+    </nav>
+  </header>
+{% endblock %}
+
+{% block tabs %}{% endblock %}
+
 {% block hero %}
-    <div class="hero">
-        <h1 id="cc-linting-that-just-works">C/C++ linting that just works</h1>
-        <p>
-            Automated, configurable, and reliable linting for your C/C++ projects — set up in minutes.
-        </p>
-        <p>
-            <a class="md-button md-button--primary" href="getting-started/">
-                Get started
-                <span class="twemoji">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"></path></svg>
-                </span>
+  {% set arrow %}<span class="cl-ico">{% include ".icons/material/arrow-right.svg" %}</span>{% endset %}
+  {% set check %}<span class="cl-ico cl-ico--green">{% include ".icons/material/check-bold.svg" %}</span>{% endset %}
+  <div class="cl-home">
+
+    <section class="cl-hero">
+      <div class="cl-wrap cl-hero__grid">
+        <div class="cl-hero__copy">
+          <p class="cl-chip">{{ check }} clang-format and clang-tidy for C and C++</p>
+          <h1 class="cl-hero__title">
+            C/C++ pull requests<br>
+            that arrive<br>
+            <span class="cl-circled"><svg class="cl-circled__ring" viewBox="0 0 400 100" preserveAspectRatio="none" aria-hidden="true"><path d="M 318 10 C 236 -4, 92 0, 36 22 C -4 38, 4 84, 108 92 C 214 100, 378 90, 394 56 C 402 36, 384 20, 350 12"/></svg><span class="cl-circled__text">already checked</span><svg class="cl-circled__check" viewBox="0 0 64 52" aria-hidden="true"><path d="M 6 28 L 22 44 L 58 6"/></svg></span>.
+          </h1>
+          <p class="cl-lead">
+            cpp-linter runs clang-format and clang-tidy on the files each pull
+            request changes and reports what it finds in the job log and as
+            annotations on the pull request. Turn on reviews and the fixes arrive
+            as suggestions you commit in one click. Set the same LLVM version in
+            the workflow and the pre-commit hooks, and laptops and CI use the
+            same major release.
+          </p>
+          <div class="cl-actions">
+            <a class="cl-btn cl-btn--primary cl-btn--lg" href="{{ 'getting-started/' | url }}">Add it to a repository {{ arrow }}</a>
+            <a class="cl-btn cl-btn--line cl-btn--lg" href="#tools">
+              Find the right tool <span class="cl-ico">{% include ".icons/material/arrow-down.svg" %}</span>
             </a>
-        </p>
+          </div>
+          <ul class="cl-proof">
+            <li>{{ check }} Used by 1,000+ repositories</li>
+            <li>{{ check }} Linux, macOS and Windows runners</li>
+            <li>{{ check }} Free and open source</li>
+          </ul>
+        </div>
+
+        <div class="cl-visual" role="img" aria-label="A review comment from cpp-linter-action suggests a clang-tidy fix, and auto-fix pushes the clang-format fixes as a commit.">
+          <svg class="cl-visual__ring" viewBox="0 0 600 600" preserveAspectRatio="none" aria-hidden="true"><path d="M 512 112 C 460 56, 380 30, 300 30 C 150 30, 36 146, 36 300 C 36 452, 150 570, 302 570 C 454 570, 566 452, 566 300 C 566 250, 552 206, 532 172"/></svg>
+          <span class="cl-visual__pin"><span class="cl-ico">{% include ".icons/octicons/pin-16.svg" %}</span>clang-format 21 · clang-tidy 21</span>
+          <div class="cl-review">
+            <div class="cl-review__file">
+              <span class="cl-review__path"><span class="cl-ico cl-hide-sm">{% include ".icons/octicons/file-16.svg" %}</span>src/parser.cpp</span>
+              <span class="cl-review__stat"><span class="cl-add-text">+12</span> <span class="cl-del-text">−3</span></span>
+            </div>
+            <div class="cl-diff cl-review__diff">
+              <div class="cl-diff__line cl-hide-sm"><span class="cl-diff__no">41</span><span class="cl-diff__mark"></span><span class="cl-diff__code">int parse(const char *src) {</span></div>
+              <div class="cl-diff__line cl-diff__line--add"><span class="cl-diff__no">42</span><span class="cl-diff__mark">+</span><span class="cl-diff__code">  char *end = 0;</span></div>
+              <div class="cl-diff__line cl-diff__line--add"><span class="cl-diff__no">43</span><span class="cl-diff__mark">+</span><span class="cl-diff__code">  long n=strtol(src,&amp;end,10);</span></div>
+            </div>
+            <div class="cl-comment">
+              <div class="cl-comment__head">
+                <span class="cl-avatar">{% include ".icons/octicons/workflow-16.svg" %}</span>
+                <strong>github-actions</strong>
+                <span class="cl-comment__bot">bot</span>
+              </div>
+              <div class="cl-comment__body">
+                <p><strong>clang-tidy diagnostics</strong></p>
+                <p>use nullptr <span class="cl-comment__check">[modernize-use-nullptr]</span></p>
+                <div class="cl-suggestion">
+                  <div class="cl-suggestion__title">Suggested change</div>
+                  <div class="cl-diff__line cl-diff__line--del"><span class="cl-diff__mark">−</span><span class="cl-diff__code">  char *end = 0;</span></div>
+                  <div class="cl-diff__line cl-diff__line--fix"><span class="cl-diff__mark">+</span><span class="cl-diff__code">  char *end = nullptr;</span></div>
+                </div>
+                <div class="cl-comment__actions">
+                  <span class="cl-fake-btn cl-hide-sm">Add to batch</span>
+                  <span class="cl-fake-btn cl-fake-btn--primary">Commit suggestion</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <svg class="cl-visual__check" viewBox="0 0 140 120" aria-hidden="true"><path d="M 14 70 L 44 100 L 128 12"/></svg>
+          <div class="cl-fixchip">
+            <span class="cl-fixchip__icon">{% include ".icons/material/check-bold.svg" %}</span>
+            <span class="cl-fixchip__text">
+              <code>style: apply clang-format fixes</code>
+              <span>auto-fix pushed 1 commit<span class="cl-hide-sm"> · 2 files</span></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {% set tools = [
+      {
+        "title": "On every pull request", "name": "cpp-linter-action", "icon": "octicons/git-pull-request-24",
+        "text": "Annotates findings on the pull request. Pass GITHUB_TOKEN with pull-requests: write to add a summary comment or review suggestions. Linux, macOS and Windows runners.",
+        "code": "uses: cpp-linter/cpp-linter-action@v2",
+        "href": "https://cpp-linter.github.io/cpp-linter-action/", "cta": "Read the docs",
+      },
+      {
+        "title": "Before every commit", "name": "cpp-linter-hooks", "icon": "octicons/git-commit-24",
+        "text": "pre-commit hooks that pip-install the clang-format and clang-tidy version you pin, on every developer's machine. clang-tidy wheels cover LLVM 13 to 22.",
+        "code": "args: [--style=file, --version=21]",
+        "href": "https://github.com/cpp-linter/cpp-linter-hooks", "cta": "View on GitHub",
+      },
+      {
+        "title": "Locally or in other CI", "name": "cpp-linter", "icon": "octicons/terminal-24",
+        "text": "The Python command behind the action. Run it locally, or on the whole repository in other CI, with clang tools you install first. It exits 0 even when checks fail.",
+        "code": "pip install cpp-linter",
+        "href": "https://cpp-linter.github.io/cpp-linter/", "cta": "Read the docs",
+      },
+      {
+        "title": "Just the clang tools", "name": "clang-tools", "icon": "octicons/package-24",
+        "text": "clang-format, clang-tidy and friends for LLVM 12 to 23 via pip or asdf, plus Docker images (up to 22) and a macOS Homebrew tap (19 to 23).",
+        "code": "pip install clang-tools\nclang-tools install clang-format clang-tidy --version 21",
+        "href": "https://cpp-linter.github.io/clang-tools-pip/", "cta": "Read the docs",
+      },
+    ] %}
+    <section class="cl-band cl-band--white" id="tools">
+      <div class="cl-wrap">
+        <div class="cl-head cl-head--split">
+          <div>
+            <p class="cl-eyebrow">Start here</p>
+            <h2 class="cl-h2">Pick where the checks run</h2>
+            <p class="cl-sub">Four ways in. Each can use the same .clang-format and .clang-tidy files from your repository.</p>
+          </div>
+          <a class="cl-link" href="{{ 'why-cpp-linter/' | url }}">Compare with other tools {{ arrow }}</a>
+        </div>
+        <div class="cl-tools">
+          {% for tool in tools %}
+            <article class="cl-tool">
+              <span class="cl-tool__icon">{% include ".icons/" ~ tool.icon ~ ".svg" %}</span>
+              <h3 class="cl-h3">{{ tool.title }}</h3>
+              <p class="cl-tool__name">{{ tool.name }}</p>
+              <p class="cl-tool__text">{{ tool.text }}</p>
+              <code class="cl-tool__code">{{ tool.code }}</code>
+              <a class="cl-link" href="{{ tool.href }}">{{ tool.cta }} {{ arrow }}</a>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    {% set stations = [
+      ("octicons/device-desktop-24", "On your laptop", "clang-tools", "--version 21", "Install clang-format and clang-tidy by LLVM version with pip, Homebrew or asdf, or run them from a Docker image."),
+      ("octicons/git-commit-24", "Before each commit", "cpp-linter-hooks", "--version=21", "pre-commit runs them on the files you staged."),
+      ("octicons/git-pull-request-24", "On the pull request", "cpp-linter-action", "version: '21'", "Checks the files the pull request changes and annotates the findings."),
+      ("octicons/terminal-24", "In other CI", "cpp-linter", "--version=21", "The same checks as one Python command. Install LLVM 21 first: without it, --version=21 falls back to whatever clang-format is on PATH."),
+    ] %}
+    <section class="cl-band cl-band--indigo">
+      <div class="cl-wrap">
+        <div class="cl-intro">
+          <div>
+            <p class="cl-eyebrow">The idea behind it</p>
+            <h2 class="cl-h2">Pin the same LLVM version in each tool</h2>
+          </div>
+          <p>
+            Different clang-format releases can format the same file
+            differently. Set the same LLVM version in the action, the pre-commit
+            hooks and on your machine, and every step runs the same major
+            release. The clang-tidy hook covers LLVM 13 to 22; the action and
+            clang-tools cover 12 to 23.
+          </p>
+        </div>
+        <div class="cl-track">
+          <svg class="cl-track__line" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M 40 22 C 240 8, 420 30, 610 18 C 800 6, 980 30, 1160 16"/></svg>
+          <ol class="cl-stations">
+            {% for icon, title, name, pin, text in stations %}
+              <li class="cl-station">
+                <span class="cl-station__dot">{% include ".icons/" ~ icon ~ ".svg" %}</span>
+                <code class="cl-station__pin">{{ pin }}</code>
+                <h3>{{ title }}</h3>
+                <span class="cl-station__name">{{ name }}</span>
+                <p>{{ text }}</p>
+              </li>
+            {% endfor %}
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="cl-band">
+      <div class="cl-wrap">
+        <div class="cl-head">
+          <p class="cl-eyebrow">What reviewers see</p>
+          <h2 class="cl-h2">Results show up on the pull request</h2>
+          <p class="cl-sub">Annotations are on by default. Review suggestions, a summary comment and auto-fix each take one input plus write access for the job.</p>
+        </div>
+        <div class="cl-outcomes">
+          <article class="cl-outcome">
+            <div class="cl-outcome__art" aria-hidden="true">
+              <div class="cl-mini cl-diff cl-diff--roomy">
+                <div class="cl-diff__line cl-diff__line--del"><span class="cl-diff__mark">−</span><span class="cl-diff__code">int* p=0;</span></div>
+                <div class="cl-diff__line cl-diff__line--fix"><span class="cl-diff__mark">+</span><span class="cl-diff__code">int *p = nullptr;</span></div>
+              </div>
+              <span class="cl-fake-btn cl-fake-btn--primary cl-fake-btn--end">Commit suggestion</span>
+            </div>
+            <h3 class="cl-h3">Suggestions you can commit</h3>
+            <p>Set format-review or tidy-review and fixes for lines in the diff arrive as review suggestions. Needs pull-requests: write, so pull requests from forks get annotations only.</p>
+          </article>
+          <article class="cl-outcome">
+            <div class="cl-outcome__art" aria-hidden="true">
+              <div class="cl-mini cl-diff cl-diff--roomy">
+                <div class="cl-diff__line"><span class="cl-diff__no">17</span><span class="cl-diff__code">for (size_t i = 0; i &lt; n; ++i) {</span></div>
+                <div class="cl-diff__line cl-diff__line--warn"><span class="cl-diff__no">18</span><span class="cl-diff__code">  if (v[i] == 0) return false;</span></div>
+                <div class="cl-diff__line"><span class="cl-diff__no">19</span><span class="cl-diff__code">}</span></div>
+              </div>
+              <p class="cl-annotation"><span class="cl-ico cl-ico--warn">{% include ".icons/octicons/alert-16.svg" %}</span><span><strong>Line 18</strong> · readability-braces-around-statements</span></p>
+            </div>
+            <h3 class="cl-h3">Notes in the diff</h3>
+            <p>clang-tidy findings in the checked file are annotated on their line (GitHub shows up to 10 warnings per step), and clang-format adds one note per file. Annotations need no write access, so they also work on pull requests from forks.</p>
+          </article>
+          <article class="cl-outcome">
+            <div class="cl-outcome__art" aria-hidden="true">
+              <div class="cl-mini cl-summary">
+                <p class="cl-summary__head"><span class="cl-avatar">{% include ".icons/octicons/workflow-16.svg" %}</span><strong>github-actions</strong><span class="cl-comment__bot">bot</span><span class="cl-muted">commented · edited</span></p>
+                <p class="cl-summary__report"><strong>Cpp-Linter Report</strong> Some files did not pass the configured checks!</p>
+                <p class="cl-summary__tags"><span class="cl-tag cl-tag--warn">clang-tidy (v21.1.0) reports: 2 concern(s)</span></p>
+              </div>
+            </div>
+            <h3 class="cl-h3">One summary comment</h3>
+            <p>Set thread-comments: update and one comment lists the results, edited on each push while there are findings. It is posted by github-actions[bot] or your own App, and needs pull-requests: write, so it fails on pull requests from forks.</p>
+          </article>
+          <article class="cl-outcome">
+            <div class="cl-outcome__art" aria-hidden="true">
+              <div class="cl-mini cl-commit">
+                <span class="cl-fixchip__icon">{% include ".icons/material/check-bold.svg" %}</span>
+                <span class="cl-fixchip__text">
+                  <code>style: apply clang-format fixes</code>
+                  <span>2 files changed · pushed to feature/parser</span>
+                </span>
+              </div>
+              <p class="cl-annotation"><code class="cl-inline-code">auto-fix: true</code> plus <code class="cl-inline-code">contents: write</code></p>
+            </div>
+            <div class="cl-outcome__title">
+              <h3 class="cl-h3">Fixes pushed for you</h3>
+              <span class="cl-badge-new">New in v2.23</span>
+            </div>
+            <p>Set auto-fix: true and give the job contents: write, and the clang-format fixes are committed to the branch of a same-repository pull request, by default under the name of whoever triggered the run.</p>
+          </article>
+        </div>
+        <div class="cl-strip">
+          <span class="cl-tool__icon">{% include ".icons/octicons/history-24.svg" %}</span>
+          <p>
+            <strong>Bringing clang-tidy to an old codebase?</strong> Set
+            lines-changed-only: true and only the lines each pull request changes are
+            checked, so a strict .clang-tidy works from the first pull request.
+          </p>
+          <a class="cl-link" href="{{ 'blog/2026/09/12/moving-to-cpp-linter-from-other-clang-format-and-clang-tidy-actions/' | url }}">Read the guide {{ arrow }}</a>
+        </div>
+      </div>
+    </section>
+
+    {#- Stars as of September 2026, from the showcase page. -#}
+    {% set projects = [
+      ("zealdocs/zeal", "Zeal", "Offline documentation browser", "12.8k"),
+      ("libvips/libvips", "libvips", "Fast image processing library", "11.6k"),
+      ("diasurgical/DevilutionX", "DevilutionX", "Diablo build for modern operating systems", "9.7k"),
+      ("iree-org/iree", "IREE", "MLIR-based ML compiler and runtime", "3.9k"),
+      ("nextcloud/desktop", "Nextcloud Desktop", "Desktop sync client for Nextcloud", "3.9k"),
+      ("bloomberg/blazingmq", "BlazingMQ", "High-performance message queue", "3.2k"),
+      ("TrenchBroom/TrenchBroom", "TrenchBroom", "Cross-platform level editor", "2.8k"),
+      ("chocolate-doom/chocolate-doom", "Chocolate Doom", "Historically accurate Doom source port", "2.4k"),
+    ] %}
+    <section class="cl-band cl-band--white">
+      <div class="cl-wrap">
+        <div class="cl-head cl-head--center">
+          <p class="cl-eyebrow">Showcase</p>
+          <h2 class="cl-h2">Used by 1,000+ repositories</h2>
+          <p class="cl-sub">That is GitHub's dependents count, forks included. 550+ public projects run it on their default branch, with 75,000+ GitHub stars between them. A few of them, with stars as of September 2026:</p>
+        </div>
+        <div class="cl-projects">
+          {% for repo, name, text, stars in projects %}
+            <a class="cl-project" href="https://github.com/{{ repo }}">
+              <span class="cl-project__repo">{{ repo }}</span>
+              <span class="cl-project__name">{{ name }}</span>
+              <span class="cl-project__text">{{ text }}</span>
+              <span class="cl-project__stars">{% include ".icons/octicons/star-fill-16.svg" %}{{ stars }}</span>
+            </a>
+          {% endfor %}
+        </div>
+        <div class="cl-center">
+          <a class="cl-btn cl-btn--line cl-btn--lg" href="{{ 'showcase/' | url }}">See more projects in the showcase {{ arrow }}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cl-band">
+      <div class="cl-wrap cl-start">
+        <div>
+          <p class="cl-eyebrow">Get started</p>
+          <h2 class="cl-h2">Start with one workflow file</h2>
+          <ol class="cl-steps">
+            <li><span class="cl-steps__no">1</span><span>Save it as <code class="cl-inline-code">.github/workflows/cpp-linter.yml</code></span></li>
+            <li><span class="cl-steps__no">2</span><span>Open a pull request that changes C or C++ files, from a branch in this repository and not as a draft.</span></li>
+            <li><span class="cl-steps__no">3</span><span>Commit the suggestions you agree with.</span></li>
+          </ol>
+          <p class="cl-note">Runs on Linux, macOS and Windows runners with LLVM 12 to 23, and reads your .clang-format and .clang-tidy files. On pull requests from forks the token is read-only, so findings show up as annotations only.</p>
+          <a class="cl-link" href="{{ 'getting-started/' | url }}">Read the getting started guide {{ arrow }}</a>
+        </div>
+        <div class="cl-window">
+          <div class="cl-window__bar">
+            <span class="cl-window__file">.github/workflows/cpp-linter.yml</span>
+            <button type="button" class="cl-copy" data-clipboard-target="#cl-workflow" title="{{ lang.t('clipboard.copy') }}">
+              <span class="cl-ico">{% include ".icons/octicons/copy-16.svg" %}</span>Copy
+            </button>
+          </div>
+<pre class="cl-code" id="cl-workflow"><span class="k">name</span>: cpp-linter
+<span class="k">on</span>: pull_request
+
+<span class="k">jobs</span>:
+  <span class="k">cpp-linter</span>:
+    <span class="k">runs-on</span>: ubuntu-latest
+    <span class="k">permissions</span>:
+      <span class="k">contents</span>: read
+      <span class="k">pull-requests</span>: write
+    <span class="k">steps</span>:
+      - <span class="k">uses</span>: <span class="s">actions/checkout@v7</span>
+      - <span class="k">uses</span>: <span class="s">cpp-linter/cpp-linter-action@v2</span>
+        <span class="k">env</span>:
+          <span class="k">GITHUB_TOKEN</span>: <span class="s">{% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}</span>
+        <span class="k">with</span>:
+          <span class="k">style</span>: file
+          <span class="k">tidy-checks</span>: <span class="s">''</span>
+          <span class="k">format-review</span>: <span class="b">true</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="cl-sponsor">
+      <div class="cl-wrap cl-sponsor__inner">
+        <div>
+          <h2>Maintained by two volunteers</h2>
+          <p>cpp-linter is free and open source. Sponsorship goes to the project through Open Collective, where all income and expenses are public.</p>
+        </div>
+        <div class="cl-sponsor__actions">
+          <a class="cl-btn cl-btn--ink cl-btn--lg" href="{{ 'sponsor/' | url }}"><span class="cl-ico">{% include ".icons/octicons/heart-16.svg" %}</span> Sponsor cpp-linter</a>
+          <a class="cl-btn cl-btn--outline cl-btn--lg" href="https://github.com/cpp-linter/cpp-linter/discussions">Ask in Discussions</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+  <footer class="cl-footer">
+    <div class="cl-wrap">
+      <div class="cl-footer__grid">
+        <div>
+          <p class="cl-footer__brand"><img src="{{ config.theme.logo | url }}" alt="" width="36" height="36">{{ config.site_name }}</p>
+          <p class="cl-footer__about">clang-format and clang-tidy for C and C++, in pull requests, pre-commit hooks and CI.</p>
+        </div>
+        <nav aria-label="Tools">
+          <p class="cl-footer__label">Tools</p>
+          <a href="https://cpp-linter.github.io/cpp-linter-action/">GitHub Action</a>
+          <a href="https://github.com/cpp-linter/cpp-linter-hooks">pre-commit hooks</a>
+          <a href="https://cpp-linter.github.io/cpp-linter/">Python CLI</a>
+          <a href="https://cpp-linter.github.io/clang-tools-pip/">clang-tools</a>
+          <a href="https://hub.docker.com/r/xianpengshen/clang-tools">Docker images</a>
+        </nav>
+        <nav aria-label="Learn">
+          <p class="cl-footer__label">Learn</p>
+          <a href="{{ 'getting-started/' | url }}">Get started</a>
+          <a href="{{ 'why-cpp-linter/' | url }}">Why cpp-linter</a>
+          <a href="{{ 'showcase/' | url }}">Showcase</a>
+          <a href="{{ 'blog/' | url }}">Blog</a>
+        </nav>
+        <nav aria-label="Community">
+          <p class="cl-footer__label">Community</p>
+          <a href="{{ config.repo_url }}">GitHub</a>
+          <a href="https://github.com/cpp-linter/cpp-linter/discussions">Discussions</a>
+          <a href="{{ 'sponsor/' | url }}">Sponsor</a>
+        </nav>
+      </div>
+      <div class="cl-footer__bottom">
+        <span>{{ config.copyright }}</span>
+        <span>Built with Material for MkDocs</span>
+      </div>
     </div>
+  </footer>
 {% endblock %}
