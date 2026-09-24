@@ -1,59 +1,73 @@
 ---
 title: Why cpp-linter?
 description: How cpp-linter compares with other clang-format and clang-tidy GitHub Actions and pre-commit hooks, and how to migrate.
+hide:
+  - navigation
 ---
 
 # Why cpp-linter?
 
-There are several ways to run `clang-format` and `clang-tidy` on a pull request. Most of them do
-one tool, in one place, with whatever clang version the runner happens to have. cpp-linter pins one
-LLVM version and runs both tools in every place code gets checked, from a contributor's pre-commit
-hook to the review comments on the pull request.
+There are several ways to run `clang-format` and `clang-tidy` on a pull request. Most of them run
+one tool in one place, each with its own way of choosing the clang version. cpp-linter runs both
+tools in pre-commit hooks, on the pull request and in other CI. Set the same LLVM version in each
+and they all run the same major release.
 
 ## What the action does
 
-cpp-linter-action runs `clang-format` and `clang-tidy` in one step and reports through four
-channels, each behind its own input: pull request reviews with suggested fixes (`format-review`,
-`tidy-review`), annotations in the diff view (`file-annotations`), one thread comment that is
-rewritten on every push (`thread-comments: update`), and the job step summary (`step-summary`).
+cpp-linter-action runs `clang-format` and `clang-tidy` in one step. Annotations in the diff view
+are on by default (`file-annotations`); GitHub shows up to 10 warnings per step. Three more
+reports each take one input: pull request reviews with suggested fixes (`format-review`,
+`tidy-review`), one comment that is edited on each push while there are findings
+(`thread-comments: update`), and the job step summary (`step-summary`).
+
+Reviews and the comment need `GITHUB_TOKEN` with `pull-requests: write`. Pull requests from forks
+get a read-only token: annotations still work, reviews are not posted, and `thread-comments` fails
+the step. Since v2.23.0, `auto-fix: true` with `contents: write` commits the clang-format fixes to
+the branch of a pull request from the same repository.
 
 Only the files changed in the pull request are checked unless you set `files-changed-only: false`,
 and `lines-changed-only: true` drops clang-tidy findings outside the changed lines. That is how a
 strict `.clang-tidy` becomes usable on a code base that has never run it.
 
-The `version` input picks the clang tools: an LLVM major version that
-[clang-tools](https://github.com/cpp-linter/clang-tools-pip) can install, a path to tools you
-installed yourself, or an empty string for whatever the runner already has. The
-[input reference](https://cpp-linter.github.io/cpp-linter-action/inputs-outputs/#version) has the
-details. The action installs the tools itself on ubuntu, macOS and Windows runners, so there is no
-Docker image to build before the first result.
+The `version` input picks the clang tools: an LLVM major version from 12 to 23 (the default is
+`21`), a path to tools you installed yourself, or an empty string for whatever the runner already
+has. The [input reference](https://cpp-linter.github.io/cpp-linter-action/inputs-outputs/#version)
+has the details. The action installs the tools itself, with apt on Linux, Homebrew on macOS and the
+[clang-tools](https://github.com/cpp-linter/clang-tools-pip) static binaries on Windows, so there
+is no Docker image to build before the first result.
 
-The same two tools run outside CI from the same project: as pre-commit hooks through
-[cpp-linter-hooks](https://github.com/cpp-linter/cpp-linter-hooks) with the same `--version` pin,
-from any script through the [cpp-linter](https://pypi.org/project/cpp-linter/) CLI, and on a laptop
-through `clang-tools`.
+The same tools run outside the action too. The pre-commit hooks in
+[cpp-linter-hooks](https://github.com/cpp-linter/cpp-linter-hooks) take the same version number
+(the clang-tidy hook covers LLVM 13 to 22). The [cpp-linter](https://pypi.org/project/cpp-linter/)
+CLI runs from a script or another CI system; it expects the clang tools to be installed already
+and exits 0 even when checks fail. On a laptop, `clang-tools` installs the binaries.
 
 ## How it compares
 
-Checked on 2026-09-12 against each project's current README and `action.yml`. Follow the header
-links to verify a cell. ✓ yes · ✗ no · — not applicable.
+Checked on 2026-09-24 against each project's current README, `action.yml` and source. Follow the
+header links to verify a cell. ✓ yes · ✗ no · — not applicable.
 
 <!-- markdownlint-disable MD013 MD033 -->
 
+<div class="compare" markdown>
+
 | | [cpp-linter-action](https://github.com/cpp-linter/cpp-linter-action) | [jidicula/<br>clang-format-action](https://github.com/jidicula/clang-format-action) | [DoozyX/<br>clang-format-lint-action](https://github.com/DoozyX/clang-format-lint-action) | [ZedThree/<br>clang-tidy-review](https://github.com/ZedThree/clang-tidy-review) | [platisd/<br>clang-tidy-pr-comments](https://github.com/platisd/clang-tidy-pr-comments) | [JacobDomagala/<br>StaticAnalysis](https://github.com/JacobDomagala/StaticAnalysis) | [pre-commit/<br>mirrors-clang-format](https://github.com/pre-commit/mirrors-clang-format) |
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Runs clang-format | ✓ | ✓ check only | ✓ check or fix | ✗ | ✗ | ✗ | ✓ fix |
+| Runs clang-format | ✓ check, or fix with `auto-fix` | ✓ check only | ✓ check or fix | ✗ | ✗ | ✗ | ✓ fix |
 | Runs clang-tidy | ✓ | ✗ | ✗ | ✓ | ✗ (reads your `-export-fixes` YAML) | ✓ plus cppcheck | ✗ |
 | PR review with suggested fixes | ✓ | ✗ | ✗ | ✓ | ✓ | ✗ | — |
-| File annotations | ✓ | ✗ | ✗ | ✓ (10 max) | ✗ | ✗ | — |
+| File annotations | ✓ (10 per step) | ✗ | ✗ | ✓ instead of the review (10 max) | ✗ | ✗ | — |
 | Thread comment, updated per push | ✓ | ✗ | ✗ | LGTM only | ✗ | ✓ | — |
-| Job step summary | ✓ | on failure | ✗ | ✗ | ✗ | ✗ | — |
+| Job step summary | ✓ | on failure | ✗ | timings only | ✗ | ✗ | — |
+| Reviews or comments on fork PRs | annotations only | — | — | ✓ split workflow | ✓ `workflow_run` | ✓ `pull_request_target` | — |
 | Only changed files / lines | ✓ both | ✗ | ✗ | ✓ diff | changed lines only | ✓ lines | staged files |
-| Choose the LLVM version | [major, path or runner default](https://cpp-linter.github.io/cpp-linter-action/inputs-outputs/#version) | 3–22 | 5–20 | 14, 17–21 | — | ✗ | via `rev` |
+| Choose the LLVM version | [12–23, a path, or the runner's](https://cpp-linter.github.io/cpp-linter-action/inputs-outputs/#version) | 3–22 | 5–20 | 14, 17–21 | — | ✗ | via `rev` |
 | Installs the tools itself | ✓ | Docker run | Docker | Docker (2–3 min build) | ✗ | Docker | ✓ wheel |
-| Runners | ubuntu, macOS, Windows | ubuntu only | Linux (Docker) | Linux (Docker) | unclear | Linux (Docker) | — |
+| Runners | Linux, macOS, Windows | Linux (Docker) | Linux (Docker) | Linux (Docker) | Linux | Linux (Docker) | — |
 | Compilation database input | ✓ `database` | — | — | ✓ `build_dir` | — | ✓ | — |
 | pre-commit hook from the same project | ✓ cpp-linter-hooks | ✗ | ✗ | ✗ | ✗ | ✗ | is one |
+
+</div>
 
 <!-- markdownlint-enable MD013 MD033 -->
 
@@ -68,19 +82,17 @@ through it.
 
 ## When another tool is the better fit
 
-If all you want is a red check when formatting is off, jidicula/clang-format-action is one input
-and one script. cpp-linter can be configured the same way with `tidy-checks: '-*'` and
-`file-annotations: false`, but it is not smaller. If you already run clang-tidy in your own build
-job and only want its YAML turned into review comments, platisd/clang-tidy-pr-comments does exactly
-that step, and nothing else.
+If all you want is a red check when formatting is off, jidicula/clang-format-action is a single
+step with no required inputs. cpp-linter-action does the same with `tidy-checks: '-*'` plus a step
+that fails on `checks-failed` (see below), but it is not smaller. If you already run clang-tidy in
+your own build job and only want its YAML turned into review comments,
+platisd/clang-tidy-pr-comments does exactly that step, and nothing else.
 
-cpp-linter does not run cppcheck; JacobDomagala/StaticAnalysis runs it next to clang-tidy. For
-fixes committed straight back to the pull request, DoozyX's README shows an `inplace` plus
-commit-action recipe. cpp-linter-action has an `auto-fix` option
-[in review](https://github.com/cpp-linter/cpp-linter-action/pull/443), and until it ships the
-`format-review` suggestions are one click from the same result. If you lint many languages through
-one framework, reviewdog or MegaLinter fit better, with the `cpp-linter` CLI as the C/C++ step if
-you want it.
+cpp-linter does not run cppcheck; JacobDomagala/StaticAnalysis runs it next to clang-tidy. If most
+pull requests come from forks, clang-tidy-review's split workflow or clang-tidy-pr-comments'
+`workflow_run` recipe can post reviews on them, while cpp-linter-action shows annotations only. If
+you lint many languages through one framework, reviewdog or MegaLinter fit better; neither ships
+clang-tidy support, and MegaLinter's C/C++ linters are clang-format, cpplint and cppcheck.
 
 ## Migrating
 
@@ -102,15 +114,16 @@ you want it.
     version: '21'
     style: file            # .clang-format
     tidy-checks: '-*'      # keep it format-only for now
-    ignore: 'third_party'  # paths to skip, separated by |
+    ignore: '|!src'        # check only src/, like check-path
 - if: steps.linter.outputs.checks-failed > 0
   run: exit 1
 ```
 
-`check-path` scanned a whole directory on every run; cpp-linter checks the files changed in the
-pull request by default, and `files-changed-only: false` restores the whole-tree behaviour. Drop
-`tidy-checks: '-*'` when you are ready to add `clang-tidy`; with `tidy-checks: ''` the action
-reads `.clang-tidy`. Set `format-review: true` to turn findings into review suggestions.
+`check-path` scanned all of `src` on every run; cpp-linter checks only the files the pull request
+changes, and `files-changed-only: false` checks every file the `ignore` filter lets through. When
+you are ready for clang-tidy, change the line to `tidy-checks: ''` so only your `.clang-tidy`
+applies (removing the line adds the action's default checks). `format-review: true` turns findings
+into review suggestions and needs `pull-requests: write`.
 
 ### From ZedThree/clang-tidy-review
 
@@ -132,11 +145,13 @@ reads `.clang-tidy`. Set `format-review: true` to turn findings into review sugg
     tidy-checks: ''        # .clang-tidy
     style: file            # .clang-format, or '' to skip clang-format
     tidy-review: true
+    passive-reviews: true  # comment, don't request changes
     lines-changed-only: true
 ```
 
-The review comments land in the same job, without the separate post step and without waiting for
-a Docker image to build.
+The review comes from the same step, without waiting for a Docker image to build, and a new one
+is posted on each push. Keep `pull-requests: write` on the job. Pull requests from forks get
+annotations only; if most of yours come from forks, stay with the split workflow.
 
 ### From pre-commit/mirrors-clang-format
 
@@ -154,16 +169,17 @@ a Docker image to build.
     - id: clang-format
       args: [--style=file, --version=21]
     - id: clang-tidy
-      args: [--checks=.clang-tidy, --version=21]
+      args: [--version=21]
 ```
 
-`--version` pins the tool independently of the hooks release, so updating `rev` never changes
-which clang-format formats your code. The `clang-tidy` hook is optional; it auto-detects
-`compile_commands.json` in common build directories.
+`--version=21` installs the newest 21.x wheel on PyPI whatever the hooks `rev` is; write
+`--version=21.1.0` to keep exactly what the mirror pinned. The `clang-tidy` hook is optional; it
+auto-detects `compile_commands.json` in common build directories. The clang-format hook only runs
+on C and C++ files, so keep the mirror if you also format CUDA, Objective-C, proto, Java or JSON.
 
 ## Next steps
 
 - [Getting started](getting-started.md) lists every integration and how to install the tools.
-- [Who uses cpp-linter](showcase.md) shows projects that made the switch.
+- [Who uses cpp-linter](showcase.md) lists open-source projects that run it.
 - The [cpp-linter-action docs](https://cpp-linter.github.io/cpp-linter-action/) describe every
   input, output and permission.

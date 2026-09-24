@@ -18,7 +18,7 @@ authors:
 # Set up a clang-format pre-commit hook for C and C++
 
 Formatting comments are the cheapest part of a code review to get rid of. A pre-commit hook runs
-clang-format on the files in each commit, so badly formatted code never reaches a pull request,
+clang-format on the files in each commit, so badly formatted code rarely reaches a pull request,
 and CI stops failing for a missing space.
 
 With the [pre-commit](https://pre-commit.com/) framework, nobody on the team has to install LLVM,
@@ -154,6 +154,9 @@ git add .git-blame-ignore-revs
 git commit -m "chore: ignore the reformat commit in git blame"
 ```
 
+If the reformat reaches the default branch through a squash or rebase merge, it gets a new SHA
+there. Record that one in `.git-blame-ignore-revs` after the merge.
+
 `.git-blame-ignore-revs` keeps `git blame` useful: lines are attributed to the commit that last
 changed their content, not to the reformat. GitHub's blame view reads the file automatically.
 Locally, each clone needs:
@@ -170,8 +173,9 @@ and announce it. After resolving the conflicts, a branch author runs
 Ask contributors to put the formatting change in a separate commit from the logic change, so
 reviewers can skip it. The code base converges more slowly and the noisy diffs last longer.
 
-To format only the changed lines, use `git clang-format`, which ships with LLVM. It does not run
-through the pre-commit framework.
+To format only the changed lines, use `git clang-format`, which ships with LLVM and with the
+`clang-format` wheel (`pip install clang-format==21.1.8`). It does not run through the pre-commit
+framework.
 
 ## Step 6: Enforce it in CI
 
@@ -189,7 +193,7 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - run: pipx run pre-commit run --all-files --show-diff-on-failure
 ```
 
@@ -212,11 +216,30 @@ index b9e228e..1f76448 100644
 +int add(int a, int b) { return a + b; }
 ```
 
+`--all-files` suits the reformat-once option. If you format as you go, it keeps CI red until the
+whole tree is formatted, so check only the files the pull request changes:
+
+```yaml title=".github/workflows/pre-commit.yml (format as you go)"
+name: pre-commit
+on:
+  pull_request:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - run: pipx run pre-commit run --from-ref origin/${{ github.base_ref }} --to-ref HEAD --show-diff-on-failure
+```
+
 If you would rather have the fix offered in the pull request, use
-[cpp-linter-action](https://cpp-linter.github.io/cpp-linter-action/) with `format-review: true`
-and the same `version`. It posts the formatting differences as review suggestions that can be
-committed from the browser.
-[Moving to cpp-linter](2026-09-12-moving-to-cpp-linter.md) has a complete workflow.
+[cpp-linter-action](https://cpp-linter.github.io/cpp-linter-action/) with the same `version`. It
+checks only the files the pull request changes, and it can post the formatting differences as
+review suggestions (`format-review: true`) or commit the fixes to the pull request branch
+(`auto-fix: true`, which needs `contents: write` and works for pull requests from the same
+repository). [Moving to cpp-linter](2026-09-12-moving-to-cpp-linter.md) has a complete workflow.
 
 ## Troubleshooting
 
@@ -225,7 +248,7 @@ committed from the browser.
 | The hook "fails" on every commit that needs formatting | It fixed the files and stopped the commit. `git add` them and commit again. |
 | Formatting differs between two machines | Someone formats with another clang-format version, for example from an editor plugin or a system package. Point the editor at the same version, for example `pip install clang-format==21.1.8`. See [One clang-format version everywhere](2026-09-12-one-clang-version-everywhere.md). |
 | `Could not find any stable versions of clang-format on PyPI` | The hook looks the version up on pypi.org each time it runs, so it needs network access. |
-| `Unsupported clang-format version '...'` | There is no wheel for that version. The message lists the available ones. |
+| `Unsupported clang-format version '...'` | There is no wheel for that version. The message shows some of the available versions and the command that lists them all. |
 | Vendored or generated code gets reformatted | Exclude it; see step 4. |
 | One block must keep its manual layout | Wrap it in `// clang-format off` and `// clang-format on`. |
 | You need to commit without the hook once | `SKIP=clang-format git commit ...` skips this hook only; `git commit --no-verify` skips all hooks. CI still checks the result. |
@@ -236,12 +259,14 @@ The same repository provides a `clang-tidy` hook:
 
 ```yaml title=".pre-commit-config.yaml"
       - id: clang-tidy
-        args: [--checks=.clang-tidy, --version=21]
+        args: [--version=21]
 ```
 
-clang-tidy needs a `compile_commands.json` to find your headers, which the hook picks up from
-`build/` and a few other common directories. It is also much slower than clang-format, because it
-parses every header a file includes. We suggest keeping clang-format in the hook and running
+clang-tidy reads `.clang-tidy` by itself. Its wheels are released separately from the
+clang-format ones, so an exact pin such as `21.1.8` may not exist for clang-tidy; give it the major
+version. clang-tidy needs a `compile_commands.json` to find your headers, which the hook picks up
+from `build/` and a few other common directories. It is also much slower than clang-format, because
+it parses every header a file includes. We suggest keeping clang-format in the hook and running
 clang-tidy in CI.
 
 ## Where to go next

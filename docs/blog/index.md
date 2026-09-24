@@ -1,3 +1,7 @@
+---
+description: Guides to running clang-format and clang-tidy with cpp-linter.
+---
+
 # Blog
 
-News, updates, and resources from the cpp-linter organization.
+Guides to running clang-format and clang-tidy with cpp-linter.
