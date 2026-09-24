@@ -94,6 +94,7 @@ plugins:
         - Announcements
 
 extra_css:
+  - stylesheets/shared.css
   - stylesheets/extra.css
 
 edit_uri_template: https://github.com/cpp-linter/cpp-linter.github.io/edit/main/docs/{path}
