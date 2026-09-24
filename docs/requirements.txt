@@ -1,4 +1,4 @@
 markdown-gfm-admonition
-mkdocs
+mkdocs-ng
+mkdocs-ng-material
 mkdocs-include-markdown-plugin
-mkdocs-material
