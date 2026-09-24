@@ -1,0 +1,31 @@
+docs/index.md
+  s_0da9b18608c2a0::t_0b87dc7cd91b49 8
+docs/overrides/home.html
+  s_0da9b18608c2a0::t_bb8cf7d8b8236b 5,81-86,96-97,101,116-118,121-122,150,156,161-162,168-169,179,199-202,209,212-216,222,225,239-241,253,258,260,264-265,270-272,275-276,287,293,299-301,312,317,323-324,337,349,352,372,379,387-388,408,433
+docs/overrides/main.html
+  s_0da9b18608c2a0::t_4bc774fb2cb8bc 1-15
+docs/showcase.md
+  s_0da9b18608c2a0::t_919f5994a4b8f2 11-12,18-20
+docs/stylesheets/extra.css
+  s_0da9b18608c2a0::t_634ad1791dfc1e 73-76,79-84,87-161
+docs/stylesheets/home.css
+  s_0da9b18608c2a0::t_b6d46121372078 787-792,796,799-805,819,1013,1227,1232-1235
+mkdocs.yml
+  s_0da9b18608c2a0::t_4f5afa42953fe6 34-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "632877e6c2707affda3a3443f25863827ffc2e50",
+  "prompts": {},
+  "sessions": {
+    "s_0da9b18608c2a0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c1ae0c79-9ddb-4e6b-a8e1-2213cfd3c2b6",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Xianpeng Shen <xianpeng.shen@gmail.com>"
+    }
+  }
+}
