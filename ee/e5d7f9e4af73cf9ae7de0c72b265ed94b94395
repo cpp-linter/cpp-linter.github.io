@@ -1,0 +1,37 @@
+README.md
+  s_0da9b18608c2a0::t_7dfb4fa6a5e624 42-43
+docs/fonts/OFL-bricolage-grotesque.txt
+  s_0da9b18608c2a0::t_f41b5902c6a3c6 1-93
+docs/fonts/OFL-instrument-sans.txt
+  s_0da9b18608c2a0::t_0029dca8583ebe 1-93
+docs/fonts/OFL-jetbrains-mono.txt
+  s_0da9b18608c2a0::t_853a11664f39fd 1-93
+docs/overrides/main.html
+  s_0da9b18608c2a0::t_9c98868af70450 4-9,14-15
+docs/stylesheets/shared.css
+  s_b586be21c5e5c9::t_1596c477179824 8-9,12-114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "eee5d7f9e4af73cf9ae7de0c72b265ed94b94395",
+  "prompts": {},
+  "sessions": {
+    "s_0da9b18608c2a0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c1ae0c79-9ddb-4e6b-a8e1-2213cfd3c2b6",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Xianpeng Shen <xianpeng.shen@gmail.com>"
+    },
+    "s_b586be21c5e5c9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "be4091c1-c568-4c69-8d27-68afc4e03361",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Xianpeng Shen <xianpeng.shen@gmail.com>"
+    }
+  }
+}
