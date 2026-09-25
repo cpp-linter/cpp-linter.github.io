@@ -1,0 +1,23 @@
+README.md
+  s_240b8d40d061ae::t_079fbbcf84a0cf 41
+docs/overrides/main.html
+  s_240b8d40d061ae::t_a8a4efaf058e66 6-9
+docs/stylesheets/shared.css
+  s_240b8d40d061ae::t_d32afcc54a0d53 5-9,12-13,133-347
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "63076a1039b67db118f2349eda68683e688927bb",
+  "prompts": {},
+  "sessions": {
+    "s_240b8d40d061ae": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d4747621-aab3-47e2-b1b5-64d1c75978db",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Xianpeng Shen <xianpeng.shen@gmail.com>"
+    }
+  }
+}
