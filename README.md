@@ -38,5 +38,6 @@ without updating those repositories:
 
 - `docs/stylesheets/shared.css`, served at <https://cpp-linter.github.io/stylesheets/shared.css>,
   is loaded by the docs sites of cpp-linter-action, cpp-linter, clang-tools-pip and cpp-linter-rs.
+  It carries the site's look (colors, header, fonts), so a change to it changes all of them.
 - `docs/install-wheel.sh`, served at <https://cpp-linter.github.io/install-wheel.sh>, is used by
   the clang-tools-wheel README and its release workflow.

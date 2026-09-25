@@ -3,8 +3,10 @@
 {#-
   The site's fonts, loaded on every page: Instrument Sans for text,
   JetBrains Mono for code and Bricolage Grotesque for headings. theme.font is
-  false in mkdocs.yml, so Material loads nothing itself; extra.css points
-  Material's font variables at these.
+  false in mkdocs.yml, so Material loads nothing itself; shared.css points
+  Material's font variables at these. shared.css imports the same URL for the
+  other docs sites; linking it here too lets the home page fetch the fonts
+  without waiting for that stylesheet.
 -#}
 
 {% block extrahead %}
