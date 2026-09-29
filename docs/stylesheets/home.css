@@ -254,6 +254,15 @@
         border-radius: 12px 12px 0 0;
     }
 
+    /*
+     * Closed, the form is a 44px button, but the input and the suggestion
+     * layer keep Material's padding and are 88px wide. Clip them so they do
+     * not cover the GitHub button next to it.
+     */
+    [data-md-toggle="search"]:not(:checked) ~ .cl-header .md-search__form {
+        overflow: hidden;
+    }
+
     .cl-header .md-search__input {
         color: var(--cl-ink);
         font-family: var(--cl-text);
