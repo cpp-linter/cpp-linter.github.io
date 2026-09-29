@@ -1,6 +1,6 @@
 ---
 date:
-  created: 2026-09-20
+  created: 2026-09-29
 slug: clang-tidy-github-actions-pull-requests
 description: >-
   Run clang-tidy on every pull request with GitHub Actions: generate compile_commands.json,
