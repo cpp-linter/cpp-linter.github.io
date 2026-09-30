@@ -1,0 +1,21 @@
+docs/overrides/home.html
+  s_09263517f50e31::t_9f6392db0e58c9 78,102,135
+docs/stylesheets/home.css
+  s_09263517f50e31::t_9d723a3fab8f23 964-1095
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "0ba6cf9d2541a2eb22de7a4e9bc4d9f0f210ac99",
+  "prompts": {},
+  "sessions": {
+    "s_09263517f50e31": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "f7df82d8-ca11-461d-89dd-b523c84d7f5d",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Xianpeng Shen <xianpeng.shen@gmail.com>"
+    }
+  }
+}
