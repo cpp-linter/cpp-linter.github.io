@@ -164,7 +164,7 @@ annotations only; if most of yours come from forks, stay with the split workflow
 
 ```yaml title="After"
 - repo: https://github.com/cpp-linter/cpp-linter-hooks
-  rev: v1.6.0
+  rev: v1.6.1
   hooks:
     - id: clang-format
       args: [--style=file, --version=21]
