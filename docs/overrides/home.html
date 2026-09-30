@@ -147,7 +147,7 @@
     {% set tools = [
       {
         "title": "On every pull request", "name": "cpp-linter-action", "icon": "octicons/git-pull-request-24",
-        "text": "Annotates findings on the pull request. Pass GITHUB_TOKEN with pull-requests: write to add a summary comment or review suggestions. Linux, macOS and Windows runners.",
+        "text": "Annotates findings on the pull request. Pass GITHUB_TOKEN with pull-requests: write to add thread comments or pull request reviews. Linux, macOS and Windows runners.",
         "code": "uses: cpp-linter/cpp-linter-action@v2",
         "href": "https://cpp-linter.github.io/cpp-linter-action/", "cta": "Read the docs",
       },
@@ -238,20 +238,9 @@
         <div class="cl-head">
           <p class="cl-eyebrow">What reviewers see</p>
           <h2 class="cl-h2">Results show up on the pull request</h2>
-          <p class="cl-sub">Annotations are on by default. Review suggestions, a summary comment and auto-fix each take one input plus write access for the job.</p>
+          <p class="cl-sub">Annotations are on by default and each of the others takes one input. Thread comments, pull request reviews and auto-fix also need write access for the job; the step summary shows on the workflow run.</p>
         </div>
         <div class="cl-outcomes">
-          <article class="cl-outcome">
-            <div class="cl-outcome__art" aria-hidden="true">
-              <div class="cl-mini cl-diff cl-diff--roomy">
-                <div class="cl-diff__line cl-diff__line--del"><span class="cl-diff__mark">−</span><span class="cl-diff__code">int* p=0;</span></div>
-                <div class="cl-diff__line cl-diff__line--fix"><span class="cl-diff__mark">+</span><span class="cl-diff__code">int *p = nullptr;</span></div>
-              </div>
-              <span class="cl-fake-btn cl-fake-btn--primary cl-fake-btn--end">Commit suggestion</span>
-            </div>
-            <h3 class="cl-h3">Suggestions you can commit</h3>
-            <p>Set format-review or tidy-review and fixes for lines in the diff arrive as review suggestions. Needs pull-requests: write, so pull requests from forks get annotations only.</p>
-          </article>
           <article class="cl-outcome">
             <div class="cl-outcome__art" aria-hidden="true">
               <div class="cl-mini cl-diff cl-diff--roomy">
@@ -261,8 +250,11 @@
               </div>
               <p class="cl-annotation"><span class="cl-ico cl-ico--warn">{% include ".icons/octicons/alert-16.svg" %}</span><span><strong>Line 18</strong> · readability-braces-around-statements</span></p>
             </div>
-            <h3 class="cl-h3">Notes in the diff</h3>
-            <p>clang-tidy findings in the checked file are annotated on their line (GitHub shows up to 10 warnings per step), and clang-format adds one note per file. Annotations need no write access, so they also work on pull requests from forks.</p>
+            <div class="cl-outcome__title">
+              <h3 class="cl-h3">Annotations</h3>
+              <code class="cl-inline-code">file-annotations</code>
+            </div>
+            <p>On by default. clang-tidy findings in the checked file are annotated on their line (GitHub shows up to 10 warnings per step), and clang-format adds one note per file. Annotations need no write access, so they also work on pull requests from forks.</p>
           </article>
           <article class="cl-outcome">
             <div class="cl-outcome__art" aria-hidden="true">
@@ -272,8 +264,55 @@
                 <p class="cl-summary__tags"><span class="cl-tag cl-tag--warn">clang-tidy (v21.1.0) reports: 2 concern(s)</span></p>
               </div>
             </div>
-            <h3 class="cl-h3">One summary comment</h3>
+            <div class="cl-outcome__title">
+              <h3 class="cl-h3">Thread Comment</h3>
+              <code class="cl-inline-code">thread-comments</code>
+            </div>
             <p>Set thread-comments: update and one comment lists the results, edited on each push while there are findings. It is posted by github-actions[bot] or your own App, and needs pull-requests: write, so it fails on pull requests from forks.</p>
+          </article>
+          <article class="cl-outcome">
+            <div class="cl-outcome__art" aria-hidden="true">
+              <div class="cl-mini cl-summary">
+                <p class="cl-summary__head"><strong>cpp-linter summary</strong></p>
+                <p class="cl-summary__report"><strong>Cpp-Linter Report</strong> Some files did not pass the configured checks!</p>
+                <p class="cl-summary__tags"><span class="cl-tag cl-tag--warn">clang-format (v21.1.0) reports: 1 file(s) not formatted</span></p>
+              </div>
+            </div>
+            <div class="cl-outcome__title">
+              <h3 class="cl-h3">Step Summary</h3>
+              <code class="cl-inline-code">step-summary</code>
+            </div>
+            <p>Set step-summary: true and the same report is added to the job summary of the workflow run. It needs no write access, so it also works on pull requests from forks and in private repositories, where thread comments are turned off.</p>
+          </article>
+          <article class="cl-outcome">
+            <div class="cl-outcome__art" aria-hidden="true">
+              <p class="cl-annotation"><span><strong>clang-tidy diagnostics</strong> · use nullptr [modernize-use-nullptr]</span></p>
+              <div class="cl-mini cl-diff cl-diff--roomy">
+                <div class="cl-diff__line cl-diff__line--del"><span class="cl-diff__mark">−</span><span class="cl-diff__code">int *p = 0;</span></div>
+                <div class="cl-diff__line cl-diff__line--fix"><span class="cl-diff__mark">+</span><span class="cl-diff__code">int *p = nullptr;</span></div>
+              </div>
+              <span class="cl-fake-btn cl-fake-btn--primary cl-fake-btn--end">Commit suggestion</span>
+            </div>
+            <div class="cl-outcome__title">
+              <h3 class="cl-h3">Pull Request Review</h3>
+              <code class="cl-inline-code">tidy-review</code>
+            </div>
+            <p>Set tidy-review: true and clang-tidy's fixes for lines in the diff are posted in a pull request review, as suggested changes under each diagnostic. Needs pull-requests: write, so pull requests from forks get annotations only.</p>
+          </article>
+          <article class="cl-outcome">
+            <div class="cl-outcome__art" aria-hidden="true">
+              <p class="cl-annotation"><span><strong>clang-format suggestion</strong></span></p>
+              <div class="cl-mini cl-diff cl-diff--roomy">
+                <div class="cl-diff__line cl-diff__line--del"><span class="cl-diff__mark">−</span><span class="cl-diff__code">int* p=nullptr;</span></div>
+                <div class="cl-diff__line cl-diff__line--fix"><span class="cl-diff__mark">+</span><span class="cl-diff__code">int *p = nullptr;</span></div>
+              </div>
+              <span class="cl-fake-btn cl-fake-btn--primary cl-fake-btn--end">Commit suggestion</span>
+            </div>
+            <div class="cl-outcome__title">
+              <h3 class="cl-h3">Pull Request Review</h3>
+              <code class="cl-inline-code">format-review</code>
+            </div>
+            <p>Set format-review: true and clang-format's fixes for lines in the diff are posted in a pull request review, as suggested changes you commit in one click. Same permission as tidy-review.</p>
           </article>
           <article class="cl-outcome">
             <div class="cl-outcome__art" aria-hidden="true">
@@ -287,7 +326,8 @@
               <p class="cl-annotation"><code class="cl-inline-code">auto-fix: true</code> plus <code class="cl-inline-code">contents: write</code></p>
             </div>
             <div class="cl-outcome__title">
-              <h3 class="cl-h3">Fixes pushed for you</h3>
+              <h3 class="cl-h3">Auto-fix</h3>
+              <code class="cl-inline-code">auto-fix</code>
               <span class="cl-badge-new">New in v2.23</span>
             </div>
             <p>Set auto-fix: true and give the job contents: write, and the clang-format fixes are committed to the branch of a same-repository pull request, by default under the name of whoever triggered the run.</p>

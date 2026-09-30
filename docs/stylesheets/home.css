@@ -1186,6 +1186,11 @@
     gap: 12px;
 }
 
+/* the action input beside each card title */
+.cl-outcome__title .cl-inline-code {
+    font-size: 13px;
+}
+
 .cl-mini {
     overflow: hidden;
     background: #fff;
