@@ -1,0 +1,29 @@
+docs/blog/posts/2026-09-12-one-clang-version-everywhere.md
+  s_0da9b18608c2a0::t_d9e05890d8b77b 56
+docs/why-cpp-linter.md
+  s_0da9b18608c2a0::t_d9e05890d8b77b 167
+docs/blog/posts/2026-09-20-clang-format-pre-commit-hook.md
+  s_0da9b18608c2a0::t_d9e05890d8b77b 57
+docs/blog/posts/2026-09-12-moving-to-cpp-linter.md
+  s_0da9b18608c2a0::t_d9e05890d8b77b 148
+docs/blog/posts/2026-09-20-clang-tidy-pull-requests-github-actions.md
+  s_0da9b18608c2a0::t_d9e05890d8b77b 250
+docs/getting-started.md
+  s_0da9b18608c2a0::t_d9e05890d8b77b 74
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d3d92de3b6e9e1ff2a4ce4ee735c7b442b09cc47",
+  "prompts": {},
+  "sessions": {
+    "s_0da9b18608c2a0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c1ae0c79-9ddb-4e6b-a8e1-2213cfd3c2b6",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Xianpeng Shen <xianpeng.shen@gmail.com>"
+    }
+  }
+}
