@@ -107,8 +107,11 @@ language standard of the real build. It reads them from a compilation database,
 
 Two things commonly go wrong here:
 
-- **Third-party dependencies.** If the configure step runs `find_package(Foo)`, install
-  `libfoo-dev` (or restore your vcpkg/Conan cache) before it, exactly as your build job does.
+- **Third-party libraries.** clang-tidy finds a library's headers only through the `-I` paths
+  the compiler gets for each file, and it reads those from the database. Install the library
+  before the configure step, as your build job does (`libfoo-dev`, or your vcpkg or Conan cache),
+  so `find_package(Foo)` succeeds and its include paths are recorded. Without a build system, add
+  the paths to `extra-args` yourself, for example `-Ithird_party/fmt/include`.
 - **Generated headers.** Protobuf output, `config.h` and similar files only exist after the build
   step that produces them. Build those targets before running clang-tidy.
 
