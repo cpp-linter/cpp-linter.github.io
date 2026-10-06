@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{#-
+  The site's fonts are self-hosted in docs/fonts and declared in shared.css:
+  Instrument Sans for text, JetBrains Mono for code and Bricolage Grotesque for
+  headings. theme.font is false in mkdocs.yml, so Material loads nothing itself.
+  Preloading the latin files for text and headings lets the browser fetch them
+  while it is still reading the stylesheets. The URLs must match the ones in
+  shared.css, and crossorigin is required for fonts even on the same origin.
+-#}
+
+{% block extrahead %}
+  {{ super() }}
+  <link rel="preload" href="{{ 'fonts/instrument-sans-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ 'fonts/bricolage-grotesque-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+{% endblock %}

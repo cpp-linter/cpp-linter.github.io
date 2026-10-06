@@ -1,255 +1,48 @@
-th {
-    background-color: var(--md-default-fg-color--lightest);
-}
-
-:root > * {
-    --cpp-linter-logo-color-green: #40b385;
-    --cpp-linter-logo-color-yellow: #ffc20a;
-}
-
-/* Hero section styling */
-.hero {
-    text-align: center;
-    padding: 4rem 0;
-    background: var(--md-primary-fg-color);
-    color: var(--md-primary-bg-color);
-}
-
-.hero h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    text-align: center;
-    color: unset;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    width: 65%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero .twemoji {
-	--md-icon-size: 1.125em;
-	display: inline-flex;
-	height: var(--md-icon-size);
-	vertical-align: text-top;
-}
-
-.hero .md-button {
-    background: var(--cpp-linter-logo-color-yellow);
-    color: black;
-    border: none;
-    border-radius: unset;
-    display: inline-block;
-}
-
-.hero .md-button:hover {
-    background: var(--cpp-linter-logo-color-green);
-    color: black;
-    border: none;
-}
-
-.md-typeset .md-button:hover {
-    color: black;
-}
-
-/* Card enhancements */
-.md-typeset .grid.cards > .card-content {
-    background: var(--md-default-bg-color);
-    border: 1px solid var(--md-default-fg-color--lightest);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.md-typeset .grid.cards > .card-content:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    border-color: var(--md-primary-fg-color);
-}
-
-/* Community section styling */
-.community-section {
-    background: var(--md-default-fg-color--lightest);
-    padding: 3rem 2rem;
-    margin: 3rem -1.5rem 0 -1.5rem;
-    text-align: center;
-    border-radius: 1rem 1rem 0 0;
-}
-
-.community-section h2 {
-    color: var(--md-primary-fg-color);
-    margin-bottom: 1rem;
-}
-
-/* Code block enhancements */
-.md-typeset pre > code {
-    border-radius: 0.5rem;
-}
-
-/* Button styling improvements */
-.md-button {
-    border-radius: 2rem;
-    padding: 0.5rem 1.5rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.md-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* Trusted by section styling */
-.trusted-by {
-    text-align: center;
-    padding: 3rem 0;
-    background: var(--md-default-fg-color--lightest);
-    margin: 3rem -1.5rem;
-    border-radius: 1rem;
-}
-
-.trusted-by p {
-    font-size: 1.1rem;
-    color: var(--md-default-fg-color--light);
-    margin-bottom: 2rem;
-}
-
-.logo-grid {
+/* Merchandise page styling */
+.image-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    margin-bottom: 3rem;
-    padding: 0 2rem;
+    margin: 2rem 0;
 }
 
-.logo-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.3s ease;
-    padding: 1rem;
-    border-radius: 0.5rem;
+.image-grid img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.logo-item:hover {
-    transform: translateY(-4px);
-    background: var(--md-default-bg-color);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+.image-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
 }
 
-.logo-item img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 0.5rem;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-}
-
-.logo-item:hover img {
-    filter: grayscale(0%);
-}
-
-.logo-item span {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--md-default-fg-color--light);
-}
-
-/* Mobile responsiveness for trusted by section */
-@media screen and (max-width: 768px) {
-    .logo-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        padding: 0 1rem;
-    }
-
-
-}
-
-/* Ensure tab items have proper contrast */
-.md-tabs__item {
-    background-color: transparent;
-}
-
-.md-tabs__link {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.md-tabs__link--active,
-.md-tabs__link:hover {
-    color: white;
-}
-
-@media screen and (max-width: 76.2344em) {
-    .md-nav--primary .md-nav__title[for="__drawer"] {
-        background-color: #4051b5;
+/* Pages without the left navigation keep their text at a readable width */
+@media screen and (min-width: 76.25em) {
+    .md-sidebar--primary[hidden] ~ .md-content {
+        max-width: 42rem;
     }
 }
 
-.md-typeset .admonition.important,
-.md-typeset details.important {
-    border-color: #00b8d4;
+/* The comparison table on the why page and the size chart on the sponsor page:
+ * narrow columns so they fit that width */
+.md-typeset .compare table:not([class]) th,
+.md-typeset .size-chart table:not([class]) th {
+    min-width: 0;
 }
 
-.md-typeset .important>.admonition-title::before,
-.md-typeset .important>summary::before {
-    background-color: #00b8d4;
-    -webkit-mask-image: var(--md-admonition-icon--info);
-    mask-image: var(--md-admonition-icon--info);
+.md-typeset .compare table:not([class]) {
+    font-size: 0.62rem;
 }
 
-.md-typeset .important>.admonition-title,
-.md-typeset .important>summary {
-    background-color: #00b8d41a;
+.md-typeset .compare table:not([class]) th,
+.md-typeset .compare table:not([class]) td {
+    padding: 0.75em 0.6em;
 }
 
-.md-banner {
-    color: var(--md-footer-fg-color--lighter)
-}
-
-.md-banner strong {
-    white-space: nowrap
-}
-
-.md-banner a,
-.md-banner strong {
-    color: var(--md-footer-fg-color)
-}
-
-.md-banner a:focus,
-.md-banner a:hover {
-    color: currentcolor
-}
-
-.md-banner a:focus .twemoji,
-.md-banner a:hover .twemoji {
-    background-color: var(--md-footer-fg-color);
-    box-shadow: none
-}
-
-.md-banner .twemoji {
-    border-radius: 100%;
-    box-shadow: inset 0 0 0 .05rem currentcolor;
-    display: inline-block;
-    height: 1.2rem;
-    padding: .25rem;
-    transition: all .25s;
-    vertical-align: bottom;
-    width: 1.2rem
-}
-
-.md-banner .twemoji svg {
-    display: block;
-    max-height: none
-}
-
-a.md-annotation__index {
-    border-radius: 2.2ch;
+.md-typeset .compare table:not([class]) td:first-child {
+    font-weight: 600;
 }
