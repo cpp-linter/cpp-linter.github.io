@@ -1,0 +1,67 @@
+.github/workflows/deploy.yml
+  s_b3aadf4812adc9::t_b28f10f9ab6300 13,18,47
+.pre-commit-config.yaml
+  s_b3aadf4812adc9::t_4c6ebd9450acf7 1-6,17
+README.md
+  s_b3aadf4812adc9::t_4068b89633a29c 3-4,6-8,10,12-15,17,19-20,22-37
+docs/blog/index.md
+  s_b3aadf4812adc9::t_1b104dff96c6d7 1-4,7
+docs/blog/posts/2026-09-12-moving-to-cpp-linter.md
+  s_b3aadf4812adc9::t_f1f19c5ff9a4ae 3,5,8-10,13-15,18-170
+docs/blog/posts/2026-09-12-one-clang-version-everywhere.md
+  s_b3aadf4812adc9::t_7b56eef6ca1348 1-168
+docs/blog/posts/2026-09-20-clang-format-pre-commit-hook.md
+  s_b3aadf4812adc9::t_4660471448d71c 1-279
+docs/blog/posts/2026-09-20-clang-tidy-pull-requests-github-actions.md
+  s_b3aadf4812adc9::t_70eafa9b12d094 1-266
+docs/discussion.md
+  s_b3aadf4812adc9::t_3deca00303590d 1-6,8,10,12,14-25
+docs/fonts/OFL-bricolage-grotesque.txt
+  s_b3aadf4812adc9::t_25897fbe1cef3a 1-93
+docs/fonts/OFL-instrument-sans.txt
+  s_b3aadf4812adc9::t_441f43c56e9ff5 1-93
+docs/fonts/OFL-jetbrains-mono.txt
+  s_b3aadf4812adc9::t_f3713023b3c434 1-93
+docs/getting-started.md
+  s_b3aadf4812adc9::t_fd4f806e222cb8 1-6,8,10-12,14,16-128
+docs/google7a7018130a36ef4d.html
+  s_b3aadf4812adc9::t_33d0460f3a3e1d 1
+docs/index.md
+  s_b3aadf4812adc9::t_3bdf7bb4ce69ec 5,8,11
+docs/overrides/home.html
+  s_b3aadf4812adc9::t_7fa6d7115352db 3-65,67-323,325-372,374-475,477
+docs/overrides/main.html
+  s_b3aadf4812adc9::t_821ddd1107c56a 1-16
+docs/showcase.md
+  s_b3aadf4812adc9::t_559ae4d8631105 1-75
+docs/sponsor.md
+  s_b3aadf4812adc9::t_f9401246cfed27 1-93
+docs/stylesheets/extra.css
+  s_b3aadf4812adc9::t_aa82e2810e256f 1-2,4,6,9-15,18-20,23-26,30-34,37-38,41-43,46-47
+docs/stylesheets/home.css
+  s_b3aadf4812adc9::t_21ace36538dd49 1-2069
+docs/stylesheets/shared.css
+  s_b3aadf4812adc9::t_1cb4216efca007 1-449
+docs/why-cpp-linter.md
+  s_b3aadf4812adc9::t_137998e8a96d21 1-185
+mkdocs.yml
+  s_b3aadf4812adc9::t_d1c62ab252937a 2,7-10,14-20,30-31,38-39,74,93-101,104,107-108,113-119,123-136
+noxfile.py
+  s_b3aadf4812adc9::t_57adf2ceb10207 8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c2fc9eae3258fe72c573e3f546fdc39f8ed49d78",
+  "prompts": {},
+  "sessions": {
+    "s_b3aadf4812adc9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "0b5424bb-7df4-4fa5-a939-8318e2f61faf",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "Xianpeng Shen <xianpeng.shen@gmail.com>"
+    }
+  }
+}
