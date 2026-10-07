@@ -26,8 +26,11 @@ expenses are publicly visible.
 | **Silver** | USD 200 | Everything in Bronze, plus your logo on the [home page](index.md) and in the READMEs of cpp-linter-action, cpp-linter, cpp-linter-rs and cpp-linter-hooks |
 | **Gold** | USD 500 | Everything in Silver with a larger logo placed first, plus a quarterly roadmap call with the maintainers |
 
-- Yearly and one-time payments count at their monthly equivalent for the months they cover.
-- Logos link to your website. We add them by hand, so allow a few days after you sponsor.
+- Tiers are monthly. Yearly and one-time payments count at their monthly equivalent for the
+  months they cover; for example, a one-time USD 600 is Silver for three months.
+- Logos link to your website. We add them by hand, so allow a few days after you sponsor, and
+  review the list once a quarter: logos stay until the quarter after a sponsorship ends.
+- Past sponsors stay listed by name on this page, and release notes keep the thanks they gave.
 - The quarterly roadmap call is a 30-minute video call where we share what is coming next and hear
   what your team needs. It does not buy control over the roadmap or a support SLA.
 - To change the name, logo or link we show, open an
