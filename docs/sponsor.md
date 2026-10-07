@@ -1,5 +1,5 @@
 ---
-description: Sponsor cpp-linter through GitHub Sponsors or Open Collective. Sponsor tiers include your logo on the website and READMEs, thanks in release notes, and a quarterly roadmap call.
+description: Sponsor cpp-linter through GitHub Sponsors or Open Collective. Sponsor tiers include your logo on the website and READMEs and thanks in release notes.
 hide:
   - navigation
 ---
@@ -24,15 +24,13 @@ expenses are publicly visible.
 | **Backer** | USD 5 | Your name on this page |
 | **Bronze** | USD 50 | Your logo on this page and thanks in every release note while you sponsor |
 | **Silver** | USD 200 | Everything in Bronze, plus your logo on the [home page](index.md) and in the READMEs of cpp-linter-action, cpp-linter, cpp-linter-rs and cpp-linter-hooks |
-| **Gold** | USD 500 | Everything in Silver with a larger logo placed first, plus a quarterly roadmap call with the maintainers |
+| **Gold** | USD 500 | Everything in Silver, with a larger logo placed first |
 
 - Tiers are monthly. Yearly and one-time payments count at their monthly equivalent for the
   months they cover; for example, a one-time USD 600 is Silver for three months.
 - Logos link to your website. We add them by hand, so allow a few days after you sponsor, and
   review the list once a quarter: logos stay until the quarter after a sponsorship ends.
 - Past sponsors stay listed by name on this page, and release notes keep the thanks they gave.
-- The quarterly roadmap call is a 30-minute video call where we share what is coming next and hear
-  what your team needs. It does not buy control over the roadmap or a support SLA.
 - To change the name, logo or link we show, open an
   [issue](https://github.com/cpp-linter/cpp-linter.github.io/issues) or contact us through the
   platform you sponsor on.
