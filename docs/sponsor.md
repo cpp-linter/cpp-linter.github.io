@@ -46,8 +46,8 @@ cpp-linter T-shirt.
 
 1. Sponsor through [GitHub Sponsors](https://github.com/sponsors/cpp-linter) or
    [Open Collective](https://opencollective.com/cpp-linter).
-2. Once your sponsorship reaches **USD 100** in total, email us or message us on the platform you
-   sponsor on with your size and shipping address.
+2. Once your sponsorship reaches **USD 100** in total, message us on the platform you sponsor on
+   with your size and shipping address.
 3. We check the total and ship it. One T-shirt per sponsor.
 
 Availability depends on stock, sizing and shipping at the time, but we will always let you know
