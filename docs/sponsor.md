@@ -1,5 +1,5 @@
 ---
-description: Sponsor cpp-linter through Open Collective. Sponsors who give USD 100 or more in total get a cpp-linter T-shirt.
+description: Sponsor cpp-linter through GitHub Sponsors or Open Collective. Sponsor tiers include your logo on the website and READMEs and thanks in release notes.
 hide:
   - navigation
 ---
@@ -11,20 +11,44 @@ the project.
 
 ## How to sponsor
 
-[Sponsor cpp-linter on Open Collective](https://opencollective.com/cpp-linter){ .md-button .md-button--primary }
+[Sponsor on GitHub](https://github.com/sponsors/cpp-linter){ .md-button .md-button--primary }
+[Sponsor on Open Collective](https://opencollective.com/cpp-linter){ .md-button }
 
-All contributions go to the project as a whole, not to any single maintainer, and all income and
+Both go to the project as a whole, not to any single maintainer. Open Collective income and
 expenses are publicly visible.
 
-## Sponsor perks
+## Sponsor tiers
 
-Sponsors who give USD 100 or more in total get a cpp-linter T-shirt.
+| Tier | Per month | What you get |
+| --- | :---: | --- |
+| **Backer** | USD 5 | Your name on this page |
+| **Bronze** | USD 50 | Your logo on this page and thanks in every release note while you sponsor |
+| **Silver** | USD 200 | Everything in Bronze, plus your logo on the [home page](index.md) and in the READMEs of cpp-linter-action, cpp-linter, cpp-linter-rs and cpp-linter-hooks |
+| **Gold** | USD 500 | Everything in Silver, with a larger logo placed first |
 
-### How the T-shirt perk works
+- Tiers are monthly. Yearly and one-time payments count at their monthly equivalent for the
+  months they cover; for example, a one-time USD 600 is Silver for three months.
+- Logos link to your website. We add them by hand, so allow a few days after you sponsor, and
+  review the list once a quarter: logos stay until the quarter after a sponsorship ends.
+- Past sponsors stay listed by name on this page, and release notes keep the thanks they gave.
+- To change the name, logo or link we show, open an
+  [issue](https://github.com/cpp-linter/cpp-linter.github.io/issues) or contact us through the
+  platform you sponsor on.
 
-1. Donate through [Open Collective](https://opencollective.com/cpp-linter).
-2. When your donations reach **USD 100** in total, we will contact you to arrange shipping.
-3. We confirm each shipment by hand and ask for your size and address at that point.
+## Sponsors
+
+No sponsors yet. [Your logo could be here](https://github.com/sponsors/cpp-linter).
+
+## T-shirt perk
+
+Sponsors who give USD 100 or more in total, on any tier or as one-time donations, can claim one
+cpp-linter T-shirt.
+
+1. Sponsor through [GitHub Sponsors](https://github.com/sponsors/cpp-linter) or
+   [Open Collective](https://opencollective.com/cpp-linter).
+2. Once your sponsorship reaches **USD 100** in total, message us on the platform you sponsor on
+   with your size and shipping address.
+3. We check the total and ship it. One T-shirt per sponsor.
 
 Availability depends on stock, sizing and shipping at the time, but we will always let you know
 before anything is sent.
