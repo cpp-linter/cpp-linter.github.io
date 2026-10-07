@@ -41,13 +41,14 @@ No sponsors yet. [Your logo could be here](https://github.com/sponsors/cpp-linte
 
 ## T-shirt perk
 
-Sponsors who give USD 100 or more in total, on any tier or as one-time donations, get a cpp-linter
-T-shirt.
+Sponsors who give USD 100 or more in total, on any tier or as one-time donations, can claim one
+cpp-linter T-shirt.
 
 1. Sponsor through [GitHub Sponsors](https://github.com/sponsors/cpp-linter) or
    [Open Collective](https://opencollective.com/cpp-linter).
-2. When your sponsorship reaches **USD 100** in total, we will contact you to arrange shipping.
-3. We confirm each shipment by hand and ask for your size and address at that point.
+2. Once your sponsorship reaches **USD 100** in total, email us or message us on the platform you
+   sponsor on with your size and shipping address.
+3. We check the total and ship it. One T-shirt per sponsor.
 
 Availability depends on stock, sizing and shipping at the time, but we will always let you know
 before anything is sent.
