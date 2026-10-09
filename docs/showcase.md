@@ -16,7 +16,8 @@ The list below is a selection from that set, ranked by stars.
 !!! info "How this list is built"
     Counted on 2026-09-24 with a GitHub code search for `cpp-linter/cpp-linter-action@` in `.yml`
     and `.yaml` files under `.github/workflows`, in repositories that are not forks and not
-    archived. Star counts in the table are from 2026-09-12. GitHub's dependents count, which
+    archived. Star counts in the table are from 2026-09-12, except for rows added on
+    2026-10-09, which use that day's counts. GitHub's dependents count, which
     includes forks, is over 1,000.
 
 ## Projects
@@ -54,15 +55,25 @@ The list below is a selection from that set, ranked by stars.
 | <img src="https://github.com/carbonengine.png?size=40" width="20" alt=""> [carbonengine/trinity](https://github.com/carbonengine/trinity) | 455 | Rendering engine for the Carbon game engine |
 | <img src="https://github.com/fabiangreffrath.png?size=40" width="20" alt=""> [fabiangreffrath/woof](https://github.com/fabiangreffrath/woof) | 324 | Continuation of the Boom/MBF Doom source ports |
 | <img src="https://github.com/qualcomm.png?size=40" width="20" alt=""> [qualcomm/eld](https://github.com/qualcomm/eld) | 259 | Embedded linker |
+| <img src="https://github.com/OpenVisualCloud.png?size=40" width="20" alt=""> [OpenVisualCloud/Media-Transport-Library](https://github.com/OpenVisualCloud/Media-Transport-Library) | 248 | Real-time media transport stack (DPDK, AF_XDP) for raw and compressed video |
+| <img src="https://github.com/apache.png?size=40" width="20" alt=""> [apache/iceberg-cpp](https://github.com/apache/iceberg-cpp) | 226 | C++ implementation of Apache Iceberg |
 | <img src="https://github.com/Cambridge-ICCS.png?size=40" width="20" alt=""> [Cambridge-ICCS/FTorch](https://github.com/Cambridge-ICCS/FTorch) | 206 | Call PyTorch models directly from Fortran |
+| <img src="https://github.com/3DBAG.png?size=40" width="20" alt=""> [3DBAG/roofer](https://github.com/3DBAG/roofer) | 203 | Large-scale automatic LoD2.2 building reconstruction |
 | <img src="https://github.com/stormchecker.png?size=40" width="20" alt=""> [stormchecker/storm](https://github.com/stormchecker/storm) | 172 | Modern probabilistic model checker |
 | <img src="https://github.com/man-group.png?size=40" width="20" alt=""> [man-group/sparrow](https://github.com/man-group/sparrow) | 144 | C++20 idiomatic APIs for the Apache Arrow columnar format |
+| <img src="https://github.com/cda-tum.png?size=40" width="20" alt=""> [cda-tum/fiction](https://github.com/cda-tum/fiction) | 95 | Design automation framework for field-coupled nanotechnologies |
+| <img src="https://github.com/Samsung.png?size=40" width="20" alt=""> [Samsung/mTower](https://github.com/Samsung/mTower) | 78 | Trusted Execution Environment for Arm TrustZone microcontrollers |
+| <img src="https://github.com/eclipse-4diac.png?size=40" width="20" alt=""> [eclipse-4diac/4diac-forte](https://github.com/eclipse-4diac/4diac-forte) | 75 | IEC 61499 runtime for small embedded control devices |
+| <img src="https://github.com/llnl.png?size=40" width="20" alt=""> [llnl/proteus](https://github.com/llnl/proteus) | 54 | Programmable JIT compilation and optimization for C/C++ using LLVM |
+| <img src="https://github.com/eclipse-uprotocol.png?size=40" width="20" alt=""> [eclipse-uprotocol/up-cpp](https://github.com/eclipse-uprotocol/up-cpp) | 29 | Eclipse uProtocol library for C++ |
+| <img src="https://github.com/launchdarkly.png?size=40" width="20" alt=""> [launchdarkly/cpp-sdks](https://github.com/launchdarkly/cpp-sdks) | 10 | LaunchDarkly C++ client and server SDKs |
+| <img src="https://github.com/numpy.png?size=40" width="20" alt=""> [numpy/numpy-simd-routines](https://github.com/numpy/numpy-simd-routines) | 10 | SIMD math routines used in NumPy |
 
 ## Pre-commit users
 
 [cpp-linter-hooks](https://github.com/cpp-linter/cpp-linter-hooks) is used by projects from
 bazel-contrib, CodSpeed, doldecomp (the Super Smash Bros. Melee decompilation), HKUST Aerial
-Robotics, Kubewarden, MIT ACL and others. GitHub
+Robotics, [SimpleKernel](https://github.com/Simple-XX/SimpleKernel) (an OS kernel learning project), Kubewarden, MIT ACL and others. GitHub
 [code search](https://github.com/search?q=%22cpp-linter%2Fcpp-linter-hooks%22+path%3A.pre-commit-config.yaml&type=code)
 (sign-in required) lists more; some results are forks or commented-out entries.
 
