@@ -80,7 +80,7 @@ repos:
 ```
 
 Run `pre-commit install` once in each clone. `--version=21` installs the newest 21.x wheel;
-clang-tidy wheels cover LLVM 13 to 22. The clang-tidy hook needs a `compile_commands.json`, which
+clang-tidy wheels cover LLVM 13 to 23. The clang-tidy hook needs a `compile_commands.json`, which
 it looks for in `build/` and a few other directories; leave it out if you only run clang-tidy in
 CI. [Set up a clang-format pre-commit hook](blog/posts/2026-09-20-clang-format-pre-commit-hook.md)
 walks through the whole setup.
@@ -97,9 +97,9 @@ cpp-linter --version=21 --style=file --tidy-checks=''
 - It does not install the clang tools. Install them first, for example with clang-tools below;
   without them, `--version=21` falls back to whatever `clang-format` is on your PATH.
 - It exits 0 even when checks fail, so it reports findings but does not fail a build.
-- Locally, `--files-changed-only` and `--lines-changed-only` read `git diff`. In other CI, check
-  the whole repository (the default): most CI systems set `CI=true`, and with it those options ask
-  the GitHub API for the changed files.
+- Locally and in other CI, `--files-changed-only` and `--lines-changed-only` read `git diff`;
+  `--diff-base` sets the commit to compare against. Only on GitHub Actions, which sets
+  `GITHUB_ACTIONS=true`, do they ask the GitHub API for the changed files.
 
 cpp-linter v2, a rewrite in Rust ([cpp-linter-rs](https://github.com/cpp-linter/cpp-linter-rs)),
 is in release candidates. Use the Python package until 2.0 is released.
@@ -124,5 +124,5 @@ llvm-symbolizer. The Docker images carry Ubuntu's clang-format and clang-tidy pa
 
 Single tools are also on PyPI as Python wheels: `clang-format` and `clang-tidy` (the wheels
 cpp-linter-hooks installs), [clang-apply-replacements](https://pypi.org/project/clang-apply-replacements/)
-(LLVM 16 and 17) and [clang-include-cleaner](https://pypi.org/project/clang-include-cleaner/)
+(LLVM 16 to 23) and [clang-include-cleaner](https://pypi.org/project/clang-include-cleaner/)
 (LLVM 22).
