@@ -38,7 +38,7 @@ is no Docker image to build before the first result.
 
 The same tools run outside the action too. The pre-commit hooks in
 [cpp-linter-hooks](https://github.com/cpp-linter/cpp-linter-hooks) take the same version number
-(the clang-tidy hook covers LLVM 13 to 22). The [cpp-linter](https://pypi.org/project/cpp-linter/)
+(the clang-tidy hook covers LLVM 13 to 23). The [cpp-linter](https://pypi.org/project/cpp-linter/)
 CLI runs from a script or another CI system; it expects the clang tools to be installed already
 and exits 0 even when checks fail. On a laptop, `clang-tools` installs the binaries.
 
