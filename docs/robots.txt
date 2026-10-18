@@ -1,0 +1,10 @@
+# The cpp-linter docs share this host: the organization site at the root and
+# each project's docs under its own path. This file covers all of them.
+User-agent: *
+Allow: /
+
+Sitemap: https://cpp-linter.github.io/sitemap.xml
+Sitemap: https://cpp-linter.github.io/cpp-linter-action/sitemap.xml
+Sitemap: https://cpp-linter.github.io/clang-tools-pip/sitemap.xml
+Sitemap: https://cpp-linter.github.io/cpp-linter-rs/sitemap.xml
+Sitemap: https://cpp-linter.github.io/cpp-linter/sitemap.xml

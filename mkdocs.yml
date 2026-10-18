@@ -88,6 +88,9 @@ markdown_extensions:
   - toc:
       permalink: true
 
+hooks:
+  - hooks/redirects.py
+
 plugins:
   - search
   - tags

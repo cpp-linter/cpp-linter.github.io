@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{#-
+  Gives the 404 page a title of its own. With Material's default it was titled
+  "cpp-linter" like a real page, so missing pages were hard to tell apart in
+  Google Analytics.
+-#}
+
+{% block htmltitle %}
+  <title>Page not found - {{ config.site_name }}</title>
+{% endblock %}
+
+{% block content %}
+  <h1>404 - Not found</h1>
+{% endblock %}
