@@ -1,16 +1,110 @@
 {% extends "base.html" %}
 
 {#-
+  Visits from the maintainers are tagged so that the Internal Traffic data
+  filter in Google Analytics can drop them. Opening any page with ?internal=1
+  stores a flag in localStorage, ?internal=0 removes it, and while the flag is
+  there every event carries traffic_type=internal. The docs under
+  /cpp-linter-action/, /clang-tools-pip/, /cpp-linter-rs/ and /cpp-linter/ are
+  on the same origin and read the same flag. It runs before Material's own
+  snippet, so the setting is queued ahead of the first page_view.
+-#}
+
+{% block analytics %}
+  {% if config.extra.analytics %}
+    <script>
+      try {
+        var param = new URLSearchParams(location.search).get("internal");
+        if (param === "1") localStorage.setItem("cpp-linter-internal", "1");
+        if (param === "0") localStorage.removeItem("cpp-linter-internal");
+        if (localStorage.getItem("cpp-linter-internal") === "1") {
+          window.dataLayer = window.dataLayer || [];
+          (function () { dataLayer.push(arguments); })("set", { traffic_type: "internal" });
+        }
+      } catch (e) {}
+    </script>
+  {% endif %}
+  {{ super() }}
+{% endblock %}
+
+{#-
   The site's fonts are self-hosted in docs/fonts and declared in shared.css:
   Instrument Sans for text, JetBrains Mono for code and Bricolage Grotesque for
   headings. theme.font is false in mkdocs.yml, so Material loads nothing itself.
   Preloading the latin files for text and headings lets the browser fetch them
   while it is still reading the stylesheets. The URLs must match the ones in
   shared.css, and crossorigin is required for fonts even on the same origin.
+
+  The Open Graph and Twitter tags give links shared in chats and on social
+  sites a title, a description and the card in static/og-image.png. Pages with
+  no URL of their own, like the 404 page, leave og:url out.
 -#}
 
 {% block extrahead %}
   {{ super() }}
   <link rel="preload" href="{{ 'fonts/instrument-sans-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ 'fonts/bricolage-grotesque-latin.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+  {%- if page and page.meta and page.meta.title %}
+    {%- set og_title = page.meta.title %}
+  {%- elif page and page.title and not page.is_homepage %}
+    {%- set og_title = page.title | striptags %}
+  {%- else %}
+    {%- set og_title = config.site_name %}
+  {%- endif %}
+  {%- set og_description = (page.meta.description if page and page.meta and page.meta.description) or config.site_description %}
+  {%- set og_image = config.site_url ~ "static/og-image.png" %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:title" content="{{ og_title }}">
+  <meta property="og:description" content="{{ og_description }}">
+  {%- if page and page.canonical_url %}
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  {%- endif %}
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="cpp-linter: clang-format and clang-tidy for C/C++ pull requests, pre-commit hooks and CI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ og_title }}">
+  <meta name="twitter:description" content="{{ og_description }}">
+  <meta name="twitter:image" content="{{ og_image }}">
+{% endblock %}
+
+{#-
+  Copying a code block is how a reader takes cpp-linter into a project, so each
+  copy is sent to Google Analytics as a copy_code event. snippet names the
+  section the block is in (the id of the nearest heading above it, or the
+  block's own id on the home page), and code_title is the file name shown above
+  the block, when it has one.
+-#}
+
+{% block scripts %}
+  {{ super() }}
+  {% if config.extra.analytics %}
+    <script>
+      document.addEventListener("click", function (event) {
+        var button = event.target.closest &&
+          event.target.closest('.md-code__button[data-md-type="copy"], .md-clipboard, .cl-copy');
+        if (!button) return;
+        var block = button.closest(".highlight, .cl-window");
+        var snippet = "";
+        if (button.classList.contains("cl-copy")) {
+          snippet = (button.getAttribute("data-clipboard-target") || "").replace(/^#/, "");
+        } else if (block) {
+          var headings = document.querySelectorAll("article h2[id], article h3[id]");
+          for (var i = 0; i < headings.length; i++) {
+            if (headings[i].compareDocumentPosition(block) & Node.DOCUMENT_POSITION_FOLLOWING) {
+              snippet = headings[i].id;
+            }
+          }
+        }
+        var title = block && block.querySelector(".filename, .cl-window__file");
+        window.dataLayer = window.dataLayer || [];
+        (function () { dataLayer.push(arguments); })("event", "copy_code", {
+          snippet: snippet || "(none)",
+          code_title: title ? title.textContent.trim() : "(none)"
+        });
+      });
+    </script>
+  {% endif %}
 {% endblock %}

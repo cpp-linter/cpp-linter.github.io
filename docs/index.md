@@ -4,7 +4,7 @@ hide:
   - toc
   - feedback
 template: home.html
-title: C/C++ Linting
+title: C/C++ Linter with clang-format and clang-tidy
 description: clang-format and clang-tidy for C and C++ pull requests, pre-commit hooks and CI, with the LLVM version you pin.
 ---
 
