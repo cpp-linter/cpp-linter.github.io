@@ -12,6 +12,7 @@ exclude_docs: |
 nav:
   - Home: index.md
   - Get started: getting-started.md
+  - AI coding agents: ai-coding-agents.md
   - Why cpp-linter: why-cpp-linter.md
   - Showcase: showcase.md
   - Blog:
