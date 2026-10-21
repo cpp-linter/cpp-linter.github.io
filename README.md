@@ -5,3 +5,5 @@ website and is never merged.
 
 - `clang-tools-static-binaries-151/`: the download page before and after
   cpp-linter/clang-tools-static-binaries#151.
+- `clang-tools-static-binaries-page-style/`: the download page before and after
+  it took the look of cpp-linter.github.io.
