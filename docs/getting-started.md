@@ -108,14 +108,16 @@ is in release candidates. Use the Python package until 2.0 is released.
 
 These install `clang-format`, `clang-tidy` and other LLVM tools without building LLVM. clang-tools,
 asdf and the Homebrew tap use the same
-[static binaries](https://github.com/cpp-linter/clang-tools-static-binaries/releases).
+[static binaries](https://cpp-linter.github.io/clang-tools-static-binaries/). Their
+download page links every file, shows which versions LLVM, PyPI, conda-forge and Homebrew
+have, and explains how to check a download.
 
 | Package | LLVM | Runs on | Install |
 | --- | --- | --- | --- |
 | [clang-tools](https://cpp-linter.github.io/clang-tools-pip/) | 12 to 23 | Linux, macOS, Windows | `pip install clang-tools`, then `clang-tools install clang-format clang-tidy --version 21` |
 | [asdf plugin](https://github.com/cpp-linter/asdf-clang-tools) | 12 to 23 | wherever asdf runs | `asdf plugin add clang-format https://github.com/cpp-linter/asdf-clang-tools.git` |
 | [Homebrew tap](https://github.com/cpp-linter/homebrew-tap) | 19 to 23 | macOS only | `brew install cpp-linter/tap/clang-format@21` |
-| [Static binaries](https://github.com/cpp-linter/clang-tools-static-binaries/releases) | 12 to 23 | Linux, macOS, Windows on x86-64 and ARM64 | download from GitHub Releases |
+| [Static binaries](https://cpp-linter.github.io/clang-tools-static-binaries/) | 12 to 23 | Linux, macOS, Windows on x86-64 and ARM64 | download one file from the download page |
 | [Docker images](https://hub.docker.com/r/xianpengshen/clang-tools) | up to 22 | Docker | `docker pull xianpengshen/clang-tools:21` |
 
 The static binaries include clang-format, clang-tidy, clang-query, clang-apply-replacements,
