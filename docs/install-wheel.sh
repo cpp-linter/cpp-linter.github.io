@@ -179,18 +179,26 @@ find_wheel_asset() {
             select(.name | test("^(" + $tool + "|" + $tool_us + ")-")) |
             select(.name | contains($platform)) |
             if $version != "" then select(.name | contains($version)) else . end |
-            .browser_download_url + "|" + .name + "|" + (.size | tostring)
+            .browser_download_url + "|" + .name + "|" + (.size | tostring) + "|" + (.digest // "")
         ' | head -n1
     else
-        # Fallback: use grep and sed (less reliable but works without jq)
-        echo "$json_data" | grep -o '"browser_download_url":"[^"]*"' | sed 's/"browser_download_url":"//; s/"//' | while read -r url; do
+        # Fallback: use grep and sed (less reliable but works without jq).
+        # In each asset the API lists "digest" before "browser_download_url".
+        local digest=""
+        echo "$json_data" | grep -oE '"(digest|browser_download_url)": *"[^"]*"' | sed -E 's/^"([a-z_]+)": *"(.*)"$/\1 \2/' | while read -r key value; do
+            if [[ "$key" == "digest" ]]; then
+                digest="$value"
+                continue
+            fi
+            local url="$value"
             local filename=$(echo "$url" | sed 's|.*/||')
             if [[ "$filename" == *".whl" ]] && [[ "$filename" == "$tool"* || "$filename" == "$tool_underscore"* ]] && [[ "$filename" == *"$platform_tag"* ]]; then
                 if [[ -z "$version" ]] || [[ "$filename" == *"$version"* ]]; then
-                    echo "$url|$filename|unknown"
+                    echo "$url|$filename|unknown|$digest"
                     break
                 fi
             fi
+            digest=""
         done
     fi
 }
@@ -221,6 +229,34 @@ download_file() {
     fi
 }
 
+# Check a downloaded file against the sha256 digest GitHub lists for the asset
+verify_sha256() {
+    local file="$1"
+    local digest="$2"
+    local expected="${digest#sha256:}"
+    local actual
+
+    if [[ "$digest" != sha256:* ]]; then
+        rm -f "$file"
+        error "The release lists no sha256 digest for $(basename "$file"), so it cannot be checked"
+    fi
+
+    if command_exists sha256sum; then
+        actual=$(sha256sum "$file" | cut -d' ' -f1)
+    elif command_exists shasum; then
+        actual=$(shasum -a 256 "$file" | cut -d' ' -f1)
+    else
+        rm -f "$file"
+        error "Neither sha256sum nor shasum found. One of them is needed to check the download."
+    fi
+
+    if [[ "$actual" != "$expected" ]]; then
+        rm -f "$file"
+        error "Checksum mismatch for $(basename "$file"): expected sha256 $expected, got $actual"
+    fi
+    success "sha256 checked: $expected"
+}
+
 # List available platforms
 list_platforms() {
     local json_data="$1"
@@ -239,7 +275,7 @@ list_platforms() {
         done
     else
         # Fallback without jq
-        echo "$json_data" | grep -o '"name":"[^"]*\.whl"' | sed 's/"name":"//; s/"//' | grep -E "^($tool|${tool//-/_})-" | sed 's/.*py2\.py3-none-//; s/\.whl$//' | sort -u | while read -r platform; do
+        echo "$json_data" | grep -oE '"name": *"[^"]*\.whl"' | sed -E 's/"name": *"//; s/"//' | grep -E "^($tool|${tool//-/_})-" | sed 's/.*py2\.py3-none-//; s/\.whl$//' | sort -u | while read -r platform; do
             echo "  $platform"
         done
     fi
@@ -325,7 +361,7 @@ main() {
     if command_exists jq; then
         release_tag=$(echo "$release_info" | jq -r '.tag_name')
     else
-        release_tag=$(echo "$release_info" | grep -o '"tag_name":"[^"]*"' | sed 's/"tag_name":"//; s/"//')
+        release_tag=$(echo "$release_info" | grep -oE '"tag_name": *"[^"]*"' | sed -E 's/"tag_name": *"//; s/"//')
     fi
 
     if [[ "$list_platforms_flag" == true ]]; then
@@ -357,7 +393,7 @@ main() {
     fi
 
     # Parse wheel info
-    IFS='|' read -r download_url filename file_size <<< "$wheel_info"
+    IFS='|' read -r download_url filename file_size digest <<< "$wheel_info"
 
     # Create output directory
     mkdir -p "$output_dir"
@@ -365,6 +401,7 @@ main() {
     # Download the wheel
     local output_file="$output_dir/$filename"
     if download_file "$download_url" "$output_file"; then
+        verify_sha256 "$output_file" "$digest"
         echo
         success "Wheel downloaded successfully!"
         echo "File: $output_file"
