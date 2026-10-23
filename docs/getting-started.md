@@ -119,11 +119,12 @@ have, and explains how to check a download.
 | [asdf plugin](https://github.com/cpp-linter/asdf-clang-tools) | 12 to 23 | wherever asdf runs | `asdf plugin add clang-format https://github.com/cpp-linter/asdf-clang-tools.git` |
 | [Homebrew tap](https://github.com/cpp-linter/homebrew-tap) | 19 to 23 | macOS only | `brew install cpp-linter/tap/clang-format@21` |
 | [Static binaries](https://cpp-linter.github.io/clang-tools-static-binaries/) | 12 to 23 | Linux, macOS, Windows on x86-64 and ARM64 | download one file from the download page |
-| [Docker images](https://hub.docker.com/r/xianpengshen/clang-tools) | up to 22 | Docker | `docker pull xianpengshen/clang-tools:21` |
+| [Docker images](https://github.com/cpp-linter/clang-tools-docker) | 7 to 23 | Docker on x86-64 and ARM64 | `docker pull ghcr.io/cpp-linter/clang-tools:21` |
 
 The static binaries include clang-format, clang-tidy, clang-query, clang-apply-replacements,
 clang-include-cleaner (LLVM 18 and later), clang-scan-deps, llvm-cov, llvm-profdata and
-llvm-symbolizer. The Docker images carry Ubuntu's clang-format and clang-tidy packages.
+llvm-symbolizer. The Docker images carry Ubuntu's clang-format and clang-tidy packages (Debian
+unstable's for LLVM 23). The same images are on Docker Hub as `xianpengshen/clang-tools`.
 
 Single tools are also on PyPI as Python wheels: `clang-format` and `clang-tidy` (the wheels
 cpp-linter-hooks installs), [clang-apply-replacements](https://pypi.org/project/clang-apply-replacements/)
