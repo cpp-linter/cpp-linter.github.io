@@ -247,7 +247,7 @@ checks on the staged files at each commit, on the agent's machine and on yours:
 ```yaml title=".pre-commit-config.yaml"
 repos:
   - repo: https://github.com/cpp-linter/cpp-linter-hooks
-    rev: v1.7.0
+    rev: v1.8.1
     hooks:
       - id: clang-format
         args: [--style=file, --version=21]
