@@ -1,2 +1,2 @@
-mkdocs-ng
-mkdocs-ng-material
+mkdocs-ng>=1.11.0
+mkdocs-ng-material>=9.8.0
