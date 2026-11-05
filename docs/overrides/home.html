@@ -345,23 +345,23 @@
       </div>
     </section>
 
-    {#- Stars as of September 2026, from the showcase page. -#}
+    {#- Star counts from the showcase page. -#}
     {% set projects = [
       ("zealdocs/zeal", "Zeal", "Offline documentation browser", "12.8k"),
       ("libvips/libvips", "libvips", "Fast image processing library", "11.6k"),
       ("diasurgical/DevilutionX", "DevilutionX", "Diablo build for modern operating systems", "9.7k"),
+      ("aws/s2n-tls", "s2n-tls", "AWS implementation of the TLS/SSL protocols", "4.8k"),
       ("iree-org/iree", "IREE", "MLIR-based ML compiler and runtime", "3.9k"),
       ("nextcloud/desktop", "Nextcloud Desktop", "Desktop sync client for Nextcloud", "3.9k"),
       ("bloomberg/blazingmq", "BlazingMQ", "High-performance message queue", "3.2k"),
       ("TrenchBroom/TrenchBroom", "TrenchBroom", "Cross-platform level editor", "2.8k"),
-      ("chocolate-doom/chocolate-doom", "Chocolate Doom", "Historically accurate Doom source port", "2.4k"),
     ] %}
     <section class="cl-band cl-band--white">
       <div class="cl-wrap">
         <div class="cl-head cl-head--center">
           <p class="cl-eyebrow">Showcase</p>
           <h2 class="cl-h2">Used by 1,000+ repositories</h2>
-          <p class="cl-sub">That is GitHub's dependents count, forks included. 550+ public projects run it on their default branch, with 75,000+ GitHub stars between them. A few of them, with stars as of September 2026:</p>
+          <p class="cl-sub">That is GitHub's dependents count, forks included. 550+ public projects run it on their default branch, with 75,000+ GitHub stars between them. A few of them:</p>
         </div>
         <div class="cl-projects">
           {% for repo, name, text, stars in projects %}
