@@ -17,7 +17,7 @@ The list below is a selection from that set, ranked by stars.
     Counted on 2026-09-24 with a GitHub code search for `cpp-linter/cpp-linter-action@` in `.yml`
     and `.yaml` files under `.github/workflows`, in repositories that are not forks and not
     archived. Star counts in the table are from 2026-09-12, except for rows added on
-    2026-10-09, which use that day's counts. GitHub's dependents count, which
+    2026-10-09 and 2026-11-05, which use that day's counts. GitHub's dependents count, which
     includes forks, is over 1,000.
 
 ## Projects
@@ -27,6 +27,7 @@ The list below is a selection from that set, ranked by stars.
 | <img src="https://github.com/zealdocs.png?size=40" width="20" alt=""> [zealdocs/zeal](https://github.com/zealdocs/zeal) | 12,789 | Offline documentation browser |
 | <img src="https://github.com/libvips.png?size=40" width="20" alt=""> [libvips/libvips](https://github.com/libvips/libvips) | 11,633 | Fast image processing library with low memory needs |
 | <img src="https://github.com/diasurgical.png?size=40" width="20" alt=""> [diasurgical/DevilutionX](https://github.com/diasurgical/DevilutionX) | 9,736 | Diablo build for modern operating systems |
+| <img src="https://github.com/aws.png?size=40" width="20" alt=""> [aws/s2n-tls](https://github.com/aws/s2n-tls) | 4,785 | AWS implementation of the TLS/SSL protocols |
 | <img src="https://github.com/iree-org.png?size=40" width="20" alt=""> [iree-org/iree](https://github.com/iree-org/iree) | 3,925 | Retargetable MLIR-based machine learning compiler and runtime |
 | <img src="https://github.com/nextcloud.png?size=40" width="20" alt=""> [nextcloud/desktop](https://github.com/nextcloud/desktop) | 3,867 | Desktop sync client for Nextcloud |
 | <img src="https://github.com/bloomberg.png?size=40" width="20" alt=""> [bloomberg/blazingmq](https://github.com/bloomberg/blazingmq) | 3,213 | High-performance open-source message queuing system |
