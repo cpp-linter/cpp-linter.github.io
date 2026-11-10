@@ -71,7 +71,7 @@ pip-install the clang-format and clang-tidy version you pin:
 ```yaml title=".pre-commit-config.yaml"
 repos:
   - repo: https://github.com/cpp-linter/cpp-linter-hooks
-    rev: v1.8.1
+    rev: v1.9.0
     hooks:
       - id: clang-format
         args: [--style=file, --version=21]
@@ -100,6 +100,8 @@ cpp-linter --version=21 --style=file --tidy-checks=''
 - Locally and in other CI, `--files-changed-only` and `--lines-changed-only` read `git diff`;
   `--diff-base` sets the commit to compare against. Only on GitHub Actions, which sets
   `GITHUB_ACTIONS=true`, do they ask the GitHub API for the changed files.
+- [Other CI systems](other-ci.md) has a script and the job definitions for GitLab CI, Jenkins,
+  Azure Pipelines and Bitbucket Pipelines.
 
 cpp-linter v2, a rewrite in Rust ([cpp-linter-rs](https://github.com/cpp-linter/cpp-linter-rs)),
 is in release candidates. Use the Python package until 2.0 is released.
@@ -123,10 +125,12 @@ have, and explains how to check a download.
 
 The static binaries include clang-format, clang-tidy, clang-query, clang-apply-replacements,
 clang-include-cleaner (LLVM 18 and later), clang-scan-deps, llvm-cov, llvm-profdata and
-llvm-symbolizer. The Docker images carry Ubuntu's clang-format and clang-tidy packages (Debian
-unstable's for LLVM 23). The same images are on Docker Hub as `xianpengshen/clang-tools`.
+llvm-symbolizer. The Docker images for LLVM 12 to 23 are built from these static binaries, with
+clang's builtin headers and the C and C++ standard library headers; the images for 7 to 11 carry
+Ubuntu's packages and are no longer rebuilt. The same images are on Docker Hub as
+`xianpengshen/clang-tools`.
 
 Single tools are also on PyPI as Python wheels: `clang-format` and `clang-tidy` (the wheels
 cpp-linter-hooks installs), [clang-apply-replacements](https://pypi.org/project/clang-apply-replacements/)
 (LLVM 16 to 23) and [clang-include-cleaner](https://pypi.org/project/clang-include-cleaner/)
-(LLVM 22).
+(LLVM 22 and 23).

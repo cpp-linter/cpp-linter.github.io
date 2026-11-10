@@ -14,6 +14,13 @@ pipx run nox -s docs       # build into site/
 pipx run nox -s docs-live  # preview with live reload
 ```
 
+## Versions in the examples
+
+The [Update versions](https://github.com/cpp-linter/cpp-linter.github.io/actions/workflows/update-versions.yml)
+workflow runs daily and opens a pull request when cpp-linter-hooks has a release newer than the
+`rev:` in the pages' examples. To do it by hand, run `python3 scripts/update-versions.py`. Blog
+posts keep the version of the day they were written.
+
 ## Files other projects use
 
 Other repositories load these files from the published site, so do not rename or remove them

@@ -1,0 +1,43 @@
+name: Update versions
+
+on:
+  schedule:
+    # Daily check for a new cpp-linter-hooks release
+    - cron: '20 6 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      # push the update branch and open the pull request
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set the cpp-linter-hooks rev in the examples
+        run: python3 scripts/update-versions.py
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@5f6978faf089d4d20b00c7766989d076bb2fc7f1 # v8.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          sign-commits: true
+          commit-message: "docs: update the cpp-linter-hooks version in the examples"
+          branch: auto-update-versions
+          delete-branch: true
+          title: "docs: update the cpp-linter-hooks version in the examples"
+          body: |
+            Automated update: the `rev:` of the cpp-linter-hooks examples now names the
+            latest [cpp-linter-hooks release](https://github.com/cpp-linter/cpp-linter-hooks/releases/latest).
+          labels: |
+            documentation
+          assignees: |
+            ${{ github.actor }}
