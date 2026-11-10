@@ -136,8 +136,8 @@ same patch release.
 
 ## Containers and other package managers
 
-[Docker images](https://github.com/cpp-linter/clang-tools-docker) carry Ubuntu's clang-format and
-clang-tidy packages, tagged by major version up to 22:
+[Docker images](https://github.com/cpp-linter/clang-tools-docker) are built from the same static
+binaries for LLVM 12 to 23, tagged by major version:
 
 ```bash
 docker run --rm -v "$PWD":/src xianpengshen/clang-tools:21 clang-format --dry-run --Werror /src/main.cpp
