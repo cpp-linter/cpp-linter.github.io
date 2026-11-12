@@ -119,6 +119,9 @@ extra:
     - icon: material/forum
       link: https://github.com/cpp-linter/cpp-linter/discussions
       name: GitHub Discussions
+    - icon: simple/githubsponsors
+      link: https://github.com/sponsors/cpp-linter
+      name: Sponsor on GitHub
     - icon: simple/opencollective
       link: https://opencollective.com/cpp-linter
       name: Sponsor on Open Collective
