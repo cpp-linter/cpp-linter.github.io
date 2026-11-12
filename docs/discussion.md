@@ -22,4 +22,4 @@ cpp-linter is maintained by two volunteers, and all of it happens on GitHub.
 - **Contributing:** read the [contributing guide](https://github.com/cpp-linter/.github/blob/main/CONTRIBUTING.md)
   and the [code of conduct](https://github.com/cpp-linter/.github/blob/main/CODE_OF_CONDUCT.md).
 - **Your project:** if it runs cpp-linter, [add it to the showcase](showcase.md#add-your-project).
-- **Funding:** [sponsor cpp-linter](sponsor.md) through Open Collective.
+- **Funding:** [sponsor cpp-linter](sponsor.md) through GitHub Sponsors or Open Collective.
