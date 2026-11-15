@@ -30,7 +30,7 @@ The examples use LLVM 21. Use the version your project already pins, the same on
 binaries:
 
 ```bash
-pipx install cpp-linter
+pipx install 'cpp-linter<2'
 pipx install clang-tools
 clang-tools install clang-format clang-tidy --version 21
 ```
@@ -38,6 +38,9 @@ clang-tools install clang-format clang-tidy --version 21
 This puts `clang-format-21` and `clang-tidy-21` in `~/.local/bin` on Linux, with unversioned
 `clang-format` and `clang-tidy` links next to them. `pip install` into a virtual environment works
 as well.
+
+`'cpp-linter<2'` keeps the Python package this page describes. Version 2, a rewrite in Rust, is in
+release candidates and changes some options and outputs.
 
 clang-tidy needs the compiler flags of each file, from a `compile_commands.json`. With CMake:
 
@@ -194,7 +197,7 @@ jobs:
 
       - name: Install cpp-linter and the clang tools
         run: |
-          pipx install cpp-linter
+          pipx install 'cpp-linter<2'
           pipx install clang-tools
           clang-tools install clang-format clang-tidy --version 21
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"

@@ -95,6 +95,9 @@ hooks:
 
 plugins:
   - search
+  # llms.txt, llms-full.txt and a Markdown copy of every page, for AI agents.
+  - llms_txt:
+      full_output: true
   - tags
   - blog:
       blog_dir: blog
