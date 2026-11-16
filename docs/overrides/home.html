@@ -66,7 +66,10 @@
 {% block hero %}
   {% set arrow %}<span class="cl-ico">{% include ".icons/material/arrow-right.svg" %}</span>{% endset %}
   {% set check %}<span class="cl-ico cl-ico--green">{% include ".icons/material/check-bold.svg" %}</span>{% endset %}
-  <div class="cl-home">
+  {#- index.md has a Markdown copy for AI agents that this template doesn't render. Its first
+      heading still gives Material's "Skip to content" link a target, so that id goes here. -#}
+  {%- set skip = page.toc | first %}
+  <div class="cl-home"{% if skip is defined %} id="{{ skip.id }}"{% endif %}>
 
     <section class="cl-hero">
       <div class="cl-wrap cl-hero__grid">

@@ -40,6 +40,12 @@
   The Open Graph and Twitter tags give links shared in chats and on social
   sites a title, a description and the card in static/og-image.png. Pages with
   no URL of their own, like the 404 page, leave og:url out.
+
+  The llms_txt plugin of MkDocs NG writes a Markdown copy of each page next to
+  its source path (getting-started.md for getting-started/) and llms.txt at the
+  site root. The alternate links tell an AI agent that lands on a page where
+  the clean copy is, so it does not have to guess the URL. The 404 page has no
+  source file and gets no Markdown link.
 -#}
 
 {% block extrahead %}
@@ -70,6 +76,12 @@
   <meta name="twitter:title" content="{{ og_title }}">
   <meta name="twitter:description" content="{{ og_description }}">
   <meta name="twitter:image" content="{{ og_image }}">
+  {%- if "llms_txt" in config.plugins %}
+    {%- if page and page.file and page.file.src_uri.endswith(".md") %}
+  <link rel="alternate" type="text/markdown" href="{{ page.file.src_uri | url }}" title="Markdown">
+    {%- endif %}
+  <link rel="alternate" type="text/plain" href="{{ 'llms.txt' | url }}" title="llms.txt">
+  {%- endif %}
 {% endblock %}
 
 {#-
