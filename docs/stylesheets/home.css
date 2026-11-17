@@ -1754,6 +1754,10 @@
     font-size: 14px;
 }
 
+.cl-footer__bottom a {
+    font-size: inherit;
+}
+
 /* Smaller screens */
 
 @media screen and (max-width: 1199px) {
