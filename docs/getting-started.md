@@ -90,7 +90,7 @@ walks through the whole setup.
 [cpp-linter](https://cpp-linter.github.io/cpp-linter/) is the Python command behind the action:
 
 ```bash
-pip install cpp-linter
+pip install 'cpp-linter<2'
 cpp-linter --version=21 --style=file --tidy-checks=''
 ```
 
@@ -104,7 +104,8 @@ cpp-linter --version=21 --style=file --tidy-checks=''
   Azure Pipelines and Bitbucket Pipelines.
 
 cpp-linter v2, a rewrite in Rust ([cpp-linter-rs](https://github.com/cpp-linter/cpp-linter-rs)),
-is in release candidates. Use the Python package until 2.0 is released.
+is in release candidates. `'cpp-linter<2'` keeps the Python package this section describes, also
+after 2.0 is released.
 
 ## Just the clang tools
 
