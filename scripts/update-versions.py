@@ -5,7 +5,9 @@ Usage:
     python3 scripts/update-versions.py [tag]
 
 Without a tag, the script asks GitHub for the latest cpp-linter-hooks release.
-Blog posts are left alone: each one shows the version of the day it was written.
+The clang-format playground's script builds the same example, so it is updated
+too. Blog posts are left alone: each one shows the version of the day it was
+written.
 """
 
 from __future__ import annotations
@@ -40,7 +42,8 @@ def main() -> None:
     tag = sys.argv[1] if len(sys.argv) > 1 else latest_tag(HOOKS_REPO)
     if not re.fullmatch(r"v[0-9]+\.[0-9]+\.[0-9]+", tag):
         sys.exit(f"Unexpected {HOOKS_REPO} tag: {tag!r}")
-    for page in sorted(DOCS.glob("*.md")):
+    pages = [*sorted(DOCS.glob("*.md")), DOCS / "javascripts" / "playground.js"]
+    for page in pages:
         text = page.read_text(encoding="utf-8")
         updated = REV.sub(rf"\g<1>{tag}", text)
         if updated != text:

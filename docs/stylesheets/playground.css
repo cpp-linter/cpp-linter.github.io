@@ -1,0 +1,321 @@
+/* The clang-format playground (playground.md). Loaded only on that page.
+ * Colors come from the theme's variables, so light and dark both work. */
+
+/* Pages without the left navigation are 42rem wide (extra.css); the two
+ * panes need the full width. */
+@media screen and (min-width: 76.25em) {
+    .md-sidebar--primary[hidden] ~ .md-content {
+        max-width: none;
+    }
+}
+
+.cl-pg {
+    --cl-pg-line: var(--md-default-fg-color--lightest);
+    --cl-pg-add: #48b8882e;
+    --cl-pg-add-sign: #2f7a5a;
+    --cl-pg-del: #e5534b24;
+    --cl-pg-del-sign: #b4352e;
+    margin-top: 1.5rem;
+}
+
+[data-md-color-scheme="slate"] .cl-pg {
+    --cl-pg-add-sign: #6fd3a8;
+    --cl-pg-del-sign: #ff8f88;
+}
+
+.cl-pg__controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 0.8rem 1rem;
+}
+
+.cl-pg__field,
+.cl-pg__config {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.cl-pg select,
+.cl-pg textarea {
+    font: inherit;
+    font-weight: 400;
+    color: var(--md-default-fg-color);
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--md-default-fg-color--lighter);
+    border-radius: 0.3rem;
+}
+
+.cl-pg select {
+    min-height: 2.2rem;
+    padding: 0 0.6rem;
+    font-size: 0.75rem;
+}
+
+.cl-pg .md-button {
+    margin: 0;
+    padding: 0.45em 1.1em;
+    font-size: 0.7rem;
+}
+
+.cl-pg textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    font-family: var(--md-code-font-family);
+    font-size: 0.72rem;
+    line-height: 1.6;
+    tab-size: 4;
+    resize: vertical;
+}
+
+.cl-pg select:focus-visible,
+.cl-pg textarea:focus-visible,
+.cl-pg button:focus-visible {
+    outline: 2px solid var(--md-accent-fg-color);
+    outline-offset: 1px;
+}
+
+.cl-pg__config {
+    margin-top: 1rem;
+}
+
+.cl-pg__config[hidden] {
+    display: none;
+}
+
+.cl-pg__panes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 60em) {
+    .cl-pg__panes {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.cl-pg__pane {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 0.4rem;
+}
+
+.cl-pg__pane-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    min-height: 1.6rem;
+}
+
+.cl-pg__pane-title {
+    display: flex;
+    align-items: center;
+    min-height: 1.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.cl-pg__pane textarea {
+    height: 26rem;
+}
+
+.cl-pg__tabs {
+    display: flex;
+    border: 1px solid var(--md-default-fg-color--lighter);
+    border-radius: 0.3rem;
+    overflow: hidden;
+}
+
+.cl-pg__tab {
+    min-height: 1.6rem;
+    padding: 0 0.7rem;
+    font: inherit;
+    font-size: 0.65rem;
+    color: var(--md-default-fg-color--light);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.cl-pg__tab + .cl-pg__tab {
+    border-left: 1px solid var(--md-default-fg-color--lighter);
+}
+
+.cl-pg__tab[aria-pressed="true"] {
+    color: var(--md-default-bg-color);
+    background: var(--md-default-fg-color);
+}
+
+.md-typeset .cl-pg__status {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.45rem;
+    margin: 0;
+    min-height: 1.4rem;
+    font-size: 0.68rem;
+    line-height: 1.5;
+    color: var(--md-default-fg-color--light);
+}
+
+.cl-pg__status svg {
+    flex: none;
+    margin-top: 0.1rem;
+}
+
+.cl-pg__result {
+    box-sizing: border-box;
+    height: 24.6rem;
+    overflow: auto;
+    border: 1px solid var(--md-default-fg-color--lighter);
+    border-radius: 0.3rem;
+    background: var(--md-code-bg-color);
+}
+
+.cl-pg__result[hidden] {
+    display: none;
+}
+
+/* The result and the commands: <pre> without <code>, styled here. */
+.md-typeset pre.cl-pg__code {
+    margin: 0;
+    padding: 0.8rem 1rem;
+    font-family: var(--md-code-font-family);
+    font-size: 0.68rem;
+    line-height: 1.6;
+    color: var(--md-code-fg-color);
+    background: var(--md-code-bg-color);
+    border-radius: 0.3rem;
+    white-space: pre;
+    overflow: auto;
+}
+
+.md-typeset pre.cl-pg__result {
+    border: 1px solid var(--md-default-fg-color--lighter);
+}
+
+.cl-pg__head-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cl-pg__copy {
+    min-height: 1.6rem;
+    padding: 0 0.7rem;
+    font: inherit;
+    font-size: 0.65rem;
+    color: var(--md-default-fg-color--light);
+    background: var(--md-default-bg-color);
+    border: 1px solid var(--md-default-fg-color--lighter);
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+
+.cl-pg__copy:hover {
+    color: var(--md-default-fg-color);
+    border-color: var(--md-default-fg-color--light);
+}
+
+.cl-pg__copy[hidden] {
+    display: none;
+}
+
+/* Lines are as wide as the longest one, so the colored rows still reach the
+ * end of the text when the pane scrolls sideways. */
+.cl-pg__lines {
+    display: inline-block;
+    min-width: 100%;
+}
+
+.cl-pg__line {
+    display: grid;
+    grid-template-columns: 2.2rem 2.2rem 1.1rem auto;
+    font-family: var(--md-code-font-family);
+    font-size: 0.68rem;
+    line-height: 1.6;
+}
+
+.cl-pg__line code {
+    padding: 0;
+    font-size: inherit;
+    white-space: pre;
+    background: transparent;
+    color: var(--md-code-fg-color);
+}
+
+.cl-pg__num {
+    padding-right: 0.5rem;
+    text-align: right;
+    color: var(--md-default-fg-color--lighter);
+    user-select: none;
+}
+
+.cl-pg__sign {
+    font-weight: 700;
+    user-select: none;
+}
+
+.cl-pg__line--add {
+    background: var(--cl-pg-add);
+}
+
+.cl-pg__line--add .cl-pg__sign {
+    color: var(--cl-pg-add-sign);
+}
+
+.cl-pg__line--del {
+    background: var(--cl-pg-del);
+}
+
+.cl-pg__line--del .cl-pg__sign {
+    color: var(--cl-pg-del-sign);
+}
+
+.cl-pg__gap {
+    padding: 0.15rem 0 0.15rem 5.5rem;
+    font-size: 0.62rem;
+    color: var(--md-default-fg-color--light);
+    background: var(--cl-pg-line);
+}
+
+.cl-pg__cmds {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+}
+
+.md-typeset .cl-pg__cmd {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0;
+}
+
+.md-typeset .cl-pg__cmd figcaption {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.6rem;
+    max-width: none;
+    margin: 0 0 0.4rem;
+    font-size: 0.68rem;
+    font-style: normal;
+    text-align: left;
+}
+
+.md-typeset .cl-pg__cmd pre.cl-pg__code {
+    flex: 1;
+    text-align: left;
+}
+
+.cl-pg__note[hidden] {
+    display: none;
+}

@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{#-
+  The clang-format playground (playground.md). Its stylesheet and script are
+  only loaded on that page. The script imports clang-format builds compiled to
+  WebAssembly from jsDelivr when the page opens, one per LLVM version picked.
+-#}
+
+{% block extrahead %}
+  {{ super() }}
+  <link rel="stylesheet" href="{{ 'stylesheets/playground.css' | url }}">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script type="module" src="{{ 'javascripts/playground.js' | url }}"></script>
+{% endblock %}
