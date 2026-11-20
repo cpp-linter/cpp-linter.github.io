@@ -294,6 +294,9 @@ function setStatus(icon, text) {
 }
 
 let run = 0;
+// The hash is written once the visitor changes something, so opening the page
+// leaves its address clean.
+let touched = false;
 
 async function update() {
   const ticket = ++run;
@@ -302,7 +305,7 @@ async function update() {
   const style = styleName === "file" ? ui.config.value : styleName;
   ui.configWrap.hidden = styleName !== "file";
   renderCommands();
-  writeHash();
+  if (touched) writeHash();
 
   let mod;
   if (!modules.has(major)) setStatus("", `Loading clang-format ${major}…`);
@@ -387,13 +390,18 @@ ui.version.value = initial.version || DEFAULT_VERSION;
 ui.style.value = initial.style || "LLVM";
 ui.lang.value = initial.lang || "main.cpp";
 if (initial.config !== undefined) ui.config.value = initial.config;
+touched = location.hash.length > 1;
 ui.input.value = initial.code !== undefined ? initial.code : SAMPLE;
 
-ui.version.addEventListener("change", update);
-ui.style.addEventListener("change", update);
-ui.lang.addEventListener("change", update);
-ui.input.addEventListener("input", scheduleUpdate);
-ui.config.addEventListener("input", scheduleUpdate);
+const changed = (handler) => () => {
+  touched = true;
+  handler();
+};
+ui.version.addEventListener("change", changed(update));
+ui.style.addEventListener("change", changed(update));
+ui.lang.addEventListener("change", changed(update));
+ui.input.addEventListener("input", changed(scheduleUpdate));
+ui.config.addEventListener("input", changed(scheduleUpdate));
 ui.viewDiff.addEventListener("click", () => showView("diff"));
 ui.viewOut.addEventListener("click", () => showView("out"));
 
@@ -407,6 +415,7 @@ ui.input.addEventListener("keydown", (event) => {
   if (event.key === "Tab" && !event.shiftKey && !escaped) {
     event.preventDefault();
     ui.input.setRangeText("    ", ui.input.selectionStart, ui.input.selectionEnd, "end");
+    touched = true;
     scheduleUpdate();
   }
   escaped = false;
