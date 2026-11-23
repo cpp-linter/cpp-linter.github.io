@@ -1,7 +1,7 @@
 # cpp-linter.github.io
 
-The source of <https://cpp-linter.github.io/>: the home page, Get started, Why cpp-linter, the
-showcase, the blog and the community and sponsor pages.
+The source of <https://cpp-linter.github.io/>: the home page, Get started, the clang-format
+playground, Why cpp-linter, the showcase, the blog and the community and sponsor pages.
 
 [Website](https://cpp-linter.github.io/) ·
 [Get started](https://cpp-linter.github.io/getting-started/) ·
