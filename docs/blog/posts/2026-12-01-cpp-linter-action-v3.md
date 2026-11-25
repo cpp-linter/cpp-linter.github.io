@@ -1,7 +1,7 @@
 ---
 date:
   created: 2026-12-01
-draft: true
+draft: false
 categories:
   - Releases
 tags:
