@@ -46,3 +46,91 @@
 .md-typeset .compare table:not([class]) td:first-child {
     font-weight: 600;
 }
+
+/* Before/after slider in blog posts: the second image is clipped to the handle's position */
+.md-typeset .cl-cmp {
+    position: relative;
+    aspect-ratio: 1712 / 1120;
+    max-width: 100%;
+    margin: 1.5em 0 0.5em;
+    border: 1px solid var(--md-default-fg-color--lightest);
+    border-radius: 0.6rem;
+    overflow: hidden;
+    background: #fff;
+    user-select: none;
+    touch-action: pan-y;
+}
+.md-typeset .cl-cmp.dk { display: none; background: #0d1117; }
+[data-md-color-scheme="slate"] .md-typeset .cl-cmp.lt { display: none; }
+[data-md-color-scheme="slate"] .md-typeset .cl-cmp.dk { display: block; }
+.md-typeset .cl-cmp img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top left;
+    pointer-events: none;
+}
+.md-typeset .cl-cmp .cl-new { clip-path: inset(0 calc(100% - var(--pos, 55%)) 0 0); }
+.md-typeset .cl-cmp .cl-bar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--pos, 55%);
+    width: 3px;
+    margin-left: -1.5px;
+    background: #FFC20A;
+}
+.md-typeset .cl-cmp .cl-knob {
+    position: absolute;
+    top: 50%;
+    left: var(--pos, 55%);
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: -0.7rem 0 0 -0.7rem;
+    border-radius: 50%;
+    background: #FFC20A;
+    display: grid;
+    place-items: center;
+}
+.md-typeset .cl-cmp .cl-knob svg { width: 0.8rem; height: 0.8rem; }
+.md-typeset .cl-cmp .cl-tag {
+    position: absolute;
+    bottom: 0.6rem;
+    z-index: 1;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.6rem;
+    font-weight: 600;
+    background: #F7F5EF;
+    color: #5A5E70;
+    border: 1px solid #E4DFD1;
+}
+.md-typeset .cl-cmp .cl-tag.l { left: 0.6rem; background: #171A2E; color: #F7F5EF; border-color: #171A2E; }
+.md-typeset .cl-cmp .cl-tag.r { right: 0.6rem; }
+.md-typeset .cl-cmp::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3.5rem;
+    background: linear-gradient(transparent, #fff);
+    pointer-events: none;
+}
+.md-typeset .cl-cmp.dk::after { background: linear-gradient(transparent, #0d1117); }
+.md-typeset .cl-cmp input[type="range"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 2;
+}
+.md-typeset .cl-cmp input[type="range"]:focus-visible ~ .cl-knob {
+    outline: 3px solid var(--md-accent-fg-color);
+    outline-offset: 2px;
+}
