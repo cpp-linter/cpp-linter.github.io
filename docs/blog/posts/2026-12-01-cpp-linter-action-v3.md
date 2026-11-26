@@ -133,15 +133,20 @@ applies the patch only when `auto-fix` is on.
 ```
 
 
-Before you merge the upgrade, check three things:
+Before you merge the upgrade, check these:
 
 1. `tidy-review` and `format-review` still work, as aliases of `pr-review`. Either one now turns on
    suggestions from both tools.
-2. `version` defaults to `latest`. Pin a major version if you want results that do not change
-   when a new LLVM release comes out.
+2. Some defaults changed, so an input you don't set may now behave differently:
+    - `style` and `tidy-checks` follow your repository's `.clang-format` and `.clang-tidy` files.
+    - `lines-changed-only` is `true`, so only the lines you add are checked.
+    - `thread-comments` is `update` on pull requests: one comment, edited in place on each push.
+      It needs the `pull-requests: write` permission.
+    - `step-summary` is `true`.
+    - `version` is `latest`. Pin a major version if you want results that don't change when a new
+      LLVM release comes out.
 3. The new `strict` input fails the step when any check fails, so a separate step that reads
-   `checks-failed` is no longer needed. [TODO: say whether `strict` is on by default, and list the
-   other agreed default changes, once decided.]
+   `checks-failed` is no longer needed. [TODO: say whether `strict` is on by default.]
 
 The [migration guide](https://cpp-linter.github.io/cpp-linter-action/migration/) lists every input
 that changed, and covers workflows still on v1.
