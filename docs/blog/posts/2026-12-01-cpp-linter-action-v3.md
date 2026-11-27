@@ -145,8 +145,9 @@ Before you merge the upgrade, check these:
     - `step-summary` is `true`.
     - `version` is `latest`. Pin a major version if you want results that don't change when a new
       LLVM release comes out.
-3. The new `strict` input fails the step when any check fails, so a separate step that reads
-   `checks-failed` is no longer needed. [TODO: say whether `strict` is on by default.]
+3. The new `strict` input fails the step when any check fails. It is off by default, so an
+   upgrade never turns a passing job red. We recommend `strict: true`: it replaces the separate
+   step that reads `checks-failed`, and the outputs are still set when the step fails.
 
 The [migration guide](https://cpp-linter.github.io/cpp-linter-action/migration/) lists every input
 that changed, and covers workflows still on v1.
